@@ -1,5 +1,5 @@
 /**
- * 生成 compare/index.html 横向对比工具页面
+ * 生成 compare/index.html 横向对比工具页面 (14大真实品牌适配)
  */
 
 const fs = require('fs');
@@ -22,8 +22,8 @@ if (!fs.existsSync(COMPARE_DIR)) {
 
 function generateComparePage() {
   const meta = {
-    title: '机场横向对比工具 | 价格/协议/节点/流媒体多维度即时对比 - 梯子推荐网',
-    description: '梯子推荐网提供交互式机场横向对比工具：自由勾选2-4家主流机场服务商，实时对比套餐价格、每GB流量单价、传输协议、流媒体与AI大模型解锁能力。',
+    title: '机场横向对比工具 | 14大主流品牌价格/协议/节点/流媒体多维度即时对比 - 梯子推荐网',
+    description: '梯子推荐网提供交互式机场横向对比工具：自由勾选2-5家主流机场服务商，实时对比套餐价格、每GB流量单价、传输协议、流媒体与AI大模型解锁能力。',
     keywords: '机场对比,梯子对比,性价比机场,机场节点对比,vpn对比',
     canonicalPath: 'compare/index.html',
     schema: {
@@ -47,19 +47,19 @@ ${renderBreadcrumbs(breadcrumbs, 1)}
 
 <main class="container" style="padding:30px 20px 60px;">
   <div style="max-width:960px; margin:0 auto 30px; text-align:center;">
-    <h1 style="font-size:2.2rem; font-weight:800; margin-bottom:12px;">⚖️ 主流机场梯子节点全维度横向对比工具</h1>
+    <h1 style="font-size:2.2rem; font-weight:800; margin-bottom:12px;">⚖️ 14大主流机场梯子节点全维度横向对比工具</h1>
     <p style="font-size:1rem; color:var(--text-muted); line-height:1.6;">
-      勾选您感兴趣的 2 至 5 家机场服务商，下方矩阵表格将自动实时更新对比列。助您快速看清价格、线路、协议与解锁能力差异。
+      勾选您感兴趣的 2 至 6 家机场服务商，下方矩阵表格将自动实时更新对比列。助您快速看清价格、线路、协议与解锁能力差异。
     </p>
   </div>
 
   <!-- 勾选控制器 -->
   <div class="compare-selector-bar">
-    <strong style="font-size:0.95rem; color:var(--text-main);">选择对比品牌（已选 <span id="selected-count">5</span> 家）：</strong>
+    <strong style="font-size:0.95rem; color:var(--text-main);">选择对比品牌（已选 <span id="selected-count">${Math.min(airports.length, 5)}</span> 家）：</strong>
     <div class="compare-checkbox-group">
-      ${airports.map(a => `
+      ${airports.map((a, idx) => `
         <label class="compare-check-label">
-          <input type="checkbox" class="compare-check-input" value="${a.id}" checked>
+          <input type="checkbox" class="compare-check-input" value="${a.id}" ${idx < 5 ? 'checked' : ''}>
           <span>${a.name}</span>
         </label>
       `).join('')}
@@ -68,14 +68,14 @@ ${renderBreadcrumbs(breadcrumbs, 1)}
 
   <!-- 横向对比矩阵表格 -->
   <div class="table-responsive">
-    <table class="data-table" id="compare-table" style="min-width:900px;">
+    <table class="data-table" id="compare-table" style="min-width:1100px;">
       <thead>
         <tr>
           <th style="width:140px; background:#f1f5f9; position:sticky; left:0; z-index:10;">对比维度</th>
-          ${airports.map(a => `
-            <th class="compare-col" data-airport="${a.id}" style="text-align:center; min-width:180px;">
-              <div style="font-size:1.1rem; font-weight:700; margin-bottom:4px;">${a.name}</div>
-              <div style="font-size:0.75rem; color:var(--text-light); font-weight:normal;">${a.testStatus === 'tested' ? '✓ 编辑部实测' : '官方核验'}</div>
+          ${airports.map((a, idx) => `
+            <th class="compare-col" data-airport="${a.id}" style="text-align:center; min-width:180px; ${idx >= 5 ? 'display:none;' : ''}">
+              <div style="font-size:1.05rem; font-weight:700; margin-bottom:4px;">${a.name}</div>
+              <span class="tag" style="padding:1px 6px;">${a.lineType}</span>
             </th>
           `).join('')}
         </tr>
@@ -83,8 +83,8 @@ ${renderBreadcrumbs(breadcrumbs, 1)}
       <tbody>
         <tr>
           <td style="background:#f1f5f9; position:sticky; left:0; font-weight:600;">起步价格</td>
-          ${airports.map(a => `
-            <td class="compare-col" data-airport="${a.id}" style="text-align:center;">
+          ${airports.map((a, idx) => `
+            <td class="compare-col" data-airport="${a.id}" style="text-align:center; ${idx >= 5 ? 'display:none;' : ''}">
               <span style="font-size:1.3rem; font-weight:800; color:var(--primary);">¥${a.startingPrice}</span> / 月起
             </td>
           `).join('')}
@@ -92,8 +92,8 @@ ${renderBreadcrumbs(breadcrumbs, 1)}
 
         <tr>
           <td style="background:#f1f5f9; position:sticky; left:0; font-weight:600;">主力套餐流量</td>
-          ${airports.map(a => `
-            <td class="compare-col" data-airport="${a.id}" style="text-align:center;">
+          ${airports.map((a, idx) => `
+            <td class="compare-col" data-airport="${a.id}" style="text-align:center; ${idx >= 5 ? 'display:none;' : ''}">
               ${a.plans[0].trafficGb} GB / 月
             </td>
           `).join('')}
@@ -101,8 +101,8 @@ ${renderBreadcrumbs(breadcrumbs, 1)}
 
         <tr>
           <td style="background:#f1f5f9; position:sticky; left:0; font-weight:600;">参考每GB成本</td>
-          ${airports.map(a => `
-            <td class="compare-col" data-airport="${a.id}" style="text-align:center;">
+          ${airports.map((a, idx) => `
+            <td class="compare-col" data-airport="${a.id}" style="text-align:center; ${idx >= 5 ? 'display:none;' : ''}">
               <span style="font-weight:700; color:var(--success);">¥${a.plans[0].unitPricePerGb.toFixed(3)}</span> / GB
             </td>
           `).join('')}
@@ -110,17 +110,17 @@ ${renderBreadcrumbs(breadcrumbs, 1)}
 
         <tr>
           <td style="background:#f1f5f9; position:sticky; left:0; font-weight:600;">核心传输线路</td>
-          ${airports.map(a => `
-            <td class="compare-col" data-airport="${a.id}" style="text-align:center;">
-              ${a.id === 'paopaodog' ? '全内网 IPLC 专线' : a.id === 'feiniaoyun' ? 'Hysteria2 弱网加速' : '优质多入口 BGP 中转'}
+          ${airports.map((a, idx) => `
+            <td class="compare-col" data-airport="${a.id}" style="text-align:center; ${idx >= 5 ? 'display:none;' : ''}">
+              ${a.lineType}
             </td>
           `).join('')}
         </tr>
 
         <tr>
           <td style="background:#f1f5f9; position:sticky; left:0; font-weight:600;">支持协议</td>
-          ${airports.map(a => `
-            <td class="compare-col" data-airport="${a.id}" style="text-align:center; font-size:0.85rem;">
+          ${airports.map((a, idx) => `
+            <td class="compare-col" data-airport="${a.id}" style="text-align:center; font-size:0.85rem; ${idx >= 5 ? 'display:none;' : ''}">
               ${a.protocols.join('、')}
             </td>
           `).join('')}
@@ -128,8 +128,8 @@ ${renderBreadcrumbs(breadcrumbs, 1)}
 
         <tr>
           <td style="background:#f1f5f9; position:sticky; left:0; font-weight:600;">同时在线设备</td>
-          ${airports.map(a => `
-            <td class="compare-col" data-airport="${a.id}" style="text-align:center;">
+          ${airports.map((a, idx) => `
+            <td class="compare-col" data-airport="${a.id}" style="text-align:center; ${idx >= 5 ? 'display:none;' : ''}">
               ${a.deviceLimit}
             </td>
           `).join('')}
@@ -137,8 +137,8 @@ ${renderBreadcrumbs(breadcrumbs, 1)}
 
         <tr>
           <td style="background:#f1f5f9; position:sticky; left:0; font-weight:600;">海外 AI 解锁</td>
-          ${airports.map(a => `
-            <td class="compare-col" data-airport="${a.id}" style="text-align:center; font-size:0.85rem;">
+          ${airports.map((a, idx) => `
+            <td class="compare-col" data-airport="${a.id}" style="text-align:center; font-size:0.85rem; ${idx >= 5 ? 'display:none;' : ''}">
               ${a.aiSupport.join('、')}
             </td>
           `).join('')}
@@ -146,8 +146,8 @@ ${renderBreadcrumbs(breadcrumbs, 1)}
 
         <tr>
           <td style="background:#f1f5f9; position:sticky; left:0; font-weight:600;">4K 流媒体解锁</td>
-          ${airports.map(a => `
-            <td class="compare-col" data-airport="${a.id}" style="text-align:center; font-size:0.85rem;">
+          ${airports.map((a, idx) => `
+            <td class="compare-col" data-airport="${a.id}" style="text-align:center; font-size:0.85rem; ${idx >= 5 ? 'display:none;' : ''}">
               ${a.streamingSupport.slice(0, 3).join('、')}
             </td>
           `).join('')}
@@ -155,8 +155,8 @@ ${renderBreadcrumbs(breadcrumbs, 1)}
 
         <tr>
           <td style="background:#f1f5f9; position:sticky; left:0; font-weight:600;">核心突出优势</td>
-          ${airports.map(a => `
-            <td class="compare-col" data-airport="${a.id}" style="font-size:0.85rem; vertical-align:top;">
+          ${airports.map((a, idx) => `
+            <td class="compare-col" data-airport="${a.id}" style="font-size:0.85rem; vertical-align:top; ${idx >= 5 ? 'display:none;' : ''}">
               <ul style="padding-left:14px; margin:0;">
                 ${a.advantages.slice(0, 2).map(adv => `<li>${adv}</li>`).join('')}
               </ul>
@@ -166,20 +166,29 @@ ${renderBreadcrumbs(breadcrumbs, 1)}
 
         <tr>
           <td style="background:#f1f5f9; position:sticky; left:0; font-weight:600;">主要短板与提醒</td>
-          ${airports.map(a => `
-            <td class="compare-col" data-airport="${a.id}" style="font-size:0.85rem; color:var(--warning); vertical-align:top;">
+          ${airports.map((a, idx) => `
+            <td class="compare-col" data-airport="${a.id}" style="font-size:0.85rem; color:var(--warning); vertical-align:top; ${idx >= 5 ? 'display:none;' : ''}">
               ${a.disadvantages[0]}
             </td>
           `).join('')}
         </tr>
 
         <tr>
-          <td style="background:#f1f5f9; position:sticky; left:0; font-weight:600;">详情与评测</td>
-          ${airports.map(a => `
-            <td class="compare-col" data-airport="${a.id}" style="text-align:center;">
+          <td style="background:#f1f5f9; position:sticky; left:0; font-weight:600;">专属优惠券</td>
+          ${airports.map((a, idx) => `
+            <td class="compare-col" data-airport="${a.id}" style="text-align:center; ${idx >= 5 ? 'display:none;' : ''}">
+              ${a.coupon ? `<code style="font-weight:bold; color:#e11d48; background:#fff1f2;">${a.coupon}</code>` : '<span style="color:#94a3b8;">官方直供</span>'}
+            </td>
+          `).join('')}
+        </tr>
+
+        <tr>
+          <td style="background:#f1f5f9; position:sticky; left:0; font-weight:600;">详情与官网</td>
+          ${airports.map((a, idx) => `
+            <td class="compare-col" data-airport="${a.id}" style="text-align:center; ${idx >= 5 ? 'display:none;' : ''}">
               <div style="display:flex; flex-direction:column; gap:6px;">
-                <a href="../airport/${a.slug}.html" class="btn btn-outline btn-sm">查看参数</a>
-                <a href="../review/${a.slug}.html" class="btn btn-primary btn-sm">阅读评测</a>
+                <a href="${a.affiliateUrl}" target="_blank" rel="noopener nofollow" class="btn btn-primary btn-sm" style="padding:4px 8px;">直达官网</a>
+                <a href="../review/${a.slug}.html" class="btn btn-outline btn-sm" style="padding:4px 8px;">阅读评测</a>
               </div>
             </td>
           `).join('')}
@@ -191,11 +200,9 @@ ${renderBreadcrumbs(breadcrumbs, 1)}
   <div style="margin-top:36px; padding:24px; background:#ffffff; border:1px solid var(--border-color); border-radius:var(--radius-md);">
     <h2 style="font-size:1.3rem; margin-bottom:12px;">对比总结建议</h2>
     <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.6;">
-      • <strong>追求极致网络 SLA、游戏低延迟与外贸办公：</strong>首选 <a href="../airport/paopaodog.html">泡泡狗</a>（全内网 IPLC 专线）。<br>
-      • <strong>追求老牌大厂口碑与多设备自用：</strong>首选 <a href="../airport/speedycat.html">闪电猫</a>（4年老牌运营）。<br>
-      • <strong>追求超低单价与大流量下载：</strong>首选 <a href="../airport/juziyun.html">桔子云</a>（单价低至0.078元/GB）。<br>
-      • <strong>校园网弱网抗丢包与新兴 Hysteria2 协议：</strong>首选 <a href="../airport/feiniaoyun.html">飞鸟云</a>。<br>
-      • <strong>零基础纯小白一键傻瓜式连接：</strong>首选 <a href="../airport/beibeiyun.html">贝贝云</a>（12元月付尝鲜）。
+      • <strong>追求超低预算入门：</strong>首选 <a href="../airport/feiv.html">飞V</a>（¥4.9起）或 <a href="../airport/breezenet.html">微风网络</a>（¥8享200GB超大专线流量）。<br>
+      • <strong>追求顶级IEPL/IPLC纯专线与AI原生解锁：</strong>首选 <a href="../airport/yinxingren.html">隐形人</a>、<a href="../airport/flashleap.html">闪跃</a> 或 <a href="../airport/wuyou.html">无忧</a>。<br>
+      • <strong>追求平价高配与优惠券折上折：</strong>首选 <a href="../airport/feimaoyun.html">飞猫云</a>（券: flycat888）与 <a href="../airport/quanqiuyun.html">全球云</a>（券: tt88）。
     </p>
   </div>
 </main>
@@ -203,7 +210,7 @@ ${renderBreadcrumbs(breadcrumbs, 1)}
 ${renderFooter(1)}`;
 
   fs.writeFileSync(path.join(COMPARE_DIR, 'index.html'), html, 'utf8');
-  console.log('Generated: compare/index.html');
+  console.log('Generated: compare/index.html (Updated with 14 brands)');
 }
 
 module.exports = { generateComparePage };

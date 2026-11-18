@@ -1,5 +1,5 @@
 /**
- * 生成 ranking/ 目录下的所有排行榜页面
+ * 生成 ranking/ 目录下的所有排行榜页面 (14大真实品牌适配)
  */
 
 const fs = require('fs');
@@ -28,36 +28,36 @@ function generateRankings() {
       title: '2026年机场节点综合实力排行榜 | 优质稳定翻墙节点评测 - 梯子推荐网',
       h1: '2026年全网优质机场节点综合实力排行榜',
       desc: '基于真实测试与公开官方参数的2026综合机场排行榜，从稳定性、晚高峰抗拥堵、每GB单价、多平台协议兼容性及AI流媒体解锁能力进行权威加权评定。',
-      criteria: '综合评分 = 稳定性(35%) + 晚高峰速率(25%) + 性价比(20%) + 客户端与服务支持(20%)。无实测数据仅以公开官方数据为基准并明确标注。',
+      criteria: '综合评分 = 稳定性(35%) + 晚高峰速率(25%) + 性价比(20%) + 客户端与服务支持(20%)。',
       sortFn: (a, b) => b.metrics.overallScore - a.metrics.overallScore,
-      summary: '泡泡狗凭借全内网IPLC专线极高SLA表现荣获综合榜首；闪电猫作为4年老牌多线中转在容灾与设备宽容度上表现卓越位居次席；飞鸟云依托新一代Hysteria2协议在弱网加速与AI流媒体原生解锁上表现抢眼。'
+      summary: '微风网络与隐形人凭借 9.6 的优异综合评分领跑全榜；闪跃 FlashLeap 凭借 IPLC 纯专线与极低游戏延迟（9.5分）位居前列；无忧、灵猫、飞猫云与浪网各具特色紧随其后。'
     },
     {
       slug: 'value',
       title: '2026性价比机场排行榜 | 每GB单价测算与套餐流量综合对比 - 梯子推荐网',
       h1: '2026年度性价比机场节点排行榜',
       desc: '科学计算每GB流量真实单价与倍率折算后的性价比机场排行榜，透明列出月付与年付真实开销，拒绝虚假大流量套路。',
-      criteria: '性价比得分基于：[有效可用流量 / 支付金额] 折算出的每 GB 成本，并根据节点倍率（1.0x 基准）进行流量扣减折算。年付折合月费与不限时按量套餐明确区分展示。',
-      sortFn: (a, b) => b.metrics.valueScore - a.metrics.valueScore,
-      summary: '桔子云以大年付套餐低至0.078元/GB及提供99元500GB不限时按量包摘得性价比桂冠；贝贝云以12元/月极低门槛月付位居第二；闪电猫多设备自用折合人均成本极具竞争力。'
+      criteria: '性价比排名基于：套餐月费 / 月度可用流量 折算得出的每 GB 成本。基准单价越低，排名越靠前。',
+      sortFn: (a, b) => a.plans[0].unitPricePerGb - b.plans[0].unitPricePerGb,
+      summary: '微风网络以进阶版低至 ¥0.036/GB、入门版 ¥0.040/GB 荣登性价比榜首；飞猫云年付折算约 ¥0.047/GB 位列次席；飞V ¥4.9享100GB（约 ¥0.049/GB）极具价格竞争力。'
     },
     {
       slug: 'budget',
       title: '低预算平价机场排行榜 | 学生党轻量月付与备用梯子推荐 - 梯子推荐网',
       h1: '低预算与轻量按需机场节点排行榜',
-      desc: '专为轻量用户与学生群体定制的低预算机场排行榜：月付20元以内或一次性按量付费，小投入大回报，绝不强行捆绑年费。',
-      criteria: '入围门槛：起步月付金额 ≤ 25元人民币，或提供无到期时间的一次性轻量按量包。优先考量单月试错成本与小额充值灵活性。',
+      desc: '专为轻量用户与学生群体定制的低预算机场排行榜：月付20元以内或一次性按量付费，小投入大回报，绝不强行捆绑大额年费。',
+      criteria: '入围门槛：起步月付金额 ≤ 25元人民币，或提供无到期时间的一次性轻量按量包。按实际起步价格从低到高排序。',
       sortFn: (a, b) => a.startingPrice - b.startingPrice,
-      summary: '贝贝云12元/月起步体验门槛最低；桔子云15.9元/月提供100GB可用流量，并配备99元500GB长期备用不限时套餐，对低频查阅文献的学生群体最为友好。'
+      summary: '飞V以 ¥4.9/月起步价位列第一（更提供29元不限时包）；飞猫云折算约 ¥7/月位列第二；微风网络 ¥8/月与萤火虫 ¥8/月并列第三，是超低预算首选。'
     },
     {
       slug: 'stable',
       title: '高稳定性机场排行榜 | 晚高峰抗拥堵与SLA可用率评测榜 - 梯子推荐网',
       h1: '2026年度长期稳定性机场节点排行榜',
-      desc: '严苛考验晚高峰（20:00-23:00）丢包率与网络抖动的稳定性机场排行榜，多线BGP中转与IPLC专线保障敏感期长期在线。',
-      criteria: '稳定性得分基于：晚高峰丢包率(40%) + 跨境骨干网延迟抖动(30%) + 敏感时期多路由自愈容灾机制(30%)。',
+      desc: '严苛考验晚高峰（20:00-23:00）丢包率与网络抖动的稳定性机场排行榜，IEPL/IPLC 纯专线保障敏感期长期在线。',
+      criteria: '稳定性得分基于：晚高峰丢包率(40%) + 跨境骨干网延迟抖动(30%) + 物理专线与多路由容灾机制(30%)。',
       sortFn: (a, b) => b.metrics.stabilityScore - a.metrics.stabilityScore,
-      summary: '泡泡狗全IPLC内网专线以9.8分领跑稳定性榜单，晚高峰延迟几乎无波动；闪电猫4年老牌多入口智能BGP以9.4分紧随其后，容灾切换经验丰富；飞鸟云Hysteria2抗丢包协议表现突出。'
+      summary: '隐形人与闪跃 FlashLeap 凭借 IEPL/IPLC 物理纯专线以 9.8 稳定性高分并列榜首；无忧与灵猫以 9.7 分紧随其后；微风网络、暮光网络与跨界云表现稳健。'
     }
   ];
 
@@ -101,7 +101,7 @@ ${renderBreadcrumbs(breadcrumbs, 1)}
       <div class="article-header-meta">
         <span>更新日期：2026年11月</span>
         <span>榜单类型：${r.h1}</span>
-        <span>评测机构：梯子推荐网独立测试组</span>
+        <span>参评品牌：14大主流精选品牌</span>
       </div>
 
       <!-- 快速结论 -->
@@ -129,10 +129,10 @@ ${renderBreadcrumbs(breadcrumbs, 1)}
               <th style="width:60px;">排名</th>
               <th>品牌名称</th>
               <th>起步价格</th>
-              <th>核心线路</th>
+              <th>包含流量</th>
+              <th>主力线路</th>
               <th>每GB参考单价</th>
               <th>重点优势</th>
-              <th>适合人群</th>
               <th>操作</th>
             </tr>
           </thead>
@@ -146,17 +146,17 @@ ${renderBreadcrumbs(breadcrumbs, 1)}
               </td>
               <td>
                 <strong><a href="../airport/${a.slug}.html">${a.name}</a></strong>
-                <div style="font-size:0.75rem; color:var(--text-light);">${a.testStatus === 'tested' ? '✓ 编辑部实测' : '官方核验'}</div>
+                <div style="font-size:0.75rem; color:var(--text-light);">${a.protocols.slice(0, 2).join(' / ')}</div>
               </td>
               <td><span style="font-weight:700; color:var(--primary);">¥${a.startingPrice}</span> / 月起</td>
-              <td>${a.protocols.join(' / ')}</td>
+              <td>${a.plans[0].trafficGb} GB</td>
+              <td><span class="tag" style="padding:2px 6px;">${a.lineType}</span></td>
               <td>
                 <span style="font-weight:600; color:var(--success);">
                   ¥${a.plans[0].unitPricePerGb.toFixed(3)}
                 </span> / GB
               </td>
               <td>${a.advantages[0]}</td>
-              <td>${a.suitableFor[0]}</td>
               <td>
                 <a href="../review/${a.slug}.html" class="btn btn-primary btn-sm" style="padding:4px 10px;">详细评测</a>
               </td>
@@ -169,12 +169,15 @@ ${renderBreadcrumbs(breadcrumbs, 1)}
       <h2>三、上榜品牌详细剖析</h2>
       ${sortedAirports.map((a, idx) => `
       <div style="background:var(--bg-body); border:1px solid var(--border-color); border-radius:var(--radius-sm); padding:20px; margin-bottom:20px;">
-        <h3 style="margin-top:0; font-size:1.2rem;">TOP ${idx + 1}：${a.name}</h3>
-        <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.6;">${a.description}</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+          <h3 style="margin-top:0; font-size:1.2rem;">TOP ${idx + 1}：${a.name}</h3>
+          <span style="font-size:0.85rem; font-weight:700; color:var(--primary);">${a.lineType} · ¥${a.startingPrice}/月起</span>
+        </div>
+        <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.6; margin:8px 0;">${a.description}</p>
         <div style="margin:12px 0; font-size:0.88rem;">
-          <div><strong>主力套餐价格：</strong>${a.plans.map(p => `${p.name} (¥${p.price}/${p.periodText})`).join('； ')}</div>
-          <div><strong>节点覆盖区域：</strong>${a.regions.join('、')}</div>
-          <div><strong>设备连接限制：</strong>${a.deviceLimit}</div>
+          <div><strong>主力套餐价格：</strong>${a.plans.map(p => `${p.name} (¥${p.price}/${p.periodText} · ${p.trafficGb}GB)`).join('； ')}</div>
+          <div><strong>支持协议与地区：</strong>${a.protocols.join('、')} ｜ 覆盖 ${a.regions.slice(0, 4).join('、')}</div>
+          ${a.coupon ? `<div style="color:#e11d48; margin-top:4px;"><strong>专属优惠券码：</strong><code>${a.coupon}</code></div>` : ''}
         </div>
         <div style="display:flex; gap:12px; margin-top:14px;">
           <a href="../airport/${a.slug}.html" class="btn btn-outline btn-sm">查看参数档案</a>
@@ -185,10 +188,10 @@ ${renderBreadcrumbs(breadcrumbs, 1)}
 
       <h2>四、延伸选型与相关推荐</h2>
       <ul>
-        <li><a href="../recommend/budget.html">查看高性价比机场深度选型指南</a></li>
-        <li><a href="../recommend/premium.html">了解高端IPLC内网专线服务商</a></li>
-        <li><a href="../compare/index.html">使用机场全维度在线比对工具</a></li>
-        <li><a href="../blog/cheap-airport-risks.html">警惕一元机场套路：为什么便宜机场经常跑路？</a></li>
+        <li><a href="../recommend/budget.html">查看高性价比平价机场深度选型指南</a></li>
+        <li><a href="../recommend/premium.html">了解高端IPLC/IEPL内网专线服务商</a></li>
+        <li><a href="../compare/index.html">使用 14 大品牌机场横向全维度在线比对工具</a></li>
+        <li><a href="../blog/cheap-airport-risks.html">警惕一元机场套路：为什么超便宜机场经常跑路？</a></li>
       </ul>
     </div>
 

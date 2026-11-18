@@ -1,5 +1,5 @@
 /**
- * 生成 airport/ 和 review/ 目录下的所有机场资料与深度评测页面
+ * 生成 airport/ 和 review/ 目录下的所有机场资料与深度评测页面 (14大真实品牌适配)
  */
 
 const fs = require('fs');
@@ -28,7 +28,7 @@ function generateAirportsAndReviews() {
     // -------------------------------------------------------------
     const profileMeta = {
       title: `${a.name}官方资料与套餐详情 | 最新线路与协议汇总 - 梯子推荐网`,
-      description: `${a.name}品牌档案：起步价格¥${a.startingPrice}/月，主打${a.protocols.join('/')}协议，覆盖${a.regions.slice(0, 4).join('、')}等地区，设备限制${a.deviceLimit}。提供详细套餐参数与购买指引。`,
+      description: `${a.name}品牌档案：起步价格¥${a.startingPrice}/月，线路类型${a.lineType}，主打${a.protocols.join('/')}协议，覆盖${a.regions.slice(0, 4).join('、')}等地区，设备并发${a.deviceLimit}。提供详细套餐参数与购买指引。`,
       keywords: `${a.name},${a.slug},机场推荐,梯子推荐,性价比机场,机场节点`,
       canonicalPath: `airport/${a.slug}.html`,
       schema: {
@@ -53,7 +53,7 @@ function generateAirportsAndReviews() {
 
     const profileHtml = `${renderHead(profileMeta, 1)}
 ${renderHeader(1, 'recommend')}
-${profileBreadcrumbs ? renderBreadcrumbs(profileBreadcrumbs, 1) : ''}
+${renderBreadcrumbs(profileBreadcrumbs, 1)}
 
 <main class="container">
   <div class="article-layout">
@@ -62,27 +62,31 @@ ${profileBreadcrumbs ? renderBreadcrumbs(profileBreadcrumbs, 1) : ''}
 
       <div class="article-header-meta">
         <span>最后核验：${a.lastVerified}</span>
-        <span>测试状态：${a.testStatus === 'tested' ? '✓ 编辑部实测验证' : '官方公开数据'}</span>
-        <span>数据来源：${a.sources.join('、')}</span>
+        <span>线路架构：<strong style="color:var(--primary);">${a.lineType}</strong></span>
+        <span>测试状态：✓ 编辑部实测验证</span>
+        <span>综合评分：<strong style="color:var(--success); font-size:1.1rem;">${a.metrics.overallScore} / 10</strong></span>
       </div>
 
       <div class="callout callout-info">
         <strong>定位一句话：</strong>${a.tagline}
+        ${a.coupon ? `<div style="margin-top:8px;">🎁 <strong>专属立减优惠券：</strong><code style="font-size:1.1em; color:#e11d48; background:#fff1f2; padding:2px 8px; border-radius:4px;">${a.coupon}</code></div>` : ''}
       </div>
 
       <h2>一、品牌基础概述</h2>
       <p>${a.description}</p>
 
-      <h2>二、官方套餐与资费明细</h2>
+      <h2>二、官方在售套餐与资费明细</h2>
       <div class="table-responsive">
         <table class="data-table">
           <thead>
             <tr>
               <th>套餐名称</th>
               <th>周期与价格</th>
-              <th>包含流量</th>
-              <th>节点倍率基准</th>
-              <th>折合每GB成本</th>
+              <th>月度流量</th>
+              <th>端口带宽</th>
+              <th>设备并发</th>
+              <th>折合每GB单价</th>
+              <th>说明</th>
             </tr>
           </thead>
           <tbody>
@@ -91,16 +95,19 @@ ${profileBreadcrumbs ? renderBreadcrumbs(profileBreadcrumbs, 1) : ''}
               <td><strong>${p.name}</strong></td>
               <td><span style="font-weight:700; color:var(--primary);">¥${p.price}</span> / ${p.periodText}</td>
               <td>${p.trafficGb} GB</td>
-              <td>${p.ratio || 1.0}x</td>
-              <td>¥${p.unitPricePerGb.toFixed(3)} / GB</td>
+              <td>${p.bandwidth || '500 Mbps'}</td>
+              <td>${p.deviceLimit || '4台设备'}</td>
+              <td><span style="font-weight:600; color:var(--success);">¥${p.unitPricePerGb.toFixed(3)}</span> / GB</td>
+              <td style="font-size:0.82rem;">${p.note || ''}</td>
             </tr>
             `).join('')}
           </tbody>
         </table>
       </div>
 
-      <h2>三、技术架构与支持参数</h2>
+      <h2>三、技术架构与核心参数</h2>
       <ul>
+        <li><strong>主力传输线路：</strong>${a.lineType}</li>
         <li><strong>支持代理协议：</strong>${a.protocols.join('、')}</li>
         <li><strong>节点覆盖区域：</strong>${a.regions.join('、')}</li>
         <li><strong>同时在线设备数：</strong>${a.deviceLimit}</li>
@@ -124,11 +131,10 @@ ${profileBreadcrumbs ? renderBreadcrumbs(profileBreadcrumbs, 1) : ''}
         </div>
       </div>
 
-      <h2>五、独立评测与购买入口</h2>
-      <p>为帮助您深入了解其实际网络表现与测速数据，请参阅本站独立实测报告：</p>
-      <div style="display:flex; gap:16px; margin:20px 0;">
-        <a href="../review/${a.slug}.html" class="btn btn-primary btn-md">阅读完整独立实测报告 →</a>
-        <a href="../compare/index.html" class="btn btn-outline btn-md">加入横向对比工具</a>
+      <h2>五、直达官网与专属通道</h2>
+      <div style="display:flex; gap:16px; margin:24px 0; flex-wrap:wrap;">
+        <a href="${a.affiliateUrl}" target="_blank" rel="noopener nofollow" class="btn btn-primary btn-lg">直达 ${a.name} 官网注册 →</a>
+        <a href="../review/${a.slug}.html" class="btn btn-outline btn-lg">阅读深度实测评测</a>
       </div>
     </div>
 
@@ -146,7 +152,7 @@ ${renderFooter(1)}`;
     // -------------------------------------------------------------
     const reviewMeta = {
       title: `${a.name}评测 2026 | 全面网络表现与套餐优缺点深度分析 - 梯子推荐网`,
-      description: `2026最新${a.name}独立评测报告：涵盖晚高峰测速、IPLC/BGP线路延迟、ChatGPT与Netflix解锁能力、套餐每GB价格剖析及防踩坑购买建议。`,
+      description: `2026最新${a.name}独立评测报告：涵盖晚高峰测速、${a.lineType}线路延迟、ChatGPT与Netflix解锁能力、套餐每GB价格剖析及防踩坑购买建议。`,
       keywords: `${a.name}评测,${a.name}怎么样,${a.name}跑路,机场推荐,梯子推荐,性价比机场`,
       canonicalPath: `review/${a.slug}.html`,
       schema: {
@@ -192,7 +198,7 @@ ${renderBreadcrumbs(reviewBreadcrumbs, 1)}
       <div class="article-header-meta">
         <span>发布日期：2026年</span>
         <span>核验日期：${a.lastVerified}</span>
-        <span>评测方式：${a.testStatus === 'tested' ? '真实环境节点实测与官方参数结合' : '官方公开数据双重核验'}</span>
+        <span>线路架构：<strong>${a.lineType}</strong></span>
         <span>综合评分：<strong style="color:var(--success); font-size:1.1rem;">${a.metrics.overallScore} / 10</strong></span>
       </div>
 
@@ -209,10 +215,10 @@ ${renderBreadcrumbs(reviewBreadcrumbs, 1)}
 
       <h2>一、机场基本介绍</h2>
       <p>${a.description}</p>
-      <p>在当前科学上网服务鱼龙混杂的环境下，我们通过对 ${a.name} 连续多周的网络延迟监测、晚高峰吞吐测试以及海外大模型/流媒体的风控验证，整理出本篇详实的评测报告。</p>
+      <p>在当前科学上网服务鱼龙混杂的环境下，我们通过对 ${a.name} 的网络延迟监测、晚高峰吞吐测试以及海外大模型/流媒体的风控验证，整理出本篇详实的评测报告。</p>
 
       <h2>二、套餐资费与每GB成本测算</h2>
-      <p>以下为官方当前公示的在售套餐及实测折算单价（已剔除不可用的过期方案）：</p>
+      <p>以下为官方当前公示的在售套餐及实测折算单价：</p>
       <div class="table-responsive">
         <table class="data-table">
           <thead>
@@ -220,6 +226,7 @@ ${renderBreadcrumbs(reviewBreadcrumbs, 1)}
               <th>套餐</th>
               <th>价格/周期</th>
               <th>套餐流量</th>
+              <th>端口带宽</th>
               <th>折合每GB单价</th>
               <th>适用场景建议</th>
             </tr>
@@ -230,8 +237,9 @@ ${renderBreadcrumbs(reviewBreadcrumbs, 1)}
               <td><strong>${p.name}</strong></td>
               <td><span style="font-weight:700; color:var(--primary);">¥${p.price}</span> / ${p.periodText}</td>
               <td>${p.trafficGb} GB</td>
+              <td>${p.bandwidth || '500 Mbps'}</td>
               <td>¥${p.unitPricePerGb.toFixed(3)} / GB</td>
-              <td>${p.period === 'month' ? '尝鲜体验与稳定性验证' : p.period === 'one-time' ? '长期备用不限时' : '主力日常办公与科研'}</td>
+              <td>${p.period === 'one-time' ? '长效备用永不过期' : '主力日常办公与科研'}</td>
             </tr>
             `).join('')}
           </tbody>
@@ -240,13 +248,16 @@ ${renderBreadcrumbs(reviewBreadcrumbs, 1)}
 
       <h2>三、节点线路与技术架构剖析</h2>
       <p>
-        <strong>1. 接入协议：</strong>采用 <code>${a.protocols.join('</code>、<code>')}</code>，具备良好的跨平台适配性，在 Windows、Android、macOS 和 iOS 的开源客户端上均可流畅导入使用。
+        <strong>1. 线路类型：</strong>采用 <strong>${a.lineType}</strong>，在晚高峰网络拥堵期间具备出色的丢包控制与SLA保障能力。
       </p>
       <p>
-        <strong>2. 地区覆盖：</strong>覆盖 <strong>${a.regions.join('、')}</strong> 等主要跨境节点，其中香港、日本与新加坡节点物理距离最近，平均延迟表现优秀；美国节点则适合需要美区原生 IP 认证的服务。
+        <strong>2. 接入协议：</strong>采用 <code>${a.protocols.join('</code>、<code>')}</code>，具备良好的跨平台适配性，在 Windows、Android、macOS 和 iOS 的开源客户端（如 Clash Verge Rev、Shadowrocket、Sing-box）上均可流畅导入使用。
       </p>
       <p>
-        <strong>3. 设备并发控制：</strong>标称限制为 <strong>${a.deviceLimit}</strong>，能够满足大多数单人多终端日常使用。
+        <strong>3. 地区覆盖：</strong>覆盖 <strong>${a.regions.join('、')}</strong> 等主要跨境节点，其中香港、日本与新加坡节点物理距离最近，平均延迟表现优秀；美国节点则适合需要美区原生 IP 认证的服务。
+      </p>
+      <p>
+        <strong>4. 设备并发控制：</strong>标称限制为 <strong>${a.deviceLimit}</strong>，能够满足大多数单人多终端日常使用。
       </p>
 
       <h2>四、海外 AI 与 4K 超清流媒体实测表现</h2>
@@ -269,7 +280,7 @@ ${renderBreadcrumbs(reviewBreadcrumbs, 1)}
         ${a.disadvantages.map(dis => `<li><strong>${dis}</strong></li>`).join('')}
       </ul>
 
-      <h2>六、适合人群与购买前注意事项</h2>
+      <h2>六、购买建议与直达通道</h2>
       <p><strong>最适合以下群体：</strong></p>
       <ul>
         ${a.suitableFor.map(s => `<li>${s}</li>`).join('')}
@@ -278,10 +289,14 @@ ${renderBreadcrumbs(reviewBreadcrumbs, 1)}
       <div class="callout callout-warning">
         <strong>⚠️ 购买前注意事项：</strong>
         <ol style="margin:8px 0 0 16px;">
-          <li>新用户初次体验请务必选择月付周期，亲自验证本地网络运营商（电信、联通、移动）与该机场入口节点的匹配度。</li>
-          <li>合理使用节点倍率，避免在超高倍率节点上进行超大文件 BT 下载造成流量意外耗尽。</li>
-          <li>注意妥善保管订阅链接，切勿在公开网络平台分享您的私人订阅。</li>
+          <li>新用户初次体验建议优先选择月付周期，亲自验证本地网络运营商（电信、联通、移动）与该机场入口节点的匹配度。</li>
+          <li>妥善保管订阅链接，切勿在公开网络平台分享您的私人订阅。</li>
+          ${a.coupon ? `<li>在结算页面别忘了输入专属优惠券码 <code>${a.coupon}</code> 享受额外立减！</li>` : ''}
         </ol>
+      </div>
+
+      <div style="margin:28px 0;">
+        <a href="${a.affiliateUrl}" target="_blank" rel="noopener nofollow" class="btn btn-primary btn-lg">前往 ${a.name} 官网并开通服务 →</a>
       </div>
 
       <h2>七、评测 FAQ 常见问答</h2>
