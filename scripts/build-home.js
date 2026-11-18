@@ -194,7 +194,7 @@ ${renderHeader(0, 'home')}
             </tr>
           </thead>
           <tbody>
-            ${airports.slice().sort((a, b) => b.metrics.overallScore - a.metrics.overallScore).map((a, idx) => `
+            ${airports.slice().sort((a, b) => (a.customRank || 99) - (b.customRank || 99)).map((a, idx) => `
             <tr>
               <td>
                 <span class="rank-badge ${idx === 0 ? 'rank-1' : idx === 1 ? 'rank-2' : idx === 2 ? 'rank-3' : 'rank-other'}">

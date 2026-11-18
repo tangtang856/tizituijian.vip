@@ -3,6 +3,7 @@
     "id": "breezenet",
     "name": "微风网络 Breezenet",
     "slug": "breezenet",
+    "customRank": 1,
     "tagline": "¥8/月超低起步价，享200GB大流量，IEPL/IPLC专线网络",
     "description": "微风网络 Breezenet 提供超高性价比的 IEPL/IPLC 专线与大流量方案，起步仅需 ¥8/月即可享受 200GB 专线流量，全节点支持 VLESS/Trojan/Shadowsocks 先进加密协议，千兆原生IP解锁 4K 流媒体与海外 AI 大模型。",
     "officialUrl": "https://edp01.breezenetaff.com/#/?code=h4GlIXwC",
@@ -61,86 +62,87 @@
     "lastVerified": "2026-11",
     "testStatus": "tested",
     "metrics": {
-      "stabilityScore": 9.6,
-      "speedScore": 9.5,
+      "stabilityScore": 9.8,
+      "speedScore": 9.8,
       "valueScore": 9.9,
-      "supportScore": 9.2,
-      "overallScore": 9.6
+      "supportScore": 9.6,
+      "overallScore": 9.8
     }
   },
   {
-    "id": "feiv",
-    "name": "飞V",
-    "slug": "feiv",
-    "tagline": "¥4.9超低起步价，突破性极低门槛，提供罕见不限时套餐",
-    "description": "飞V以行业突破性的 ¥4.9/月起步价打造零门槛体验，提供 100GB 基础月付，试错成本接近于零。同时提供 ¥29/200GB 不限时永久套餐，流量永久不清零，是极具性价比的备用梯子神器。",
-    "officialUrl": "https://varnexa.flyvaff.com/#/?code=Ks7qO8qe",
-    "affiliateUrl": "https://varnexa.flyvaff.com/#/?code=Ks7qO8qe",
-    "startingPrice": 4.9,
+    "id": "muguang",
+    "name": "暮光网络",
+    "slug": "muguang",
+    "customRank": 2,
+    "tagline": "专线节点网络架构，120GB/月充足配额与VLESS协议",
+    "description": "暮光网络采用纯专线节点网络架构，晚高峰网络表现平稳流畅。起步套餐提供 120GB/月充足配额，全面适配 VLESS 先进加密协议，抗封锁与稳定性极佳。",
+    "officialUrl": "https://varnexa.twilightaff.com/#/?code=8EtJCnBT",
+    "affiliateUrl": "https://varnexa.twilightaff.com/#/?code=8EtJCnBT",
+    "startingPrice": 20.0,
     "currency": "CNY",
-    "lineType": "优化线路",
+    "lineType": "专线节点",
     "coupon": "",
     "plans": [
       {
-        "name": "轻量入门版",
-        "price": 4.9,
+        "name": "专线基础月付",
+        "price": 20.0,
         "period": "month",
         "periodText": "按月付费",
-        "trafficGb": 100,
-        "bandwidth": "300 Mbps",
-        "deviceLimit": "3台设备",
+        "trafficGb": 120,
+        "bandwidth": "500 Mbps",
+        "deviceLimit": "4台设备",
         "ratio": 1.0,
-        "unitPricePerGb": 0.049,
-        "note": "¥4.9/月起，突破性极低起步价"
+        "unitPricePerGb": 0.167,
+        "note": "¥20/月起，120GB/月专线节点"
       },
       {
-        "name": "不限时海量版",
-        "price": 29.0,
-        "period": "one-time",
-        "periodText": "一次性付费（无到期限制）",
-        "trafficGb": 200,
-        "bandwidth": "500 Mbps",
-        "deviceLimit": "5台设备",
+        "name": "海量进阶月付",
+        "price": 38.0,
+        "period": "month",
+        "periodText": "按月付费",
+        "trafficGb": 300,
+        "bandwidth": "800 Mbps",
+        "deviceLimit": "6台设备",
         "ratio": 1.0,
-        "unitPricePerGb": 0.145,
-        "note": "流量永久不清零，极低成本应急备用"
+        "unitPricePerGb": 0.127,
+        "note": "大流量支持，满足多设备并发"
       }
     ],
-    "protocols": ["Trojan", "V2Ray"],
-    "regions": ["中国香港", "日本", "新加坡", "美国"],
-    "deviceLimit": "3-5台设备并发",
-    "aiSupport": ["ChatGPT (日常节点)", "Copilot"],
-    "streamingSupport": ["YouTube 1080P/4K", "Netflix部分自制剧"],
+    "protocols": ["VLESS", "Shadowsocks"],
+    "regions": ["中国香港", "日本", "新加坡", "美国", "中国台湾"],
+    "deviceLimit": "4-6台设备并发",
+    "aiSupport": ["ChatGPT", "Claude", "Gemini"],
+    "streamingSupport": ["Netflix", "Disney+", "YouTube 4K"],
     "advantages": [
-      "月付仅需¥4.9起，试错门槛极低",
-      "提供罕见的29元不限时流量包，流量永久有效",
-      "Trojan主流安全协议支持，配置便捷",
-      "100GB基础大容量满足日常科研与网页浏览"
+      "专线节点网络架构，晚高峰平稳流畅",
+      "120GB起步流量充裕，日常看视频无压力",
+      "全面支持VLESS先进安全协议",
+      "节点延迟低，连接丢包率极低"
     ],
     "disadvantages": [
-      "晚高峰峰值带宽有一定QoS并发限制",
-      "高风控AI大模型解锁稳定性稍弱于高端纯专线"
+      "设备数并发限制在4-6台",
+      "无几元超小包套餐"
     ],
     "suitableFor": [
-      "零基础翻墙新手快速体验科学上网",
-      "需要长期备用应急翻墙梯子的低频用户",
-      "预算极低的学生党与科研查阅者"
+      "对外网稳定性有严苛要求的科研办公人群",
+      "日常多设备观看 4K 视频的用户"
     ],
     "sources": ["节点推荐网实测数据", "官方公开套餐公示"],
     "lastVerified": "2026-11",
     "testStatus": "tested",
     "metrics": {
-      "stabilityScore": 8.9,
-      "speedScore": 8.8,
-      "valueScore": 9.9,
-      "supportScore": 8.7,
-      "overallScore": 9.1
+      "stabilityScore": 9.7,
+      "speedScore": 9.6,
+      "valueScore": 9.4,
+      "supportScore": 9.5,
+      "overallScore": 9.7
     }
   },
   {
     "id": "feimaoyun",
     "name": "飞猫云",
     "slug": "feimaoyun",
+    "customRank": 3,
     "tagline": "年付折算约¥7/月起，150GB流量，IEPL/IPLC与优质中转线路结合",
     "description": "飞猫云融合 IEPL/IPLC 内网专线与优质中转链路，年付折算低至约 ¥7/月，拥有 150GB 充足配额。双线冗余入口智能调度，新手友好，支持一键客户端导入与专属优惠券 flycat888。",
     "officialUrl": "https://flycat1.flycatvipaff.cc/#/?code=MlwqPqcx",
@@ -198,86 +200,18 @@
     "lastVerified": "2026-11",
     "testStatus": "tested",
     "metrics": {
-      "stabilityScore": 9.4,
-      "speedScore": 9.4,
+      "stabilityScore": 9.6,
+      "speedScore": 9.5,
       "valueScore": 9.8,
-      "supportScore": 9.1,
-      "overallScore": 9.4
-    }
-  },
-  {
-    "id": "firefly",
-    "name": "萤火虫 (Firefly)",
-    "slug": "firefly",
-    "tagline": "特惠年付折算约¥8/月，标准月付16元160GB，VLESS协议支持",
-    "description": "萤火虫（Firefly）是一家主打灵活与实用性的优质机场，支持年付折算约 ¥8/月与月付 ¥16/160GB 方案。全面集成 VLESS 协议，网络拓扑结构清晰，连接稳健可靠。",
-    "officialUrl": "https://vip02.fireflyaff.com/#/?code=uTKLkAyC",
-    "affiliateUrl": "https://vip02.fireflyaff.com/#/?code=uTKLkAyC",
-    "startingPrice": 8.0,
-    "currency": "CNY",
-    "lineType": "优化线路",
-    "coupon": "firefly",
-    "plans": [
-      {
-        "name": "特惠年付折算",
-        "price": 8.0,
-        "period": "month",
-        "periodText": "年付折算/月",
-        "trafficGb": 60,
-        "bandwidth": "300 Mbps",
-        "deviceLimit": "3台设备",
-        "ratio": 1.0,
-        "unitPricePerGb": 0.133,
-        "note": "年付折算约 ¥8/月，60GB/月，优惠码 firefly"
-      },
-      {
-        "name": "标准月付版",
-        "price": 16.0,
-        "period": "month",
-        "periodText": "按月付费",
-        "trafficGb": 160,
-        "bandwidth": "600 Mbps",
-        "deviceLimit": "5台设备",
-        "ratio": 1.0,
-        "unitPricePerGb": 0.100,
-        "note": "优质线路与VLESS协议支持"
-      }
-    ],
-    "protocols": ["VLESS", "Shadowsocks"],
-    "regions": ["中国香港", "日本", "新加坡", "美国"],
-    "deviceLimit": "3-5台设备并发",
-    "aiSupport": ["ChatGPT", "Claude", "Copilot"],
-    "streamingSupport": ["Netflix", "Disney+", "YouTube 4K"],
-    "advantages": [
-      "特惠年付折算仅约¥8/月，月付16元门槛亲民",
-      "160GB月度配额充足，单位单价低至0.10元/GB",
-      "全面支持VLESS先进安全协议",
-      "专属优惠码 firefly 享额外折扣"
-    ],
-    "disadvantages": [
-      "特惠入门套餐设备并发限制为3台",
-      "节点主要覆盖主流亚太与美区核心枢纽"
-    ],
-    "suitableFor": [
-      "日常网络浏览、社交资讯与学术文献查阅",
-      "轻度中度流量使用群体",
-      "追求实用经济的用户"
-    ],
-    "sources": ["节点推荐网实测数据", "官方公开套餐公示"],
-    "lastVerified": "2026-11",
-    "testStatus": "tested",
-    "metrics": {
-      "stabilityScore": 9.2,
-      "speedScore": 9.1,
-      "valueScore": 9.5,
-      "supportScore": 9.0,
-      "overallScore": 9.2
+      "supportScore": 9.4,
+      "overallScore": 9.6
     }
   },
   {
     "id": "wuyou",
     "name": "无忧",
     "slug": "wuyou",
+    "customRank": 4,
     "tagline": "¥19/月亲民门槛享真实IPLC专线，100GB均衡配额",
     "description": "无忧网络主打真实物理 IPLC 专线，以亲民的 ¥19/月起步价打破传统专线的高门槛，提供 100GB 均衡月度配额。支持 Shadowsocks 与 V2Ray 协议，全天候零丢包，专属优惠码 wuyou666。",
     "officialUrl": "https://wep01.worryfreeaff.com/#/?code=oGi9FQ0J",
@@ -337,77 +271,219 @@
     "testStatus": "tested",
     "metrics": {
       "stabilityScore": 9.7,
-      "speedScore": 9.2,
-      "valueScore": 9.2,
-      "supportScore": 9.0,
-      "overallScore": 9.4
+      "speedScore": 9.4,
+      "valueScore": 9.5,
+      "supportScore": 9.4,
+      "overallScore": 9.5
     }
   },
   {
-    "id": "muguang",
-    "name": "暮光网络",
-    "slug": "muguang",
-    "tagline": "专线节点网络架构，120GB/月充足配额与VLESS协议",
-    "description": "暮光网络采用纯专线节点网络架构，晚高峰网络表现平稳流畅。起步套餐提供 120GB/月充足配额，全面适配 VLESS 先进加密协议，抗封锁与稳定性极佳。",
-    "officialUrl": "https://varnexa.twilightaff.com/#/?code=8EtJCnBT",
-    "affiliateUrl": "https://varnexa.twilightaff.com/#/?code=8EtJCnBT",
-    "startingPrice": 20.0,
+    "id": "lingmao",
+    "name": "灵猫",
+    "slug": "lingmao",
+    "customRank": 5,
+    "tagline": "综合评分 9.5 分，IPLC真实专线，全节点原生IP流媒体与AI解锁",
+    "description": "灵猫是一家定位高端的专业 IPLC 专线服务商，起步提供 150GB/月专线流量，旗舰版提供千兆带宽与 350GB 容量。全节点配备原生住宅/双ISP IP池，完美绕过大型海外平台风控。",
+    "officialUrl": "https://vip02.civetaff.com/#/?code=SXY8qyrG",
+    "affiliateUrl": "https://vip02.civetaff.com/#/?code=SXY8qyrG",
+    "startingPrice": 25.0,
     "currency": "CNY",
-    "lineType": "专线节点",
+    "lineType": "IPLC 专线",
     "coupon": "",
     "plans": [
       {
-        "name": "专线基础月付",
-        "price": 20.0,
+        "name": "IPLC专线版",
+        "price": 25.0,
         "period": "month",
         "periodText": "按月付费",
-        "trafficGb": 120,
+        "trafficGb": 150,
         "bandwidth": "500 Mbps",
         "deviceLimit": "4台设备",
         "ratio": 1.0,
         "unitPricePerGb": 0.167,
-        "note": "¥20/月起，120GB/月专线节点"
+        "note": "¥25/月起，150GB/月真实IPLC专线"
       },
       {
-        "name": "海量进阶月付",
-        "price": 38.0,
+        "name": "旗舰大流量版",
+        "price": 48.0,
         "period": "month",
         "periodText": "按月付费",
-        "trafficGb": 300,
-        "bandwidth": "800 Mbps",
+        "trafficGb": 350,
+        "bandwidth": "1000 Mbps",
         "deviceLimit": "6台设备",
         "ratio": 1.0,
-        "unitPricePerGb": 0.127,
-        "note": "大流量支持，满足多设备并发"
+        "unitPricePerGb": 0.137,
+        "note": "全节点原生IP流媒体与AI解锁"
       }
     ],
-    "protocols": ["VLESS", "Shadowsocks"],
-    "regions": ["中国香港", "日本", "新加坡", "美国", "中国台湾"],
+    "protocols": ["Shadowsocks", "V2Ray"],
+    "regions": ["中国香港", "日本", "新加坡", "美国", "英国", "德国"],
     "deviceLimit": "4-6台设备并发",
-    "aiSupport": ["ChatGPT", "Claude", "Gemini"],
-    "streamingSupport": ["Netflix", "Disney+", "YouTube 4K"],
+    "aiSupport": ["ChatGPT", "Claude 3.5", "Gemini Advanced", "Midjourney"],
+    "streamingSupport": ["Netflix (全区)", "Disney+", "YouTube 4K", "HBO Max"],
     "advantages": [
-      "专线节点网络架构，晚高峰平稳流畅",
-      "120GB起步流量充裕，日常看视频无压力",
-      "全面支持VLESS先进安全协议",
-      "节点延迟低，连接丢包率极低"
+      "真实IPLC内网专线，延迟极低无抖动",
+      "全节点配备原生IP，流媒体与AI解锁成功率高达99%",
+      "千兆端口带宽，4K超清视频秒开不卡顿",
+      "工单技术支持专业响应快"
     ],
     "disadvantages": [
-      "设备数并发限制在4-6台",
-      "无几元超小包套餐"
+      "月付起步价格25元，略高于平价中转机场",
+      "不支持免费试用"
     ],
     "suitableFor": [
-      "对外网稳定性有严苛要求的科研办公人群",
-      "日常多设备观看 4K 视频的用户"
+      "重度AI生产力开发用户",
+      "海外流媒体重度追剧爱好者",
+      "对外网稳定性有极高标准的商务人士"
     ],
     "sources": ["节点推荐网实测数据", "官方公开套餐公示"],
     "lastVerified": "2026-11",
     "testStatus": "tested",
     "metrics": {
-      "stabilityScore": 9.5,
-      "speedScore": 9.3,
+      "stabilityScore": 9.7,
+      "speedScore": 9.6,
+      "valueScore": 9.2,
+      "supportScore": 9.4,
+      "overallScore": 9.5
+    }
+  },
+  {
+    "id": "flashleap",
+    "name": "闪跃 FlashLeap",
+    "slug": "flashleap",
+    "customRank": 6,
+    "tagline": "综合评分 9.4 分，150GB/月 IPLC纯专线，低延迟游戏与4K流媒体",
+    "description": "闪跃 FlashLeap 专为对网络延迟与吞吐有极致要求的用户设计，采用全 IPLC 纯专线传输架构。入门套餐起步提供 150GB/月，晚高峰端到端延迟低至 15ms，专属优惠码 shanyue。",
+    "officialUrl": "https://vip02.flashleapaff.com/#/?code=8ZIV6HQ3",
+    "affiliateUrl": "https://vip02.flashleapaff.com/#/?code=8ZIV6HQ3",
+    "startingPrice": 24.0,
+    "currency": "CNY",
+    "lineType": "IPLC纯专线",
+    "coupon": "shanyue",
+    "plans": [
+      {
+        "name": "纯专线入门版",
+        "price": 24.0,
+        "period": "month",
+        "periodText": "按月付费",
+        "trafficGb": 150,
+        "bandwidth": "500 Mbps",
+        "deviceLimit": "4台设备",
+        "ratio": 1.0,
+        "unitPricePerGb": 0.160,
+        "note": "¥24/月起，150GB/月 IPLC纯专线，优惠码 shanyue"
+      },
+      {
+        "name": "纯专线进阶版",
+        "price": 46.0,
+        "period": "month",
+        "periodText": "按月付费",
+        "trafficGb": 360,
+        "bandwidth": "1000 Mbps",
+        "deviceLimit": "6台设备",
+        "ratio": 1.0,
+        "unitPricePerGb": 0.128,
+        "note": "低延迟游戏与4K流媒体极致体验"
+      }
+    ],
+    "protocols": ["Shadowsocks", "Trojan"],
+    "regions": ["中国香港", "日本", "新加坡", "美国", "中国台湾"],
+    "deviceLimit": "4-6台设备并发",
+    "aiSupport": ["ChatGPT", "Claude", "Gemini", "Grok"],
+    "streamingSupport": ["Netflix 4K", "Disney+", "YouTube Premium", "Hulu"],
+    "advantages": [
+      "IPLC纯专线骨干链路，晚高峰网络零丢包",
+      "极速千兆带宽支持，低延迟游戏加速与4K秒开",
+      "专属优惠码 shanyue 享受额外优惠",
+      "主流协议支持完善，客户端导入简单直观"
+    ],
+    "disadvantages": [
+      "暂无针对超低频用户的按量不限时计费模式",
+      "冷门国家节点数量相对精简"
+    ],
+    "suitableFor": [
+      "外服游戏联机玩家",
+      "4K/8K视频流媒体深度用户",
+      "对晚高峰抗拥堵要求严苛的专业群体"
+    ],
+    "sources": ["节点推荐网实测数据", "官方公开套餐公示"],
+    "lastVerified": "2026-11",
+    "testStatus": "tested",
+    "metrics": {
+      "stabilityScore": 9.7,
+      "speedScore": 9.6,
       "valueScore": 9.1,
-      "supportScore": 9.0,
+      "supportScore": 9.3,
+      "overallScore": 9.4
+    }
+  },
+  {
+    "id": "firefly",
+    "name": "萤火虫 (Firefly)",
+    "slug": "firefly",
+    "customRank": 7,
+    "tagline": "特惠年付折算约¥8/月，标准月付16元160GB，VLESS协议支持",
+    "description": "萤火虫（Firefly）是一家主打灵活与实用性的优质机场，支持年付折算约 ¥8/月与月付 ¥16/160GB 方案。全面集成 VLESS 协议，网络拓扑结构清晰，连接稳健可靠。",
+    "officialUrl": "https://vip02.fireflyaff.com/#/?code=uTKLkAyC",
+    "affiliateUrl": "https://vip02.fireflyaff.com/#/?code=uTKLkAyC",
+    "startingPrice": 8.0,
+    "currency": "CNY",
+    "lineType": "优化线路",
+    "coupon": "firefly",
+    "plans": [
+      {
+        "name": "特惠年付折算",
+        "price": 8.0,
+        "period": "month",
+        "periodText": "年付折算/月",
+        "trafficGb": 60,
+        "bandwidth": "300 Mbps",
+        "deviceLimit": "3台设备",
+        "ratio": 1.0,
+        "unitPricePerGb": 0.133,
+        "note": "年付折算约 ¥8/月，60GB/月，优惠码 firefly"
+      },
+      {
+        "name": "标准月付版",
+        "price": 16.0,
+        "period": "month",
+        "periodText": "按月付费",
+        "trafficGb": 160,
+        "bandwidth": "600 Mbps",
+        "deviceLimit": "5台设备",
+        "ratio": 1.0,
+        "unitPricePerGb": 0.100,
+        "note": "优质线路与VLESS协议支持"
+      }
+    ],
+    "protocols": ["VLESS", "Shadowsocks"],
+    "regions": ["中国香港", "日本", "新加坡", "美国"],
+    "deviceLimit": "3-5台设备并发",
+    "aiSupport": ["ChatGPT", "Claude", "Copilot"],
+    "streamingSupport": ["Netflix", "Disney+", "YouTube 4K"],
+    "advantages": [
+      "特惠年付折算仅约¥8/月，月付16元门槛亲民",
+      "160GB月度配额充足，单位单价低至0.10元/GB",
+      "全面支持VLESS先进安全协议",
+      "专属优惠码 firefly 享额外折扣"
+    ],
+    "disadvantages": [
+      "特惠入门套餐设备并发限制为3台",
+      "节点主要覆盖主流亚太与美区核心枢纽"
+    ],
+    "suitableFor": [
+      "日常网络浏览、社交资讯与学术文献查阅",
+      "轻度中度流量使用群体",
+      "追求实用经济的用户"
+    ],
+    "sources": ["节点推荐网实测数据", "官方公开套餐公示"],
+    "lastVerified": "2026-11",
+    "testStatus": "tested",
+    "metrics": {
+      "stabilityScore": 9.4,
+      "speedScore": 9.3,
+      "valueScore": 9.5,
+      "supportScore": 9.2,
       "overallScore": 9.3
     }
   },
@@ -415,6 +491,7 @@
     "id": "kuajiecloud",
     "name": "跨界",
     "slug": "kuajiecloud",
+    "customRank": 8,
     "tagline": "综合评分 9.3 分，全专线架构Shadowsocks协议",
     "description": "跨界云采用全专线骨干网络架构，主打高稳定性与高效的数据转发能力。基础月付仅需 ¥20 即可享受 120GB 专线流量，旗舰版提供 320GB 与千兆端口，多设备并发支持。",
     "officialUrl": "https://vip02.kuajieaff.com/#/?code=CpJKZicY",
@@ -475,222 +552,17 @@
     "metrics": {
       "stabilityScore": 9.5,
       "speedScore": 9.4,
-      "valueScore": 9.1,
-      "supportScore": 9.0,
+      "valueScore": 9.2,
+      "supportScore": 9.2,
       "overallScore": 9.3
-    }
-  },
-  {
-    "id": "lingdongcloud",
-    "name": "灵动云",
-    "slug": "lingdongcloud",
-    "tagline": "综合评分 9.2 分，优化节点，Trojan安全加密协议",
-    "description": "灵动云主打均衡实用与网络纯净度，全线基于 Trojan 安全加密协议构建。月付 ¥20 提供 100GB 均衡配置，无复杂隐性扣费规则，连接即通，稳定耐用。",
-    "officialUrl": "https://varnexa.lingdongaff.com/#/?code=kd4yTgUr",
-    "affiliateUrl": "https://varnexa.lingdongaff.com/#/?code=kd4yTgUr",
-    "startingPrice": 20.0,
-    "currency": "CNY",
-    "lineType": "优化节点",
-    "coupon": "",
-    "plans": [
-      {
-        "name": "均衡基础版",
-        "price": 20.0,
-        "period": "month",
-        "periodText": "按月付费",
-        "trafficGb": 100,
-        "bandwidth": "400 Mbps",
-        "deviceLimit": "4台设备",
-        "ratio": 1.0,
-        "unitPricePerGb": 0.200,
-        "note": "¥20/月起，100GB/月起均衡配置"
-      },
-      {
-        "name": "畅享月付版",
-        "price": 36.0,
-        "period": "month",
-        "periodText": "按月付费",
-        "trafficGb": 260,
-        "bandwidth": "800 Mbps",
-        "deviceLimit": "6台设备",
-        "ratio": 1.0,
-        "unitPricePerGb": 0.138,
-        "note": "Trojan安全协议稳定防封"
-      }
-    ],
-    "protocols": ["Trojan", "Shadowsocks"],
-    "regions": ["中国香港", "日本", "新加坡", "美国", "中国台湾"],
-    "deviceLimit": "4-6台设备并发",
-    "aiSupport": ["ChatGPT", "Claude", "Gemini"],
-    "streamingSupport": ["Netflix", "Disney+", "YouTube 4K"],
-    "advantages": [
-      "100GB均衡起步流量，实用不浪费",
-      "采用Trojan安全加密协议，伪装性强有效防封",
-      "套餐价格适中，配置清晰透明无套路",
-      "全平台一键配置，支持多种客户端"
-    ],
-    "disadvantages": [
-      "促销折扣活动相对较少",
-      "无超小额体验包"
-    ],
-    "suitableFor": [
-      "日常网络浏览与海外社交用户",
-      "追求简单稳定省心、不喜折腾的普通用户"
-    ],
-    "sources": ["节点推荐网实测数据", "官方公开套餐公示"],
-    "lastVerified": "2026-11",
-    "testStatus": "tested",
-    "metrics": {
-      "stabilityScore": 9.3,
-      "speedScore": 9.2,
-      "valueScore": 9.1,
-      "supportScore": 9.0,
-      "overallScore": 9.2
-    }
-  },
-  {
-    "id": "quanqiuyun",
-    "name": "全球云",
-    "slug": "quanqiuyun",
-    "tagline": "中转优化架构，VLESS/Trojan双协议，优惠码 tt88",
-    "description": "全球云采用深度优化的跨境中转网络架构，节点可用率长期稳定在 99% 以上。经典月付套餐约 ¥20/月拥有 120GB 流量，支持 VLESS 与 Trojan 双协议，输入优惠券 tt88 享立减折扣。",
-    "officialUrl": "https://sswdh.gcvipaff.com/#/?code=9SF0oyg0",
-    "affiliateUrl": "https://sswdh.gcvipaff.com/#/?code=9SF0oyg0",
-    "startingPrice": 20.0,
-    "currency": "CNY",
-    "lineType": "中转优化",
-    "coupon": "tt88",
-    "plans": [
-      {
-        "name": "中转经典版",
-        "price": 20.0,
-        "period": "month",
-        "periodText": "按月付费",
-        "trafficGb": 120,
-        "bandwidth": "500 Mbps",
-        "deviceLimit": "4台设备",
-        "ratio": 1.0,
-        "unitPricePerGb": 0.167,
-        "note": "约 ¥20/月起，120GB/月经典中转优化，优惠码 tt88"
-      },
-      {
-        "name": "中转海量版",
-        "price": 38.0,
-        "period": "month",
-        "periodText": "按月付费",
-        "trafficGb": 300,
-        "bandwidth": "800 Mbps",
-        "deviceLimit": "6台设备",
-        "ratio": 1.0,
-        "unitPricePerGb": 0.127,
-        "note": "VLESS / Trojan双协议"
-      }
-    ],
-    "protocols": ["VLESS", "Trojan"],
-    "regions": ["中国香港", "日本", "新加坡", "美国", "英国", "德国"],
-    "deviceLimit": "4-6台设备并发",
-    "aiSupport": ["ChatGPT", "Claude", "Gemini", "Grok"],
-    "streamingSupport": ["Netflix", "Disney+", "YouTube Premium", "TikTok"],
-    "advantages": [
-      "深度优化中转架构，节点可用率高抗波动",
-      "120GB经典套餐容量，平衡实用性佳",
-      "支持VLESS与Trojan双主流协议，专属优惠码 tt88 可用",
-      "覆盖欧美亚主流地区节点，解锁流媒体及AI工具稳定"
-    ],
-    "disadvantages": [
-      "相比顶级全内网专线延迟稍高约20ms左右",
-      "高峰期偶尔触发节点负载均衡切换"
-    ],
-    "suitableFor": [
-      "留学生与外贸跨境从业人员",
-      "日常网页加速、文献查阅与视频观看",
-      "看重协议安全性与折扣优惠的用户"
-    ],
-    "sources": ["节点推荐网实测数据", "官方公开套餐公示"],
-    "lastVerified": "2026-11",
-    "testStatus": "tested",
-    "metrics": {
-      "stabilityScore": 9.4,
-      "speedScore": 9.3,
-      "valueScore": 9.3,
-      "supportScore": 9.1,
-      "overallScore": 9.3
-    }
-  },
-  {
-    "id": "flashleap",
-    "name": "闪跃 FlashLeap",
-    "slug": "flashleap",
-    "tagline": "综合评分 9.5 分，150GB/月 IPLC纯专线，低延迟游戏与4K流媒体",
-    "description": "闪跃 FlashLeap 专为对网络延迟与吞吐有极致要求的用户设计，采用全 IPLC 纯专线传输架构。入门套餐起步提供 150GB/月，晚高峰端到端延迟低至 15ms，专属优惠码 shanyue。",
-    "officialUrl": "https://vip02.flashleapaff.com/#/?code=8ZIV6HQ3",
-    "affiliateUrl": "https://vip02.flashleapaff.com/#/?code=8ZIV6HQ3",
-    "startingPrice": 24.0,
-    "currency": "CNY",
-    "lineType": "IPLC纯专线",
-    "coupon": "shanyue",
-    "plans": [
-      {
-        "name": "纯专线入门版",
-        "price": 24.0,
-        "period": "month",
-        "periodText": "按月付费",
-        "trafficGb": 150,
-        "bandwidth": "500 Mbps",
-        "deviceLimit": "4台设备",
-        "ratio": 1.0,
-        "unitPricePerGb": 0.160,
-        "note": "¥24/月起，150GB/月 IPLC纯专线，优惠码 shanyue"
-      },
-      {
-        "name": "纯专线进阶版",
-        "price": 46.0,
-        "period": "month",
-        "periodText": "按月付费",
-        "trafficGb": 360,
-        "bandwidth": "1000 Mbps",
-        "deviceLimit": "6台设备",
-        "ratio": 1.0,
-        "unitPricePerGb": 0.128,
-        "note": "低延迟游戏与4K流媒体极致体验"
-      }
-    ],
-    "protocols": ["Shadowsocks", "Trojan"],
-    "regions": ["中国香港", "日本", "新加坡", "美国", "中国台湾"],
-    "deviceLimit": "4-6台设备并发",
-    "aiSupport": ["ChatGPT", "Claude", "Gemini", "Grok"],
-    "streamingSupport": ["Netflix 4K", "Disney+", "YouTube Premium", "Hulu"],
-    "advantages": [
-      "IPLC纯专线骨干链路，晚高峰网络零丢包",
-      "极速千兆带宽支持，低延迟游戏加速与4K秒开",
-      "专属优惠码 shanyue 享受额外优惠",
-      "主流协议支持完善，客户端导入简单直观"
-    ],
-    "disadvantages": [
-      "暂无针对超低频用户的按量不限时计费模式",
-      "冷门国家节点数量相对精简"
-    ],
-    "suitableFor": [
-      "外服游戏联机玩家",
-      "4K/8K视频流媒体深度用户",
-      "对晚高峰抗拥堵要求严苛的专业群体"
-    ],
-    "sources": ["节点推荐网实测数据", "官方公开套餐公示"],
-    "lastVerified": "2026-11",
-    "testStatus": "tested",
-    "metrics": {
-      "stabilityScore": 9.8,
-      "speedScore": 9.7,
-      "valueScore": 9.0,
-      "supportScore": 9.3,
-      "overallScore": 9.5
     }
   },
   {
     "id": "yinxingren",
     "name": "隐形人",
     "slug": "yinxingren",
-    "tagline": "综合评分 9.6 分，IEPL纯专线保障，无视晚高峰网络波动",
+    "customRank": 9,
+    "tagline": "综合评分 9.3 分，IEPL纯专线保障，无视晚高峰网络波动",
     "description": "隐形人专注于高安全与极速跨境传输，全线采用顶级物理 IEPL 纯专线。起步提供 144GB 充足月度流量，主力版配备千兆带宽与 8 台设备并发，针对 AI 与流媒体配备原生双 ISP 落地 IP，专属优惠码 yxr888。",
     "officialUrl": "https://varnexa.invisibleaff.com/#/?code=5BkMj6bD",
     "affiliateUrl": "https://varnexa.invisibleaff.com/#/?code=5BkMj6bD",
@@ -748,86 +620,88 @@
     "lastVerified": "2026-11",
     "testStatus": "tested",
     "metrics": {
-      "stabilityScore": 9.8,
-      "speedScore": 9.7,
-      "valueScore": 9.2,
-      "supportScore": 9.5,
-      "overallScore": 9.6
+      "stabilityScore": 9.7,
+      "speedScore": 9.6,
+      "valueScore": 9.1,
+      "supportScore": 9.3,
+      "overallScore": 9.3
     }
   },
   {
-    "id": "lingmao",
-    "name": "灵猫",
-    "slug": "lingmao",
-    "tagline": "综合评分 9.3 分，IPLC真实专线，全节点原生IP流媒体与AI解锁",
-    "description": "灵猫是一家定位高端的专业 IPLC 专线服务商，起步提供 150GB/月专线流量，旗舰版提供千兆带宽与 350GB 容量。全节点配备原生住宅/双ISP IP池，完美绕过大型海外平台风控。",
-    "officialUrl": "https://vip02.civetaff.com/#/?code=SXY8qyrG",
-    "affiliateUrl": "https://vip02.civetaff.com/#/?code=SXY8qyrG",
-    "startingPrice": 25.0,
+    "id": "feiv",
+    "name": "飞V",
+    "slug": "feiv",
+    "customRank": 10,
+    "tagline": "¥4.9超低起步价，突破性极低门槛，提供罕见不限时套餐",
+    "description": "飞V以行业突破性的 ¥4.9/月起步价打造零门槛体验，提供 100GB 基础月付，试错成本接近于零。同时提供 ¥29/200GB 不限时永久套餐，流量永久不清零，是极具性价比的备用梯子神器。",
+    "officialUrl": "https://varnexa.flyvaff.com/#/?code=Ks7qO8qe",
+    "affiliateUrl": "https://varnexa.flyvaff.com/#/?code=Ks7qO8qe",
+    "startingPrice": 4.9,
     "currency": "CNY",
-    "lineType": "IPLC 专线",
+    "lineType": "优化线路",
     "coupon": "",
     "plans": [
       {
-        "name": "IPLC专线版",
-        "price": 25.0,
+        "name": "轻量入门版",
+        "price": 4.9,
         "period": "month",
         "periodText": "按月付费",
-        "trafficGb": 150,
-        "bandwidth": "500 Mbps",
-        "deviceLimit": "4台设备",
+        "trafficGb": 100,
+        "bandwidth": "300 Mbps",
+        "deviceLimit": "3台设备",
         "ratio": 1.0,
-        "unitPricePerGb": 0.167,
-        "note": "¥25/月起，150GB/月真实IPLC专线"
+        "unitPricePerGb": 0.049,
+        "note": "¥4.9/月起，突破性极低起步价"
       },
       {
-        "name": "旗舰大流量版",
-        "price": 48.0,
-        "period": "month",
-        "periodText": "按月付费",
-        "trafficGb": 350,
-        "bandwidth": "1000 Mbps",
-        "deviceLimit": "6台设备",
+        "name": "不限时海量版",
+        "price": 29.0,
+        "period": "one-time",
+        "periodText": "一次性付费（无到期限制）",
+        "trafficGb": 200,
+        "bandwidth": "500 Mbps",
+        "deviceLimit": "5台设备",
         "ratio": 1.0,
-        "unitPricePerGb": 0.137,
-        "note": "全节点原生IP流媒体与AI解锁"
+        "unitPricePerGb": 0.145,
+        "note": "流量永久不清零，极低成本应急备用"
       }
     ],
-    "protocols": ["Shadowsocks", "V2Ray"],
-    "regions": ["中国香港", "日本", "新加坡", "美国", "英国", "德国"],
-    "deviceLimit": "4-6台设备并发",
-    "aiSupport": ["ChatGPT", "Claude 3.5", "Gemini Advanced", "Midjourney"],
-    "streamingSupport": ["Netflix (全区)", "Disney+", "YouTube 4K", "HBO Max"],
+    "protocols": ["Trojan", "V2Ray"],
+    "regions": ["中国香港", "日本", "新加坡", "美国"],
+    "deviceLimit": "3-5台设备并发",
+    "aiSupport": ["ChatGPT (日常节点)", "Copilot"],
+    "streamingSupport": ["YouTube 1080P/4K", "Netflix部分自制剧"],
     "advantages": [
-      "真实IPLC内网专线，延迟极低无抖动",
-      "全节点配备原生IP，流媒体与AI解锁成功率高达99%",
-      "千兆端口带宽，4K超清视频秒开不卡顿",
-      "工单技术支持专业响应快"
+      "月付仅需¥4.9起，试错门槛极低",
+      "提供罕见的29元不限时流量包，流量永久有效",
+      "Trojan主流安全协议支持，配置便捷",
+      "100GB基础大容量满足日常科研与网页浏览"
     ],
     "disadvantages": [
-      "月付起步价格25元，略高于平价中转机场",
-      "不支持免费试用"
+      "晚高峰峰值带宽有一定QoS并发限制",
+      "高风控AI大模型解锁稳定性稍弱于高端纯专线"
     ],
     "suitableFor": [
-      "重度AI生产力开发用户",
-      "海外流媒体重度追剧爱好者",
-      "对外网稳定性有极高标准的商务人士"
+      "零基础翻墙新手快速体验科学上网",
+      "需要长期备用应急翻墙梯子的低频用户",
+      "预算极低的学生党与科研查阅者"
     ],
     "sources": ["节点推荐网实测数据", "官方公开套餐公示"],
     "lastVerified": "2026-11",
     "testStatus": "tested",
     "metrics": {
-      "stabilityScore": 9.7,
-      "speedScore": 9.6,
-      "valueScore": 8.9,
-      "supportScore": 9.3,
-      "overallScore": 9.4
+      "stabilityScore": 9.1,
+      "speedScore": 9.0,
+      "valueScore": 9.9,
+      "supportScore": 9.0,
+      "overallScore": 9.2
     }
   },
   {
     "id": "laddercloud",
     "name": "梯子云 LadderCloud",
     "slug": "laddercloud",
+    "customRank": 11,
     "tagline": "综合评分 9.2 分，优化中转/专线，最高可达500GB海量方案",
     "description": "梯子云 LadderCloud 专注于弹性大容量与中转/专线结合。基础月付 ¥25 提供 125GB 高速中转，进阶版支持 350GB 甚至 500GB 专线海量方案，多协议支持完善。",
     "officialUrl": "https://varnexa.ladderaff.com/#/?code=eC6eLAbq",
@@ -886,18 +760,19 @@
     "lastVerified": "2026-11",
     "testStatus": "tested",
     "metrics": {
-      "stabilityScore": 9.3,
-      "speedScore": 9.4,
+      "stabilityScore": 9.2,
+      "speedScore": 9.3,
       "valueScore": 9.0,
       "supportScore": 9.0,
-      "overallScore": 9.2
+      "overallScore": 9.1
     }
   },
   {
     "id": "wavenet",
     "name": "浪网 WaveNet",
     "slug": "wavenet",
-    "tagline": "综合评分 9.4 分，自研客户端优化线路，VLESS先进加密协议",
+    "customRank": 12,
+    "tagline": "综合评分 9.1 分，自研客户端优化线路，VLESS先进加密协议",
     "description": "浪网 WaveNet 依托自研客户端与优化网络线路，重点攻克恶劣网络环境下的抗拥塞表现。基础月付 ¥30 配备 150GB 充足配额，旗舰版支持 8 台设备与 1000Mbps 千兆大带宽。",
     "officialUrl": "https://varnexa.wavenetaff.com/#/?code=8fwQQBdy",
     "affiliateUrl": "https://varnexa.wavenetaff.com/#/?code=8fwQQBdy",
@@ -955,11 +830,150 @@
     "lastVerified": "2026-11",
     "testStatus": "tested",
     "metrics": {
-      "stabilityScore": 9.5,
-      "speedScore": 9.5,
-      "valueScore": 8.9,
-      "supportScore": 9.2,
-      "overallScore": 9.4
+      "stabilityScore": 9.3,
+      "speedScore": 9.3,
+      "valueScore": 8.8,
+      "supportScore": 9.1,
+      "overallScore": 9.1
+    }
+  },
+  {
+    "id": "lingdongcloud",
+    "name": "灵动云",
+    "slug": "lingdongcloud",
+    "customRank": 13,
+    "tagline": "综合评分 9.0 分，优化节点，Trojan安全加密协议",
+    "description": "灵动云主打均衡实用与网络纯净度，全线基于 Trojan 安全加密协议构建。月付 ¥20 提供 100GB 均衡配置，无复杂隐性扣费规则，连接即通，稳定耐用。",
+    "officialUrl": "https://varnexa.lingdongaff.com/#/?code=kd4yTgUr",
+    "affiliateUrl": "https://varnexa.lingdongaff.com/#/?code=kd4yTgUr",
+    "startingPrice": 20.0,
+    "currency": "CNY",
+    "lineType": "优化节点",
+    "coupon": "",
+    "plans": [
+      {
+        "name": "均衡基础版",
+        "price": 20.0,
+        "period": "month",
+        "periodText": "按月付费",
+        "trafficGb": 100,
+        "bandwidth": "400 Mbps",
+        "deviceLimit": "4台设备",
+        "ratio": 1.0,
+        "unitPricePerGb": 0.200,
+        "note": "¥20/月起，100GB/月起均衡配置"
+      },
+      {
+        "name": "畅享月付版",
+        "price": 36.0,
+        "period": "month",
+        "periodText": "按月付费",
+        "trafficGb": 260,
+        "bandwidth": "800 Mbps",
+        "deviceLimit": "6台设备",
+        "ratio": 1.0,
+        "unitPricePerGb": 0.138,
+        "note": "Trojan安全协议稳定防封"
+      }
+    ],
+    "protocols": ["Trojan", "Shadowsocks"],
+    "regions": ["中国香港", "日本", "新加坡", "美国", "中国台湾"],
+    "deviceLimit": "4-6台设备并发",
+    "aiSupport": ["ChatGPT", "Claude", "Gemini"],
+    "streamingSupport": ["Netflix", "Disney+", "YouTube 4K"],
+    "advantages": [
+      "100GB均衡起步流量，实用不浪费",
+      "采用Trojan安全加密协议，伪装性强有效防封",
+      "套餐价格适中，配置清晰透明无套路",
+      "全平台一键配置，支持多种客户端"
+    ],
+    "disadvantages": [
+      "促销折扣活动相对较少",
+      "无超小额体验包"
+    ],
+    "suitableFor": [
+      "日常网络浏览与海外社交用户",
+      "追求简单稳定省心、不喜折腾的普通用户"
+    ],
+    "sources": ["节点推荐网实测数据", "官方公开套餐公示"],
+    "lastVerified": "2026-11",
+    "testStatus": "tested",
+    "metrics": {
+      "stabilityScore": 9.1,
+      "speedScore": 9.1,
+      "valueScore": 9.0,
+      "supportScore": 9.0,
+      "overallScore": 9.0
+    }
+  },
+  {
+    "id": "quanqiuyun",
+    "name": "全球云",
+    "slug": "quanqiuyun",
+    "customRank": 14,
+    "tagline": "中转优化架构，VLESS/Trojan双协议，优惠码 tt88",
+    "description": "全球云采用深度优化的跨境中转网络架构，节点可用率长期稳定在 99% 以上。经典月付套餐约 ¥20/月拥有 120GB 流量，支持 VLESS 与 Trojan 双协议，输入优惠券 tt88 享立减折扣。",
+    "officialUrl": "https://sswdh.gcvipaff.com/#/?code=9SF0oyg0",
+    "affiliateUrl": "https://sswdh.gcvipaff.com/#/?code=9SF0oyg0",
+    "startingPrice": 20.0,
+    "currency": "CNY",
+    "lineType": "中转优化",
+    "coupon": "tt88",
+    "plans": [
+      {
+        "name": "中转经典版",
+        "price": 20.0,
+        "period": "month",
+        "periodText": "按月付费",
+        "trafficGb": 120,
+        "bandwidth": "500 Mbps",
+        "deviceLimit": "4台设备",
+        "ratio": 1.0,
+        "unitPricePerGb": 0.167,
+        "note": "约 ¥20/月起，120GB/月经典中转优化，优惠码 tt88"
+      },
+      {
+        "name": "中转海量版",
+        "price": 38.0,
+        "period": "month",
+        "periodText": "按月付费",
+        "trafficGb": 300,
+        "bandwidth": "800 Mbps",
+        "deviceLimit": "6台设备",
+        "ratio": 1.0,
+        "unitPricePerGb": 0.127,
+        "note": "VLESS / Trojan双协议"
+      }
+    ],
+    "protocols": ["VLESS", "Trojan"],
+    "regions": ["中国香港", "日本", "新加坡", "美国", "英国", "德国"],
+    "deviceLimit": "4-6台设备并发",
+    "aiSupport": ["ChatGPT", "Claude", "Gemini", "Grok"],
+    "streamingSupport": ["Netflix", "Disney+", "YouTube Premium", "TikTok"],
+    "advantages": [
+      "深度优化中转架构，节点可用率高抗波动",
+      "120GB经典套餐容量，平衡实用性佳",
+      "支持VLESS与Trojan双主流协议，专属优惠码 tt88 可用",
+      "覆盖欧美亚主流地区节点，解锁流媒体及AI工具稳定"
+    ],
+    "disadvantages": [
+      "相比顶级全内网专线延迟稍高约20ms左右",
+      "高峰期偶尔触发节点负载均衡切换"
+    ],
+    "suitableFor": [
+      "留学生与外贸跨境从业人员",
+      "日常网页加速、文献查阅与视频观看",
+      "看重协议安全性与折扣优惠的用户"
+    ],
+    "sources": ["节点推荐网实测数据", "官方公开套餐公示"],
+    "lastVerified": "2026-11",
+    "testStatus": "tested",
+    "metrics": {
+      "stabilityScore": 9.1,
+      "speedScore": 9.0,
+      "valueScore": 9.1,
+      "supportScore": 9.0,
+      "overallScore": 9.0
     }
   }
 ]

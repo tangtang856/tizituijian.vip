@@ -211,13 +211,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tizituijian.vip/airport/feiv.html</loc>
+    <loc>https://tizituijian.vip/airport/muguang.html</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://tizituijian.vip/review/feiv.html</loc>
+    <loc>https://tizituijian.vip/review/muguang.html</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -235,18 +235,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tizituijian.vip/airport/firefly.html</loc>
-    <lastmod>2026-11-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://tizituijian.vip/review/firefly.html</loc>
-    <lastmod>2026-11-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://tizituijian.vip/airport/wuyou.html</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -259,49 +247,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tizituijian.vip/airport/muguang.html</loc>
+    <loc>https://tizituijian.vip/airport/lingmao.html</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://tizituijian.vip/review/muguang.html</loc>
-    <lastmod>2026-11-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://tizituijian.vip/airport/kuajiecloud.html</loc>
-    <lastmod>2026-11-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://tizituijian.vip/review/kuajiecloud.html</loc>
-    <lastmod>2026-11-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://tizituijian.vip/airport/lingdongcloud.html</loc>
-    <lastmod>2026-11-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://tizituijian.vip/review/lingdongcloud.html</loc>
-    <lastmod>2026-11-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://tizituijian.vip/airport/quanqiuyun.html</loc>
-    <lastmod>2026-11-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://tizituijian.vip/review/quanqiuyun.html</loc>
+    <loc>https://tizituijian.vip/review/lingmao.html</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -319,6 +271,30 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://tizituijian.vip/airport/firefly.html</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tizituijian.vip/review/firefly.html</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tizituijian.vip/airport/kuajiecloud.html</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tizituijian.vip/review/kuajiecloud.html</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://tizituijian.vip/airport/yinxingren.html</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -331,13 +307,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tizituijian.vip/airport/lingmao.html</loc>
+    <loc>https://tizituijian.vip/airport/feiv.html</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://tizituijian.vip/review/lingmao.html</loc>
+    <loc>https://tizituijian.vip/review/feiv.html</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -362,6 +338,30 @@
   </url>
   <url>
     <loc>https://tizituijian.vip/review/wavenet.html</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tizituijian.vip/airport/lingdongcloud.html</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tizituijian.vip/review/lingdongcloud.html</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tizituijian.vip/airport/quanqiuyun.html</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tizituijian.vip/review/quanqiuyun.html</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

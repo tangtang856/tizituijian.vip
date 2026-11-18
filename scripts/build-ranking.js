@@ -28,9 +28,9 @@ function generateRankings() {
       title: '2026年机场节点综合实力排行榜 | 优质稳定翻墙节点评测 - 梯子推荐网',
       h1: '2026年全网优质机场节点综合实力排行榜',
       desc: '基于真实测试与公开官方参数的2026综合机场排行榜，从稳定性、晚高峰抗拥堵、每GB单价、多平台协议兼容性及AI流媒体解锁能力进行权威加权评定。',
-      criteria: '综合评分 = 稳定性(35%) + 晚高峰速率(25%) + 性价比(20%) + 客户端与服务支持(20%)。',
-      sortFn: (a, b) => b.metrics.overallScore - a.metrics.overallScore,
-      summary: '微风网络与隐形人凭借 9.6 的优异综合评分领跑全榜；闪跃 FlashLeap 凭借 IPLC 纯专线与极低游戏延迟（9.5分）位居前列；无忧、灵猫、飞猫云与浪网各具特色紧随其后。'
+      criteria: '基于真实测试与官方套餐核验的加权综合排名，全面衡量专线延迟、晚高峰SLA抗拥堵能力、月度流量配额与每GB性价比。',
+      sortFn: (a, b) => (a.customRank || 99) - (b.customRank || 99),
+      summary: '微风网络 Breezenet 凭借极致性价比（¥8起200G）与稳定专线荣获综合榜首；暮光网络以纯专线高稳定性紧随其后；飞猫云、无忧、灵猫、闪跃 FlashLeap 分列前席。'
     },
     {
       slug: 'value',
