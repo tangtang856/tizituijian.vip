@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Windows系统配置Clash Verge Rev与v2rayN图文教程 - 梯子推荐网</title>
   <meta name="description" content="专为Windows 10/11用户编写的科学上网客户端配置图文教程：涵盖Clash Verge Rev下载安装、订阅链接导入、系统代理开启、Tun模式及开机自启完整操作。">
-  <meta name="keywords" content="windows梯子,clash教程,v2rayn教程,小火箭教程,梯子连不上,节点超时">
+  <meta name="keywords" content="Windows,Clash教程,小火箭配置,Sing-box,梯子推荐,机场推荐,客户端教程">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://tizituijian.vip/guides/windows.html">
   
@@ -51,8 +51,8 @@
         <a href="../recommend/index.html" class="nav-link ">机场推荐</a>
         <a href="../ranking/overall.html" class="nav-link ">综合排行</a>
         <a href="../compare/index.html" class="nav-link ">横向对比</a>
-        <a href="../guides/windows.html" class="nav-link active">客户端教程</a>
-        <a href="../blog/beginner-selection-guide.html" class="nav-link ">选购指南</a>
+        <a href="../guides/index.html" class="nav-link active">客户端教程</a>
+        <a href="../blog/index.html" class="nav-link ">选购指南</a>
         <a href="../glossary/iplc-iepl.html" class="nav-link ">网络百科</a>
       </nav>
       <div class="header-cta">
@@ -69,7 +69,7 @@
       <span class="breadcrumb-separator">/</span>
     </li>
 <li class="breadcrumb-item">
-      <a href="windows.html" class="breadcrumb-link">客户端使用教程</a>
+      <a href="index.html" class="breadcrumb-link">客户端使用教程</a>
       <span class="breadcrumb-separator">/</span>
     </li>
 <li class="breadcrumb-item breadcrumb-current" aria-current="page">Windows系统Clash与v2rayN客户端配置教程</li>
@@ -79,66 +79,69 @@
 
 <main class="container">
   <div class="article-layout">
-    <div class="article-content prose">
+    <article class="article-content prose">
       <h1>Windows系统Clash与v2rayN客户端配置教程</h1>
 
       <div class="article-header-meta">
-        <span>更新时间：2026年11月</span>
-        <span>栏目：客户端配置图文指引</span>
-        <span>适配系统：全平台支持</span>
+        <span>更新时间：2026-11-18</span>
+        <span>适配平台：Windows</span>
+        <span>难度等级：入门新手</span>
+        <span>阅读时长：6 分钟阅读</span>
       </div>
 
       
-        <div class="callout callout-info">
-          <strong>教程速览：</strong>Windows平台目前首推现代开源客户端 <strong>Clash Verge Rev</strong>（基于Mihomo内核，支持最新协议与优雅界面）。整个配置只需三步：下载安装 → 导入机场订阅链接 → 开启“系统代理”即可顺畅访问海外网络。
-        </div>
+      <div class="callout callout-info">
+        <strong>教程速览：</strong>Windows平台目前首推现代开源客户端 <strong>Clash Verge Rev</strong>（基于Mihomo内核，支持最新协议与优雅界面）。整个配置只需三步：下载安装 → 导入机场订阅链接 → 开启“系统代理”即可顺畅访问海外网络。
+      </div>
 
-        <h2>一、准备工作与客户端下载</h2>
-        <p>在配置前，请确保您已在受信任的<a href="../recommend/index.html">优质机场推荐</a>服务商处注册并获得了专属于您的<strong>订阅链接（Subscription URL）</strong>。</p>
-        <p>推荐使用的客户端版本：</p>
-        <ul>
-          <li><strong>Clash Verge Rev (推荐)：</strong>支持 Windows 10/11 64位系统，内置 Mihomo 核心，界面现代化且中文支持完善。</li>
-          <li><strong>v2rayN：</strong>传统经典客户端，适合更喜欢传统列表界面或需调试单一 Vmess/Vless 节点的技术用户。</li>
-        </ul>
+      <h2>一、准备工作与客户端下载</h2>
+      <p>在配置前，请确保您已在受信任的<a href="../recommend/index.html">优质机场推荐</a>服务商处注册并获得了专属于您的<strong>订阅链接（Subscription URL）</strong>。</p>
+      <p>推荐使用的客户端版本：</p>
+      <ul>
+        <li><strong>Clash Verge Rev (推荐)：</strong>支持 Windows 10/11 64位系统，内置 Mihomo 核心，界面现代化且中文支持完善。</li>
+        <li><strong>v2rayN：</strong>传统经典客户端，适合更喜欢传统列表界面或需调试单一 Vmess/Vless 节点的技术用户。</li>
+      </ul>
 
-        <h2>二、Clash Verge Rev 详细配置步骤</h2>
-        <h3>步骤 1：安装与初次启动</h3>
-        <p>双击安装包完成安装后启动软件。若弹出 Windows Defender 防火墙网络访问提示，请勾选“专用网络”并点击“允许访问”。</p>
+      <h2>二、Clash Verge Rev 详细配置步骤</h2>
+      <h3>步骤 1：安装与初次启动</h3>
+      <p>双击安装包完成安装后启动软件。若弹出 Windows Defender 防火墙网络访问提示，请勾选“专用网络”并点击“允许访问”。</p>
 
-        <h3>步骤 2：导入机场订阅链接</h3>
-        <ol>
-          <li>在左侧导航栏点击 <strong>订阅 (Profiles)</strong>。</li>
-          <li>在顶部输入框中粘贴您从机场后台复制的“Clash 订阅链接”。</li>
-          <li>点击右侧的 <strong>保存 (Save)</strong> 或 <strong>下载 (Download)</strong> 按钮。</li>
-          <li>等待几秒，下方将显示拉取成功的配置卡片，<strong>右键或左键点击该卡片以激活使用</strong>。</li>
-        </ol>
+      <h3>步骤 2：导入机场订阅链接</h3>
+      <ol>
+        <li>在左侧导航栏点击 <strong>订阅 (Profiles)</strong>。</li>
+        <li>在顶部输入框中粘贴您从机场后台复制的“Clash 订阅链接”。</li>
+        <li>点击右侧的 <strong>保存 (Save)</strong> 或 <strong>下载 (Download)</strong> 按钮。</li>
+        <li>等待几秒，下方将显示拉取成功的配置卡片，<strong>右键或左键点击该卡片以激活使用</strong>。</li>
+      </ol>
 
-        <h3>步骤 3：选择节点与开启代理</h3>
-        <ol>
-          <li>点击左侧导航栏的 <strong>代理 (Proxies)</strong> 选项卡。</li>
-          <li>模式建议保持默认的 <strong>规则 (Rule)</strong> 模式（国内流量直连不耗费节点，国外网站走代理）。</li>
-          <li>展开策略组（通常名为 PROXY 或 节点选择），在节点列表中点选一个低延迟节点（如香港01、日本01）。</li>
-          <li>回到 <strong>设置 (Settings)</strong> 页面，将 <strong>系统代理 (System Proxy)</strong> 开关切换为开启状态。</li>
-        </ol>
+      <h3>步骤 3：选择节点与开启代理</h3>
+      <ol>
+        <li>点击左侧导航栏的 <strong>代理 (Proxies)</strong> 选项卡。</li>
+        <li>模式建议保持默认的 <strong>规则 (Rule)</strong> 模式（国内流量直连不耗费节点，国外网站走代理）。</li>
+        <li>展开策略组（通常名为 PROXY 或 节点选择），在节点列表中点选一个低延迟节点（如香港01、日本01）。</li>
+        <li>回到 <strong>设置 (Settings)</strong> 页面，将 <strong>系统代理 (System Proxy)</strong> 开关切换为开启状态。</li>
+      </ol>
 
-        <h2>三、高级功能：Tun 虚拟网卡模式</h2>
-        <p>如果您发现某些无法设置系统代理的软件（如命令行终端 CMD、部分游戏客户端或特定海外桌面软件）无法连网，可以在设置中开启 <strong>Tun 模式</strong>。Tun 模式会接管全局操作系统层级流量，让所有网络请求均走分流规则。</p>
+      <h2>三、高级功能：Tun 虚拟网卡模式</h2>
+      <p>如果您发现某些无法设置系统代理的软件（如命令行终端 CMD、部分游戏客户端或特定海外桌面软件）无法连网，可以在设置中开启 <strong>Tun 模式</strong>。Tun 模式会接管全局操作系统层级流量，让所有网络请求均走分流规则。</p>
 
-        <h2>四、常见问题排查</h2>
-        <ul>
-          <li><strong>打不开网页但显示已连接：</strong>检查本地系统时间是否与网络时间同步；或检查浏览器是否安装了冲突的代理扩展插件。</li>
-          <li><strong>订阅拉取失败 (Fetch Failed)：</strong>请先开启其他备用节点，或在机场后台尝试更换备用的订阅分发域名。</li>
-        </ul>
-      
+      <h2>四、常见问题排查</h2>
+      <ul>
+        <li><strong>打不开网页但显示已连接：</strong>检查本地系统时间是否与网络时间同步；或检查浏览器是否安装了冲突的代理扩展插件。</li>
+        <li><strong>订阅拉取失败 (Fetch Failed)：</strong>请先开启其他备用节点，或在机场后台尝试更换备用的订阅分发域名。更多排查细节可参考<a href="troubleshooting.html">节点排障专项教程</a>。</li>
+      </ul>
+    
 
       <h2>五、相关知识与进阶推荐</h2>
       <ul>
         <li><a href="../recommend/index.html">精选优质稳定机场推荐列表</a></li>
         <li><a href="../ranking/overall.html">2026年机场综合实力排行榜</a></li>
+        <li><a href="../ranking/value.html">每GB流量单价性价比榜单</a></li>
+        <li><a href="index.html">查看全部30篇客户端使用与调优教程</a></li>
         <li><a href="../glossary/subscription.html">网络百科：什么是机场订阅链接与分流规则？</a></li>
         <li><a href="../blog/beginner-selection-guide.html">新手挑选机场节点的五大黄金准则</a></li>
       </ul>
-    </div>
+    </article>
 
     
   <aside class="article-sidebar">
@@ -168,10 +171,10 @@
     <div class="sidebar-widget">
       <h3 class="sidebar-title">📖 必读使用教程</h3>
       <ul class="sidebar-list">
+        <li><a href="../guides/index.html"><strong>全部30篇客户端教程大全 →</strong></a></li>
         <li><a href="../guides/windows.html">Windows配置Clash Verge教程</a></li>
         <li><a href="../guides/android.html">Android手机配置Sing-box教程</a></li>
         <li><a href="../guides/ios.html">iOS小火箭Shadowrocket配置</a></li>
-        <li><a href="../guides/macos.html">macOS系统代理设置指南</a></li>
         <li><a href="../guides/troubleshooting.html">节点超时与订阅失败排查</a></li>
       </ul>
     </div>
@@ -207,12 +210,12 @@
         <div class="footer-col">
           <div class="footer-col-title">使用教程与科普</div>
           <ul class="footer-links">
+            <li><a href="../guides/index.html">全平台30篇教程大全</a></li>
+            <li><a href="../blog/index.html">精选100篇选购指南</a></li>
             <li><a href="../guides/windows.html">Windows配置教程</a></li>
             <li><a href="../guides/android.html">Android手机教程</a></li>
             <li><a href="../guides/ios.html">iOS小火箭配置</a></li>
-            <li><a href="../guides/macos.html">macOS配置教程</a></li>
-            <li><a href="../guides/troubleshooting.html">节点排查与连接失败</a></li>
-            <li><a href="../glossary/protocols.html">Shadowsocks/Trojan对比</a></li>
+            <li><a href="../guides/troubleshooting.html">节点排障与连接失败</a></li>
           </ul>
         </div>
         <div class="footer-col">

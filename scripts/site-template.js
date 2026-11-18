@@ -71,8 +71,8 @@ function renderHeader(depth = 0, currentSection = '') {
         <a href="${p}recommend/index.html" class="nav-link ${currentSection === 'recommend' ? 'active' : ''}">机场推荐</a>
         <a href="${p}ranking/overall.html" class="nav-link ${currentSection === 'ranking' ? 'active' : ''}">综合排行</a>
         <a href="${p}compare/index.html" class="nav-link ${currentSection === 'compare' ? 'active' : ''}">横向对比</a>
-        <a href="${p}guides/windows.html" class="nav-link ${currentSection === 'guides' ? 'active' : ''}">客户端教程</a>
-        <a href="${p}blog/beginner-selection-guide.html" class="nav-link ${currentSection === 'blog' ? 'active' : ''}">选购指南</a>
+        <a href="${p}guides/index.html" class="nav-link ${currentSection === 'guides' ? 'active' : ''}">客户端教程</a>
+        <a href="${p}blog/index.html" class="nav-link ${currentSection === 'blog' ? 'active' : ''}">选购指南</a>
         <a href="${p}glossary/iplc-iepl.html" class="nav-link ${currentSection === 'glossary' ? 'active' : ''}">网络百科</a>
       </nav>
       <div class="header-cta">
@@ -113,12 +113,12 @@ function renderFooter(depth = 0) {
         <div class="footer-col">
           <div class="footer-col-title">使用教程与科普</div>
           <ul class="footer-links">
+            <li><a href="${p}guides/index.html">全平台30篇教程大全</a></li>
+            <li><a href="${p}blog/index.html">精选100篇选购指南</a></li>
             <li><a href="${p}guides/windows.html">Windows配置教程</a></li>
             <li><a href="${p}guides/android.html">Android手机教程</a></li>
             <li><a href="${p}guides/ios.html">iOS小火箭配置</a></li>
-            <li><a href="${p}guides/macos.html">macOS配置教程</a></li>
-            <li><a href="${p}guides/troubleshooting.html">节点排查与连接失败</a></li>
-            <li><a href="${p}glossary/protocols.html">Shadowsocks/Trojan对比</a></li>
+            <li><a href="${p}guides/troubleshooting.html">节点排障与连接失败</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -202,10 +202,10 @@ function renderSidebarWidgets(depth = 0) {
     <div class="sidebar-widget">
       <h3 class="sidebar-title">📖 必读使用教程</h3>
       <ul class="sidebar-list">
+        <li><a href="${p}guides/index.html"><strong>全部30篇客户端教程大全 →</strong></a></li>
         <li><a href="${p}guides/windows.html">Windows配置Clash Verge教程</a></li>
         <li><a href="${p}guides/android.html">Android手机配置Sing-box教程</a></li>
         <li><a href="${p}guides/ios.html">iOS小火箭Shadowrocket配置</a></li>
-        <li><a href="${p}guides/macos.html">macOS系统代理设置指南</a></li>
         <li><a href="${p}guides/troubleshooting.html">节点超时与订阅失败排查</a></li>
       </ul>
     </div>

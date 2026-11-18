@@ -328,6 +328,9 @@ ${renderHeader(0, 'home')}
           <a href="guides/macos.html" class="btn btn-outline btn-sm">阅读 macOS 教程 →</a>
         </div>
       </div>
+      <div style="text-align:center; margin-top:24px;">
+        <a href="guides/index.html" class="btn btn-primary btn-sm">查看全部 30 篇全平台配置与调优教程 →</a>
+      </div>
     </div>
   </section>
 
@@ -369,6 +372,9 @@ ${renderHeader(0, 'home')}
           </p>
           <a href="glossary/iplc-iepl.html" style="font-size:0.85rem; font-weight:600;">阅读全文 →</a>
         </div>
+      </div>
+      <div style="text-align:center; margin-top:24px;">
+        <a href="blog/index.html" class="btn btn-outline btn-sm">浏览全部 100 篇深度科普与选购指南 →</a>
       </div>
     </div>
   </section>

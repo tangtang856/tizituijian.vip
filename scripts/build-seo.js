@@ -5,6 +5,8 @@
 const fs = require('fs');
 const path = require('path');
 const { DOMAIN, airports } = require('./site-template');
+const guides = require('../src/data/guides-data');
+const articles = require('../src/data/blog-data');
 
 const ROOT_DIR = path.resolve(__dirname, '..');
 const INDEXNOW_KEY = '8f4b23c91d8e40f7b9c6543210abcdef';
@@ -53,16 +55,8 @@ Sitemap: ${DOMAIN}/sitemap-index.xml
     'ranking/budget.html',
     'ranking/stable.html',
     'compare/index.html',
-    'guides/windows.html',
-    'guides/android.html',
-    'guides/ios.html',
-    'guides/macos.html',
-    'guides/troubleshooting.html',
-    'blog/beginner-selection-guide.html',
-    'blog/cheap-airport-risks.html',
-    'blog/iplc-bgp-difference.html',
-    'blog/ai-streaming-unlock.html',
-    'blog/vpn-airport-difference.html',
+    'guides/index.html',
+    'blog/index.html',
     'glossary/iplc-iepl.html',
     'glossary/node-ratio.html',
     'glossary/protocols.html',
@@ -74,6 +68,14 @@ Sitemap: ${DOMAIN}/sitemap-index.xml
     'privacy-policy.html',
     'disclaimer.html'
   ];
+
+  guides.forEach(g => {
+    pages.push(`guides/${g.slug}.html`);
+  });
+
+  articles.forEach(art => {
+    pages.push(`blog/${art.slug}.html`);
+  });
 
   airports.forEach(a => {
     pages.push(`airport/${a.slug}.html`);
@@ -100,7 +102,7 @@ ${pages.map(p => {
 </urlset>`;
 
   fs.writeFileSync(path.join(ROOT_DIR, 'sitemap.xml'), sitemapXml, 'utf8');
-  console.log('Generated: sitemap.xml (with XSLT stylesheet)');
+  console.log(`Generated: sitemap.xml (with XSLT stylesheet, total ${pages.length} URLs)`);
 
   // 5. 生成 sitemap-index.xml (兼容各种爬虫规范)
   const sitemapIndexXml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -116,7 +118,7 @@ ${pages.map(p => {
   console.log('Generated: sitemap-index.xml');
 }
 
-module.exports = { generateSeoFiles, INDEXNOW_KEY };
+module.exports = { generateSeoFiles };
 
 if (require.main === module) {
   generateSeoFiles();

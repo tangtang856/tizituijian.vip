@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>节点超时与订阅更新失败排查指南 | 梯子连不上外网解决方案 - 梯子推荐网</title>
-  <meta name="description" content="科学上网常见故障排查手册：深度解决客户端节点全部超时、订阅更新报错、连上梯子打不开网页、系统时间偏差及DNS污染等常见疑难杂症。">
-  <meta name="keywords" content="windows梯子,clash教程,v2rayn教程,小火箭教程,梯子连不上,节点超时">
+  <title>节点连接超时与DNS污染排查指南 (常见错误与网络修复) - 梯子推荐网</title>
+  <meta name="description" content="汇总翻墙过程中最常见的“节点超时”、“TLS握手失败”、“订阅更新报错”、“微信打不开”等典型网络故障，提供标准化定位与逐步解决流程。">
+  <meta name="keywords" content="通用排障,Clash教程,小火箭配置,Sing-box,梯子推荐,机场推荐,客户端教程">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://tizituijian.vip/guides/troubleshooting.html">
   
   <!-- Open Graph / 社交媒体卡片 -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="节点超时与订阅更新失败排查指南 | 梯子连不上外网解决方案 - 梯子推荐网">
-  <meta property="og:description" content="科学上网常见故障排查手册：深度解决客户端节点全部超时、订阅更新报错、连上梯子打不开网页、系统时间偏差及DNS污染等常见疑难杂症。">
+  <meta property="og:title" content="节点连接超时与DNS污染排查指南 (常见错误与网络修复) - 梯子推荐网">
+  <meta property="og:description" content="汇总翻墙过程中最常见的“节点超时”、“TLS握手失败”、“订阅更新报错”、“微信打不开”等典型网络故障，提供标准化定位与逐步解决流程。">
   <meta property="og:url" content="https://tizituijian.vip/guides/troubleshooting.html">
   <meta property="og:site_name" content="梯子推荐网">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="节点超时与订阅更新失败排查指南 | 梯子连不上外网解决方案 - 梯子推荐网">
-  <meta name="twitter:description" content="科学上网常见故障排查手册：深度解决客户端节点全部超时、订阅更新报错、连上梯子打不开网页、系统时间偏差及DNS污染等常见疑难杂症。">
+  <meta name="twitter:title" content="节点连接超时与DNS污染排查指南 (常见错误与网络修复) - 梯子推荐网">
+  <meta name="twitter:description" content="汇总翻墙过程中最常见的“节点超时”、“TLS握手失败”、“订阅更新报错”、“微信打不开”等典型网络故障，提供标准化定位与逐步解决流程。">
   
   <!-- 原生标准样式表 (严格相对路径) -->
   <link rel="stylesheet" href="../css/style.css">
@@ -27,8 +27,8 @@
 {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "节点连接超时与订阅失败完整排查指南",
-  "description": "科学上网常见故障排查手册：深度解决客户端节点全部超时、订阅更新报错、连上梯子打不开网页、系统时间偏差及DNS污染等常见疑难杂症。",
+  "name": "科学上网节点连接超时、无法打开网页排障全攻略",
+  "description": "汇总翻墙过程中最常见的“节点超时”、“TLS握手失败”、“订阅更新报错”、“微信打不开”等典型网络故障，提供标准化定位与逐步解决流程。",
   "publisher": {
     "@type": "Organization",
     "name": "梯子推荐网",
@@ -51,8 +51,8 @@
         <a href="../recommend/index.html" class="nav-link ">机场推荐</a>
         <a href="../ranking/overall.html" class="nav-link ">综合排行</a>
         <a href="../compare/index.html" class="nav-link ">横向对比</a>
-        <a href="../guides/windows.html" class="nav-link active">客户端教程</a>
-        <a href="../blog/beginner-selection-guide.html" class="nav-link ">选购指南</a>
+        <a href="../guides/index.html" class="nav-link active">客户端教程</a>
+        <a href="../blog/index.html" class="nav-link ">选购指南</a>
         <a href="../glossary/iplc-iepl.html" class="nav-link ">网络百科</a>
       </nav>
       <div class="header-cta">
@@ -69,62 +69,59 @@
       <span class="breadcrumb-separator">/</span>
     </li>
 <li class="breadcrumb-item">
-      <a href="windows.html" class="breadcrumb-link">客户端使用教程</a>
+      <a href="index.html" class="breadcrumb-link">客户端使用教程</a>
       <span class="breadcrumb-separator">/</span>
     </li>
-<li class="breadcrumb-item breadcrumb-current" aria-current="page">节点连接超时与订阅失败完整排查指南</li>
+<li class="breadcrumb-item breadcrumb-current" aria-current="page">科学上网节点连接超时、无法打开网页排障全攻略</li>
       </ul>
     </div>
   </nav>
 
 <main class="container">
   <div class="article-layout">
-    <div class="article-content prose">
-      <h1>节点连接超时与订阅失败完整排查指南</h1>
+    <article class="article-content prose">
+      <h1>科学上网节点连接超时、无法打开网页排障全攻略</h1>
 
       <div class="article-header-meta">
-        <span>更新时间：2026年11月</span>
-        <span>栏目：客户端配置图文指引</span>
-        <span>适配系统：全平台支持</span>
+        <span>更新时间：2026-11-18</span>
+        <span>适配平台：通用排障</span>
+        <span>难度等级：故障排查</span>
+        <span>阅读时长：8 分钟阅读</span>
       </div>
 
       
-        <div class="callout callout-warning">
-          <strong>排查必读：</strong>遇到连不上外网时，不要慌张。超过 90% 的连接问题都源于<strong>本地配置、系统时间、系统代理开关或本地杀毒软件拦截</strong>，而非服务商跑路。请按以下顺序逐步排查。
-        </div>
+      <div class="callout callout-warning">
+        <strong>排障金法则：</strong>遇到网络连不上时，切忌盲目乱改设置。先判断是<strong>“本地系统问题”</strong>、<strong>“订阅配置问题”</strong>还是<strong>“服务器节点被封”</strong>，顺藤摸瓜即可在两分钟内恢复网络。
+      </div>
 
-        <h2>一、故障现象一：所有节点 Ping 全部超时 / 提示 Timeout</h2>
-        <h3>排查 1：检查本地系统时间</h3>
-        <p>Vmess、Vless、Trojan 等现代加密协议要求客户端与服务器时间误差<strong>不得超过90秒</strong>。若系统时间偏差较大，握手将直接失败。</p>
-        <p><strong>解决办法：</strong>打开 Windows/Mac 系统设置 → 时间和语言 → 开启“自动设置时间”并点击“立即同步”。</p>
+      <h2>一、常见故障 1：系统时间未同步导致握手失败</h2>
+      <p><strong>现象：</strong>节点延迟测速正常，但任何外网都打不开，日志提示 <code>i/o timeout</code> 或 <code>tls: bad record MAC</code>。</p>
+      <p><strong>原因：</strong>现代翻墙加密协议（如 Vmess、Trojan、Reality）严格依赖时间戳防重放攻击。若电脑或手机系统时间与网络标准时间相差超过 <strong>90 秒</strong>，服务器会直接拒绝握手。</p>
+      <p><strong>解决办法：</strong>打开系统设置中的“日期与时间”，关闭并重新打开“自动设置时间”，点击“立即同步”。</p>
 
-        <h3>排查 2：机场订阅是否已过期或流量耗尽</h3>
-        <p>登录您的机场后台，检查当前套餐是否处于活跃状态、流量是否用尽、或者是否有账单逾期未付。</p>
+      <h2>二、常见故障 2：订阅更新失败 (Fetch Failed)</h2>
+      <p><strong>现象：</strong>更新机场订阅时弹出 <code>Fetch Failed</code> 或 <code>Network Error</code>。</p>
+      <p><strong>解决办法：</strong></p>
+      <ol>
+        <li>机场官方订阅域名往往会被防火墙阻断。请先借用其他备用节点连接后，再尝试点击更新。</li>
+        <li>登录机场后台，切换其提供的“备用订阅链接”或“短链订阅”。</li>
+      </ol>
 
-        <h2>二、故障现象二：客户端显示已连接，但网页完全打不开</h2>
-        <h3>排查 1：系统代理开关是否真正生效</h3>
-        <p>检查 Windows 设置中的“网络和 Internet” → “代理”。确保“使用代理服务器”已开启，并且地址为 <code>127.0.0.1</code>，端口对应客户端的混合端口（通常为 7890 或 7897）。</p>
-
-        <h3>排查 2：浏览器插件冲突</h3>
-        <p>如果您安装了 SwitchyOmega、AdGuard 或其他网络加速插件，请检查是否覆盖了系统代理设置，将其暂时切换为“使用系统代理”。</p>
-
-        <h2>三、故障现象三：订阅链接无法更新 (Fetch / Download Failed)</h2>
-        <p>当订阅地址无法拉取时，说明当前用于更新配置的本地网络无法直连机场的订阅分发服务器：</p>
-        <ol>
-          <li>尝试临时连接手机热点进行更新。</li>
-          <li>在浏览器中直接打开该订阅链接，看能否正常下载 YAML 或 Base64 配置文件。</li>
-          <li>联系机场官方客服获取备用更新节点或最新的订阅转换地址。</li>
-        </ol>
-      
+      <h2>三、常见故障 3：连上梯子后国内应用打不开或微信转圈</h2>
+      <p><strong>原因：</strong>客户端工作模式被误设为了 <strong>全局 (Global)</strong> 模式，导致所有流量都被强制路由至海外服务器。</p>
+      <p><strong>解决办法：</strong>将工作模式切换回 <strong>规则 (Rule)</strong> 分流模式，确保国内域名直连。</p>
+    
 
       <h2>五、相关知识与进阶推荐</h2>
       <ul>
         <li><a href="../recommend/index.html">精选优质稳定机场推荐列表</a></li>
         <li><a href="../ranking/overall.html">2026年机场综合实力排行榜</a></li>
+        <li><a href="../ranking/value.html">每GB流量单价性价比榜单</a></li>
+        <li><a href="index.html">查看全部30篇客户端使用与调优教程</a></li>
         <li><a href="../glossary/subscription.html">网络百科：什么是机场订阅链接与分流规则？</a></li>
         <li><a href="../blog/beginner-selection-guide.html">新手挑选机场节点的五大黄金准则</a></li>
       </ul>
-    </div>
+    </article>
 
     
   <aside class="article-sidebar">
@@ -154,10 +151,10 @@
     <div class="sidebar-widget">
       <h3 class="sidebar-title">📖 必读使用教程</h3>
       <ul class="sidebar-list">
+        <li><a href="../guides/index.html"><strong>全部30篇客户端教程大全 →</strong></a></li>
         <li><a href="../guides/windows.html">Windows配置Clash Verge教程</a></li>
         <li><a href="../guides/android.html">Android手机配置Sing-box教程</a></li>
         <li><a href="../guides/ios.html">iOS小火箭Shadowrocket配置</a></li>
-        <li><a href="../guides/macos.html">macOS系统代理设置指南</a></li>
         <li><a href="../guides/troubleshooting.html">节点超时与订阅失败排查</a></li>
       </ul>
     </div>
@@ -193,12 +190,12 @@
         <div class="footer-col">
           <div class="footer-col-title">使用教程与科普</div>
           <ul class="footer-links">
+            <li><a href="../guides/index.html">全平台30篇教程大全</a></li>
+            <li><a href="../blog/index.html">精选100篇选购指南</a></li>
             <li><a href="../guides/windows.html">Windows配置教程</a></li>
             <li><a href="../guides/android.html">Android手机教程</a></li>
             <li><a href="../guides/ios.html">iOS小火箭配置</a></li>
-            <li><a href="../guides/macos.html">macOS配置教程</a></li>
-            <li><a href="../guides/troubleshooting.html">节点排查与连接失败</a></li>
-            <li><a href="../glossary/protocols.html">Shadowsocks/Trojan对比</a></li>
+            <li><a href="../guides/troubleshooting.html">节点排障与连接失败</a></li>
           </ul>
         </div>
         <div class="footer-col">

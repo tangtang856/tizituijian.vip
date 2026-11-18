@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Android安卓手机配置Clash Meta与Sing-box教程 - 梯子推荐网</title>
   <meta name="description" content="Android手机科学上网完整教程：涵盖Clash Meta for Android (CMFA) 与 Sing-box 客户端下载、订阅导入、分流规则与省电保活设置。">
-  <meta name="keywords" content="windows梯子,clash教程,v2rayn教程,小火箭教程,梯子连不上,节点超时">
+  <meta name="keywords" content="Android,Clash教程,小火箭配置,Sing-box,梯子推荐,机场推荐,客户端教程">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://tizituijian.vip/guides/android.html">
   
@@ -51,8 +51,8 @@
         <a href="../recommend/index.html" class="nav-link ">机场推荐</a>
         <a href="../ranking/overall.html" class="nav-link ">综合排行</a>
         <a href="../compare/index.html" class="nav-link ">横向对比</a>
-        <a href="../guides/windows.html" class="nav-link active">客户端教程</a>
-        <a href="../blog/beginner-selection-guide.html" class="nav-link ">选购指南</a>
+        <a href="../guides/index.html" class="nav-link active">客户端教程</a>
+        <a href="../blog/index.html" class="nav-link ">选购指南</a>
         <a href="../glossary/iplc-iepl.html" class="nav-link ">网络百科</a>
       </nav>
       <div class="header-cta">
@@ -69,7 +69,7 @@
       <span class="breadcrumb-separator">/</span>
     </li>
 <li class="breadcrumb-item">
-      <a href="windows.html" class="breadcrumb-link">客户端使用教程</a>
+      <a href="index.html" class="breadcrumb-link">客户端使用教程</a>
       <span class="breadcrumb-separator">/</span>
     </li>
 <li class="breadcrumb-item breadcrumb-current" aria-current="page">Android平台Clash与Sing-box客户端配置指南</li>
@@ -79,56 +79,60 @@
 
 <main class="container">
   <div class="article-layout">
-    <div class="article-content prose">
+    <article class="article-content prose">
       <h1>Android平台Clash与Sing-box客户端配置指南</h1>
 
       <div class="article-header-meta">
-        <span>更新时间：2026年11月</span>
-        <span>栏目：客户端配置图文指引</span>
-        <span>适配系统：全平台支持</span>
+        <span>更新时间：2026-11-18</span>
+        <span>适配平台：Android</span>
+        <span>难度等级：入门新手</span>
+        <span>阅读时长：6 分钟阅读</span>
       </div>
 
       
-        <div class="callout callout-info">
-          <strong>教程速览：</strong>安卓手机推荐使用 <strong>Clash Meta for Android (CMFA)</strong> 或 <strong>Sing-box</strong>。由于安卓系统的后台电池管理机制，配置时需特别注意开启“后台无限制”与“锁定后台”，防止连接中途被系统杀进程。
-        </div>
+      <div class="callout callout-info">
+        <strong>教程速览：</strong>安卓手机推荐使用 <strong>Clash Meta for Android (CMFA)</strong> 或 <strong>Sing-box</strong>。由于安卓系统的后台电池管理机制，配置时需特别注意开启“后台无限制”与“锁定后台”，防止连接中途被系统杀进程。
+      </div>
 
-        <h2>一、客户端选择与获取</h2>
-        <p>安卓生态拥有多款优秀的开源代理工具：</p>
-        <ul>
-          <li><strong>Clash Meta for Android：</strong>功能完善，支持现代分流规则与各种自建协议。</li>
-          <li><strong>Sing-box：</strong>内存占用低，CPU 占用少，省电性能优异，支持 Hysteria2 协议。</li>
-        </ul>
+      <h2>一、客户端选择与获取</h2>
+      <p>安卓生态拥有多款优秀的开源代理工具：</p>
+      <ul>
+        <li><strong>Clash Meta for Android：</strong>功能完善，支持现代分流规则与各种自建协议。</li>
+        <li><strong>Sing-box：</strong>内存占用低，CPU 占用少，省电性能优异，支持 Hysteria2 协议。</li>
+      </ul>
 
-        <h2>二、Clash Meta 配置四步法</h2>
-        <h3>步骤 1：导入订阅</h3>
-        <p>打开软件后点击 <strong>配置 (Profiles)</strong> → 点击右上角 <strong>+</strong> 号 → 选择 <strong>从 URL 导入 (URL)</strong> → 填写名称并粘贴机场订阅链接 → 点击右上角保存图标下载。</p>
+      <h2>二、Clash Meta 配置四步法</h2>
+      <h3>步骤 1：导入订阅</h3>
+      <p>打开软件后点击 <strong>配置 (Profiles)</strong> → 点击右上角 <strong>+</strong> 号 → 选择 <strong>从 URL 导入 (URL)</strong> → 填写名称并粘贴机场订阅链接 → 点击右上角保存图标下载。</p>
 
-        <h3>步骤 2：选择并选中配置</h3>
-        <p>下载完成后，点击该配置使其单选框变为选中高亮状态，然后返回主界面。</p>
+      <h3>步骤 2：选择并选中配置</h3>
+      <p>下载完成后，点击该配置使其单选框变为选中高亮状态，然后返回主界面。</p>
 
-        <h3>步骤 3：启动 VPN 服务</h3>
-        <p>在主界面点击顶部中央的“已停止/启动”开关。初次使用时系统会弹出 <strong>“网络连接请求”</strong> 授权弹窗，点击 <strong>“确定”</strong> 允许创建本地 VPN 隧道。</p>
+      <h3>步骤 3：启动 VPN 服务</h3>
+      <p>在主界面点击顶部中央的“已停止/启动”开关。初次使用时系统会弹出 <strong>“网络连接请求”</strong> 授权弹窗，点击 <strong>“确定”</strong> 允许创建本地 VPN 隧道。</p>
 
-        <h3>步骤 4：挑选低延迟节点</h3>
-        <p>点击 <strong>代理 (Proxy)</strong> 页面，点击右下角的雷电图标进行批量延迟测速，选择显示绿色延迟数值的节点即可。</p>
+      <h3>步骤 4：挑选低延迟节点</h3>
+      <p>点击 <strong>代理 (Proxies)</strong> 界面，选择低延迟节点（可点击右下角闪电图标一键测试全节点延迟）。</p>
 
-        <h2>三、关键优化：防止后台休眠断连</h2>
-        <ol>
-          <li>进入手机系统“设置” → “应用管理” → 找到客户端。</li>
-          <li>进入“电池”或“省电策略”，将后台运行权限修改为 <strong>“无限制”</strong> 或 <strong>“允许后台高耗电运行”</strong>。</li>
-          <li>在手机多任务界面将客户端卡片下拉锁定（加锁）。</li>
-        </ol>
-      
+      <h2>三、安卓系统后台防掉线设置</h2>
+      <p>国内安卓系统（如小米 HyperOS、华为鸿蒙、OPPO ColorOS、vivo OriginOS）通常具有严格的电池优化策略。请在系统设置中：</p>
+      <ol>
+        <li>将客户端的“电池策略”改为 <strong>无限制</strong>。</li>
+        <li>在多任务卡片视图中，长按该应用卡片并点击 <strong>加锁图标</strong>。</li>
+        <li>开启“自启动”权限。</li>
+      </ol>
+    
 
       <h2>五、相关知识与进阶推荐</h2>
       <ul>
         <li><a href="../recommend/index.html">精选优质稳定机场推荐列表</a></li>
         <li><a href="../ranking/overall.html">2026年机场综合实力排行榜</a></li>
+        <li><a href="../ranking/value.html">每GB流量单价性价比榜单</a></li>
+        <li><a href="index.html">查看全部30篇客户端使用与调优教程</a></li>
         <li><a href="../glossary/subscription.html">网络百科：什么是机场订阅链接与分流规则？</a></li>
         <li><a href="../blog/beginner-selection-guide.html">新手挑选机场节点的五大黄金准则</a></li>
       </ul>
-    </div>
+    </article>
 
     
   <aside class="article-sidebar">
@@ -158,10 +162,10 @@
     <div class="sidebar-widget">
       <h3 class="sidebar-title">📖 必读使用教程</h3>
       <ul class="sidebar-list">
+        <li><a href="../guides/index.html"><strong>全部30篇客户端教程大全 →</strong></a></li>
         <li><a href="../guides/windows.html">Windows配置Clash Verge教程</a></li>
         <li><a href="../guides/android.html">Android手机配置Sing-box教程</a></li>
         <li><a href="../guides/ios.html">iOS小火箭Shadowrocket配置</a></li>
-        <li><a href="../guides/macos.html">macOS系统代理设置指南</a></li>
         <li><a href="../guides/troubleshooting.html">节点超时与订阅失败排查</a></li>
       </ul>
     </div>
@@ -197,12 +201,12 @@
         <div class="footer-col">
           <div class="footer-col-title">使用教程与科普</div>
           <ul class="footer-links">
+            <li><a href="../guides/index.html">全平台30篇教程大全</a></li>
+            <li><a href="../blog/index.html">精选100篇选购指南</a></li>
             <li><a href="../guides/windows.html">Windows配置教程</a></li>
             <li><a href="../guides/android.html">Android手机教程</a></li>
             <li><a href="../guides/ios.html">iOS小火箭配置</a></li>
-            <li><a href="../guides/macos.html">macOS配置教程</a></li>
-            <li><a href="../guides/troubleshooting.html">节点排查与连接失败</a></li>
-            <li><a href="../glossary/protocols.html">Shadowsocks/Trojan对比</a></li>
+            <li><a href="../guides/troubleshooting.html">节点排障与连接失败</a></li>
           </ul>
         </div>
         <div class="footer-col">
