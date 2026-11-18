@@ -1,0 +1,18 @@
+# robots.txt for tizituijian.vip
+User-agent: *
+Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /recommend/
+Allow: /ranking/
+Allow: /airport/
+Allow: /review/
+Allow: /compare/
+Allow: /guides/
+Allow: /blog/
+Allow: /glossary/
+Disallow: /404.html
+Disallow: /scripts/
+Disallow: /src/
+
+Sitemap: https://tizituijian.vip/sitemap.xml

@@ -1,0 +1,27 @@
+{
+  "name": "tizituijian-vip",
+  "version": "1.0.0",
+  "description": "梯子推荐网 (tizituijian.vip) - 专注于客观中立的机场与VPN资讯平台，Bing SEO专业建站系统",
+  "main": "index.html",
+  "scripts": {
+    "build": "node scripts/build-all.js",
+    "audit:seo": "node scripts/audit-seo.js",
+    "audit:links": "node scripts/check-links.js",
+    "audit:content": "node scripts/validate-content.js",
+    "audit": "node scripts/audit-seo.js && node scripts/check-links.js && node scripts/validate-content.js",
+    "test": "npm run audit",
+    "indexnow": "node scripts/indexnow.js"
+  },
+  "keywords": [
+    "机场推荐",
+    "梯子推荐",
+    "性价比机场",
+    "机场节点",
+    "vpn",
+    "vpn机场",
+    "vpn节点",
+    "vpn推荐"
+  ],
+  "author": "梯子推荐网技术团队",
+  "license": "MIT"
+}

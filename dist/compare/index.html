@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>机场横向对比工具 | 价格/协议/节点/流媒体多维度即时对比 - 梯子推荐网</title>
+  <meta name="description" content="梯子推荐网提供交互式机场横向对比工具：自由勾选2-4家主流机场服务商，实时对比套餐价格、每GB流量单价、传输协议、流媒体与AI大模型解锁能力。">
+  <meta name="keywords" content="机场对比,梯子对比,性价比机场,机场节点对比,vpn对比">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://tizituijian.vip/compare/index.html">
+  
+  <!-- Open Graph / 社交媒体卡片 -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="机场横向对比工具 | 价格/协议/节点/流媒体多维度即时对比 - 梯子推荐网">
+  <meta property="og:description" content="梯子推荐网提供交互式机场横向对比工具：自由勾选2-4家主流机场服务商，实时对比套餐价格、每GB流量单价、传输协议、流媒体与AI大模型解锁能力。">
+  <meta property="og:url" content="https://tizituijian.vip/compare/index.html">
+  <meta property="og:site_name" content="梯子推荐网">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="机场横向对比工具 | 价格/协议/节点/流媒体多维度即时对比 - 梯子推荐网">
+  <meta name="twitter:description" content="梯子推荐网提供交互式机场横向对比工具：自由勾选2-4家主流机场服务商，实时对比套餐价格、每GB流量单价、传输协议、流媒体与AI大模型解锁能力。">
+  
+  <!-- 原生标准样式表 (严格相对路径) -->
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "机场全维度横向对比工具",
+  "url": "https://tizituijian.vip/compare/index.html",
+  "applicationCategory": "UtilityApplication",
+  "description": "多维度机场与梯子节点横向对比分析矩阵"
+}
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand-logo" title="梯子推荐网 - 专注于客观中立的机场与VPN评测">
+        <span>梯子推荐网</span>
+        <span class="brand-badge">2026精选</span>
+      </a>
+      <button class="nav-toggle-btn" aria-label="展开导航菜单" aria-expanded="false">☰</button>
+      <nav class="site-nav">
+        <a href="../index.html" class="nav-link ">首页</a>
+        <a href="../recommend/index.html" class="nav-link ">机场推荐</a>
+        <a href="../ranking/overall.html" class="nav-link ">综合排行</a>
+        <a href="../compare/index.html" class="nav-link active">横向对比</a>
+        <a href="../guides/windows.html" class="nav-link ">客户端教程</a>
+        <a href="../blog/beginner-selection-guide.html" class="nav-link ">选购指南</a>
+        <a href="../glossary/iplc-iepl.html" class="nav-link ">网络百科</a>
+      </nav>
+      <div class="header-cta">
+        <a href="../ranking/value.html" class="btn btn-primary btn-sm">性价比榜单</a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb-nav" aria-label="当前页面位置">
+    <div class="container">
+      <ul class="breadcrumb-list">
+        <li class="breadcrumb-item">
+      <a href="../index.html" class="breadcrumb-link">首页</a>
+      <span class="breadcrumb-separator">/</span>
+    </li>
+<li class="breadcrumb-item breadcrumb-current" aria-current="page">横向对比工具</li>
+      </ul>
+    </div>
+  </nav>
+
+<main class="container" style="padding:30px 20px 60px;">
+  <div style="max-width:960px; margin:0 auto 30px; text-align:center;">
+    <h1 style="font-size:2.2rem; font-weight:800; margin-bottom:12px;">⚖️ 主流机场梯子节点全维度横向对比工具</h1>
+    <p style="font-size:1rem; color:var(--text-muted); line-height:1.6;">
+      勾选您感兴趣的 2 至 5 家机场服务商，下方矩阵表格将自动实时更新对比列。助您快速看清价格、线路、协议与解锁能力差异。
+    </p>
+  </div>
+
+  <!-- 勾选控制器 -->
+  <div class="compare-selector-bar">
+    <strong style="font-size:0.95rem; color:var(--text-main);">选择对比品牌（已选 <span id="selected-count">5</span> 家）：</strong>
+    <div class="compare-checkbox-group">
+      
+        <label class="compare-check-label">
+          <input type="checkbox" class="compare-check-input" value="paopaodog" checked>
+          <span>泡泡狗云加速 (Paopaodog)</span>
+        </label>
+      
+        <label class="compare-check-label">
+          <input type="checkbox" class="compare-check-input" value="speedycat" checked>
+          <span>闪电猫网络 (SpeedyCat)</span>
+        </label>
+      
+        <label class="compare-check-label">
+          <input type="checkbox" class="compare-check-input" value="juziyun" checked>
+          <span>桔子云 (OrangeCloud)</span>
+        </label>
+      
+        <label class="compare-check-label">
+          <input type="checkbox" class="compare-check-input" value="feiniaoyun" checked>
+          <span>飞鸟云加速 (Feiniaoyun)</span>
+        </label>
+      
+        <label class="compare-check-label">
+          <input type="checkbox" class="compare-check-input" value="beibeiyun" checked>
+          <span>贝贝云 (Beibeiyun)</span>
+        </label>
+      
+    </div>
+  </div>
+
+  <!-- 横向对比矩阵表格 -->
+  <div class="table-responsive">
+    <table class="data-table" id="compare-table" style="min-width:900px;">
+      <thead>
+        <tr>
+          <th style="width:140px; background:#f1f5f9; position:sticky; left:0; z-index:10;">对比维度</th>
+          
+            <th class="compare-col" data-airport="paopaodog" style="text-align:center; min-width:180px;">
+              <div style="font-size:1.1rem; font-weight:700; margin-bottom:4px;">泡泡狗云加速 (Paopaodog)</div>
+              <div style="font-size:0.75rem; color:var(--text-light); font-weight:normal;">✓ 编辑部实测</div>
+            </th>
+          
+            <th class="compare-col" data-airport="speedycat" style="text-align:center; min-width:180px;">
+              <div style="font-size:1.1rem; font-weight:700; margin-bottom:4px;">闪电猫网络 (SpeedyCat)</div>
+              <div style="font-size:0.75rem; color:var(--text-light); font-weight:normal;">✓ 编辑部实测</div>
+            </th>
+          
+            <th class="compare-col" data-airport="juziyun" style="text-align:center; min-width:180px;">
+              <div style="font-size:1.1rem; font-weight:700; margin-bottom:4px;">桔子云 (OrangeCloud)</div>
+              <div style="font-size:0.75rem; color:var(--text-light); font-weight:normal;">官方核验</div>
+            </th>
+          
+            <th class="compare-col" data-airport="feiniaoyun" style="text-align:center; min-width:180px;">
+              <div style="font-size:1.1rem; font-weight:700; margin-bottom:4px;">飞鸟云加速 (Feiniaoyun)</div>
+              <div style="font-size:0.75rem; color:var(--text-light); font-weight:normal;">✓ 编辑部实测</div>
+            </th>
+          
+            <th class="compare-col" data-airport="beibeiyun" style="text-align:center; min-width:180px;">
+              <div style="font-size:1.1rem; font-weight:700; margin-bottom:4px;">贝贝云 (Beibeiyun)</div>
+              <div style="font-size:0.75rem; color:var(--text-light); font-weight:normal;">官方核验</div>
+            </th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="background:#f1f5f9; position:sticky; left:0; font-weight:600;">起步价格</td>
+          
+            <td class="compare-col" data-airport="paopaodog" style="text-align:center;">
+              <span style="font-size:1.3rem; font-weight:800; color:var(--primary);">¥38</span> / 月起
+            </td>
+          
+            <td class="compare-col" data-airport="speedycat" style="text-align:center;">
+              <span style="font-size:1.3rem; font-weight:800; color:var(--primary);">¥28</span> / 月起
+            </td>
+          
+            <td class="compare-col" data-airport="juziyun" style="text-align:center;">
+              <span style="font-size:1.3rem; font-weight:800; color:var(--primary);">¥15.9</span> / 月起
+            </td>
+          
+            <td class="compare-col" data-airport="feiniaoyun" style="text-align:center;">
+              <span style="font-size:1.3rem; font-weight:800; color:var(--primary);">¥22</span> / 月起
+            </td>
+          
+            <td class="compare-col" data-airport="beibeiyun" style="text-align:center;">
+              <span style="font-size:1.3rem; font-weight:800; color:var(--primary);">¥12</span> / 月起
+            </td>
+          
+        </tr>
+
+        <tr>
+          <td style="background:#f1f5f9; position:sticky; left:0; font-weight:600;">主力套餐流量</td>
+          
+            <td class="compare-col" data-airport="paopaodog" style="text-align:center;">
+              100 GB / 月
+            </td>
+          
+            <td class="compare-col" data-airport="speedycat" style="text-align:center;">
+              120 GB / 月
+            </td>
+          
+            <td class="compare-col" data-airport="juziyun" style="text-align:center;">
+              100 GB / 月
+            </td>
+          
+            <td class="compare-col" data-airport="feiniaoyun" style="text-align:center;">
+              150 GB / 月
+            </td>
+          
+            <td class="compare-col" data-airport="beibeiyun" style="text-align:center;">
+              60 GB / 月
+            </td>
+          
+        </tr>
+
+        <tr>
+          <td style="background:#f1f5f9; position:sticky; left:0; font-weight:600;">参考每GB成本</td>
+          
+            <td class="compare-col" data-airport="paopaodog" style="text-align:center;">
+              <span style="font-weight:700; color:var(--success);">¥0.380</span> / GB
+            </td>
+          
+            <td class="compare-col" data-airport="speedycat" style="text-align:center;">
+              <span style="font-weight:700; color:var(--success);">¥0.233</span> / GB
+            </td>
+          
+            <td class="compare-col" data-airport="juziyun" style="text-align:center;">
+              <span style="font-weight:700; color:var(--success);">¥0.159</span> / GB
+            </td>
+          
+            <td class="compare-col" data-airport="feiniaoyun" style="text-align:center;">
+              <span style="font-weight:700; color:var(--success);">¥0.146</span> / GB
+            </td>
+          
+            <td class="compare-col" data-airport="beibeiyun" style="text-align:center;">
+              <span style="font-weight:700; color:var(--success);">¥0.200</span> / GB
+            </td>
+          
+        </tr>
+
+        <tr>
+          <td style="background:#f1f5f9; position:sticky; left:0; font-weight:600;">核心传输线路</td>
+          
+            <td class="compare-col" data-airport="paopaodog" style="text-align:center;">
+              全内网 IPLC 专线
+            </td>
+          
+            <td class="compare-col" data-airport="speedycat" style="text-align:center;">
+              优质多入口 BGP 中转
+            </td>
+          
+            <td class="compare-col" data-airport="juziyun" style="text-align:center;">
+              优质多入口 BGP 中转
+            </td>
+          
+            <td class="compare-col" data-airport="feiniaoyun" style="text-align:center;">
+              Hysteria2 弱网加速
+            </td>
+          
+            <td class="compare-col" data-airport="beibeiyun" style="text-align:center;">
+              优质多入口 BGP 中转
+            </td>
+          
+        </tr>
+
+        <tr>
+          <td style="background:#f1f5f9; position:sticky; left:0; font-weight:600;">支持协议</td>
+          
+            <td class="compare-col" data-airport="paopaodog" style="text-align:center; font-size:0.85rem;">
+              Shadowsocks、Trojan
+            </td>
+          
+            <td class="compare-col" data-airport="speedycat" style="text-align:center; font-size:0.85rem;">
+              Shadowsocks、Vmess、Trojan
+            </td>
+          
+            <td class="compare-col" data-airport="juziyun" style="text-align:center; font-size:0.85rem;">
+              Shadowsocks、Trojan
+            </td>
+          
+            <td class="compare-col" data-airport="feiniaoyun" style="text-align:center; font-size:0.85rem;">
+              Hysteria2、Trojan、Shadowsocks
+            </td>
+          
+            <td class="compare-col" data-airport="beibeiyun" style="text-align:center; font-size:0.85rem;">
+              Shadowsocks、Vmess
+            </td>
+          
+        </tr>
+
+        <tr>
+          <td style="background:#f1f5f9; position:sticky; left:0; font-weight:600;">同时在线设备</td>
+          
+            <td class="compare-col" data-airport="paopaodog" style="text-align:center;">
+              5台设备同时在线
+            </td>
+          
+            <td class="compare-col" data-airport="speedycat" style="text-align:center;">
+              无硬性并发限制（合理自用）
+            </td>
+          
+            <td class="compare-col" data-airport="juziyun" style="text-align:center;">
+              3台设备在线
+            </td>
+          
+            <td class="compare-col" data-airport="feiniaoyun" style="text-align:center;">
+              4台设备在线
+            </td>
+          
+            <td class="compare-col" data-airport="beibeiyun" style="text-align:center;">
+              2台设备在线
+            </td>
+          
+        </tr>
+
+        <tr>
+          <td style="background:#f1f5f9; position:sticky; left:0; font-weight:600;">海外 AI 解锁</td>
+          
+            <td class="compare-col" data-airport="paopaodog" style="text-align:center; font-size:0.85rem;">
+              ChatGPT、Claude 3.5 Sonnet、Gemini Advanced、Midjourney
+            </td>
+          
+            <td class="compare-col" data-airport="speedycat" style="text-align:center; font-size:0.85rem;">
+              ChatGPT、Claude、Perplexity、Copilot
+            </td>
+          
+            <td class="compare-col" data-airport="juziyun" style="text-align:center; font-size:0.85rem;">
+              ChatGPT、Claude (部分专线与高倍率节点解锁)
+            </td>
+          
+            <td class="compare-col" data-airport="feiniaoyun" style="text-align:center; font-size:0.85rem;">
+              ChatGPT、Claude 3.5、Gemini、Grok
+            </td>
+          
+            <td class="compare-col" data-airport="beibeiyun" style="text-align:center; font-size:0.85rem;">
+              ChatGPT (基础日常节点可用)
+            </td>
+          
+        </tr>
+
+        <tr>
+          <td style="background:#f1f5f9; position:sticky; left:0; font-weight:600;">4K 流媒体解锁</td>
+          
+            <td class="compare-col" data-airport="paopaodog" style="text-align:center; font-size:0.85rem;">
+              Netflix (4K原生)、Disney+、YouTube Premium
+            </td>
+          
+            <td class="compare-col" data-airport="speedycat" style="text-align:center; font-size:0.85rem;">
+              Netflix、Disney+、YouTube
+            </td>
+          
+            <td class="compare-col" data-airport="juziyun" style="text-align:center; font-size:0.85rem;">
+              Netflix非原生自制剧、YouTube 4K、Disney+
+            </td>
+          
+            <td class="compare-col" data-airport="feiniaoyun" style="text-align:center; font-size:0.85rem;">
+              Netflix、Disney+、YouTube Premium
+            </td>
+          
+            <td class="compare-col" data-airport="beibeiyun" style="text-align:center; font-size:0.85rem;">
+              YouTube 1080P/4K、Netflix部分自制剧
+            </td>
+          
+        </tr>
+
+        <tr>
+          <td style="background:#f1f5f9; position:sticky; left:0; font-weight:600;">核心突出优势</td>
+          
+            <td class="compare-col" data-airport="paopaodog" style="font-size:0.85rem; vertical-align:top;">
+              <ul style="padding-left:14px; margin:0;">
+                <li>全内网IPLC专线，不经过公共GFW，抗封锁能力与网络SLA极高</li><li>晚高峰无明显拥堵与丢包，4K流媒体秒开，延迟低于50ms</li>
+              </ul>
+            </td>
+          
+            <td class="compare-col" data-airport="speedycat" style="font-size:0.85rem; vertical-align:top;">
+              <ul style="padding-left:14px; margin:0;">
+                <li>老牌服务商运营超过4年，口碑成熟，品牌抗风险信誉佳</li><li>多入口BGP中转冗余度高，主线路维护时自动切换备用路由</li>
+              </ul>
+            </td>
+          
+            <td class="compare-col" data-airport="juziyun" style="font-size:0.85rem; vertical-align:top;">
+              <ul style="padding-left:14px; margin:0;">
+                <li>单价超低，大年付套餐每GB单价低至0.078元</li><li>具备珍贵的按量不限时计费套餐，特别适合作为第二备用梯子</li>
+              </ul>
+            </td>
+          
+            <td class="compare-col" data-airport="feiniaoyun" style="font-size:0.85rem; vertical-align:top;">
+              <ul style="padding-left:14px; margin:0;">
+                <li>深度集成Hysteria2先进协议，弱网环境抗丢包与并发下载速度强悍</li><li>采用多地原生家宽与IDC双栈IP轮换，流媒体与AI工具报错率极低</li>
+              </ul>
+            </td>
+          
+            <td class="compare-col" data-airport="beibeiyun" style="font-size:0.85rem; vertical-align:top;">
+              <ul style="padding-left:14px; margin:0;">
+                <li>价格门槛低，12元/月即可起步体验，试错成本小</li><li>提供新手傻瓜式专用客户端，一键登录即可连接，无须手动配置分流规则</li>
+              </ul>
+            </td>
+          
+        </tr>
+
+        <tr>
+          <td style="background:#f1f5f9; position:sticky; left:0; font-weight:600;">主要短板与提醒</td>
+          
+            <td class="compare-col" data-airport="paopaodog" style="font-size:0.85rem; color:var(--warning); vertical-align:top;">
+              起步价格38元/月，对超低预算用户门槛略高
+            </td>
+          
+            <td class="compare-col" data-airport="speedycat" style="font-size:0.85rem; color:var(--warning); vertical-align:top;">
+              极少数敏感时期偶有轻微延迟抖动
+            </td>
+          
+            <td class="compare-col" data-airport="juziyun" style="font-size:0.85rem; color:var(--warning); vertical-align:top;">
+              部分高速解锁节点设有1.5x-2.0x的流量倍率消耗
+            </td>
+          
+            <td class="compare-col" data-airport="feiniaoyun" style="font-size:0.85rem; color:var(--warning); vertical-align:top;">
+              Hysteria2基于UDP协议，在极少数严格QoS限制的网络环境可能受阻
+            </td>
+          
+            <td class="compare-col" data-airport="beibeiyun" style="font-size:0.85rem; color:var(--warning); vertical-align:top;">
+              设备连接数严格限制为2台，不支持多人共享
+            </td>
+          
+        </tr>
+
+        <tr>
+          <td style="background:#f1f5f9; position:sticky; left:0; font-weight:600;">详情与评测</td>
+          
+            <td class="compare-col" data-airport="paopaodog" style="text-align:center;">
+              <div style="display:flex; flex-direction:column; gap:6px;">
+                <a href="../airport/paopaodog.html" class="btn btn-outline btn-sm">查看参数</a>
+                <a href="../review/paopaodog.html" class="btn btn-primary btn-sm">阅读评测</a>
+              </div>
+            </td>
+          
+            <td class="compare-col" data-airport="speedycat" style="text-align:center;">
+              <div style="display:flex; flex-direction:column; gap:6px;">
+                <a href="../airport/speedycat.html" class="btn btn-outline btn-sm">查看参数</a>
+                <a href="../review/speedycat.html" class="btn btn-primary btn-sm">阅读评测</a>
+              </div>
+            </td>
+          
+            <td class="compare-col" data-airport="juziyun" style="text-align:center;">
+              <div style="display:flex; flex-direction:column; gap:6px;">
+                <a href="../airport/juziyun.html" class="btn btn-outline btn-sm">查看参数</a>
+                <a href="../review/juziyun.html" class="btn btn-primary btn-sm">阅读评测</a>
+              </div>
+            </td>
+          
+            <td class="compare-col" data-airport="feiniaoyun" style="text-align:center;">
+              <div style="display:flex; flex-direction:column; gap:6px;">
+                <a href="../airport/feiniaoyun.html" class="btn btn-outline btn-sm">查看参数</a>
+                <a href="../review/feiniaoyun.html" class="btn btn-primary btn-sm">阅读评测</a>
+              </div>
+            </td>
+          
+            <td class="compare-col" data-airport="beibeiyun" style="text-align:center;">
+              <div style="display:flex; flex-direction:column; gap:6px;">
+                <a href="../airport/beibeiyun.html" class="btn btn-outline btn-sm">查看参数</a>
+                <a href="../review/beibeiyun.html" class="btn btn-primary btn-sm">阅读评测</a>
+              </div>
+            </td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="margin-top:36px; padding:24px; background:#ffffff; border:1px solid var(--border-color); border-radius:var(--radius-md);">
+    <h2 style="font-size:1.3rem; margin-bottom:12px;">对比总结建议</h2>
+    <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.6;">
+      • <strong>追求极致网络 SLA、游戏低延迟与外贸办公：</strong>首选 <a href="../airport/paopaodog.html">泡泡狗</a>（全内网 IPLC 专线）。<br>
+      • <strong>追求老牌大厂口碑与多设备自用：</strong>首选 <a href="../airport/speedycat.html">闪电猫</a>（4年老牌运营）。<br>
+      • <strong>追求超低单价与大流量下载：</strong>首选 <a href="../airport/juziyun.html">桔子云</a>（单价低至0.078元/GB）。<br>
+      • <strong>校园网弱网抗丢包与新兴 Hysteria2 协议：</strong>首选 <a href="../airport/feiniaoyun.html">飞鸟云</a>。<br>
+      • <strong>零基础纯小白一键傻瓜式连接：</strong>首选 <a href="../airport/beibeiyun.html">贝贝云</a>（12元月付尝鲜）。
+    </p>
+  </div>
+</main>
+
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-col-title">梯子推荐网 (tizituijian.vip)</div>
+          <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:14px;">
+            专注提供客观、严谨、多维度的优质机场推荐、梯子节点测速、翻墙客户端配置教程与跨境网络技术科普，帮助用户安全、高效地获取海外资讯与科研工具。
+          </p>
+          <div style="font-size:0.82rem; color:var(--text-light);">
+            <span>数据更新周期：双周核验</span> · 
+            <span>测试节点：港/美/日/新/英</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">推荐与排行榜</div>
+          <ul class="footer-links">
+            <li><a href="../recommend/budget.html">性价比平价机场</a></li>
+            <li><a href="../recommend/premium.html">高端IPLC专线机场</a></li>
+            <li><a href="../recommend/beginner.html">新手入门一键梯子</a></li>
+            <li><a href="../recommend/ai.html">ChatGPT/Claude专用节点</a></li>
+            <li><a href="../ranking/overall.html">综合实力排行榜</a></li>
+            <li><a href="../ranking/value.html">每GB单价性价比榜</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">使用教程与科普</div>
+          <ul class="footer-links">
+            <li><a href="../guides/windows.html">Windows配置教程</a></li>
+            <li><a href="../guides/android.html">Android手机教程</a></li>
+            <li><a href="../guides/ios.html">iOS小火箭配置</a></li>
+            <li><a href="../guides/macos.html">macOS配置教程</a></li>
+            <li><a href="../guides/troubleshooting.html">节点排查与连接失败</a></li>
+            <li><a href="../glossary/protocols.html">Shadowsocks/Trojan对比</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">政策与信任体系</div>
+          <ul class="footer-links">
+            <li><a href="../editorial-policy.html">编辑政策与评测准则</a></li>
+            <li><a href="../about.html">关于我们</a></li>
+            <li><a href="../contact.html">联系与数据纠错</a></li>
+            <li><a href="../privacy-policy.html">隐私权保护政策</a></li>
+            <li><a href="../disclaimer.html">免责声明与服务条款</a></li>
+            <li><a href="../sitemap.xml">站点地图 Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-disclaimer-box">
+        <strong>合规声明与风险警示：</strong>本站所有内容仅限用于跨国学术科研交流、跨国软件代码托管（如 GitHub）、企业跨境合法外贸业务及海外公开资讯查阅。严禁将本站介绍的技术、节点及客户端工具用于任何违反所在国家与地区法律法规的行为。请使用者严格自觉遵守当地网络安全法规，文明合规上网。
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 梯子推荐网 (tizituijian.vip). 保留所有权利.</div>
+        <div>原生静态极速版 · 无外链重型跟踪脚本</div>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

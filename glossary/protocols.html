@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shadowsocks、Trojan、Vmess、Hysteria2协议深度对比 - 梯子推荐网</title>
+  <meta name="description" content="全面对比当前主流翻墙与加速协议的技术架构、加密握手原理、抗封锁特征及性能差异：涵盖经典Shadowsocks、Vmess、Trojan及新一代基于QUIC的Hysteria2。">
+  <meta name="keywords" content="IPLC专线,IEPL专线,节点倍率,翻墙协议,Trojan,Hysteria2,原生IP,住宅IP">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://tizituijian.vip/glossary/protocols.html">
+  
+  <!-- Open Graph / 社交媒体卡片 -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Shadowsocks、Trojan、Vmess、Hysteria2协议深度对比 - 梯子推荐网">
+  <meta property="og:description" content="全面对比当前主流翻墙与加速协议的技术架构、加密握手原理、抗封锁特征及性能差异：涵盖经典Shadowsocks、Vmess、Trojan及新一代基于QUIC的Hysteria2。">
+  <meta property="og:url" content="https://tizituijian.vip/glossary/protocols.html">
+  <meta property="og:site_name" content="梯子推荐网">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Shadowsocks、Trojan、Vmess、Hysteria2协议深度对比 - 梯子推荐网">
+  <meta name="twitter:description" content="全面对比当前主流翻墙与加速协议的技术架构、加密握手原理、抗封锁特征及性能差异：涵盖经典Shadowsocks、Vmess、Trojan及新一代基于QUIC的Hysteria2。">
+  
+  <!-- 原生标准样式表 (严格相对路径) -->
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "网络百科：主流代理翻墙协议深度对比与选型",
+  "description": "全面对比当前主流翻墙与加速协议的技术架构、加密握手原理、抗封锁特征及性能差异：涵盖经典Shadowsocks、Vmess、Trojan及新一代基于QUIC的Hysteria2。",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "网络技术术语百科"
+  }
+}
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand-logo" title="梯子推荐网 - 专注于客观中立的机场与VPN评测">
+        <span>梯子推荐网</span>
+        <span class="brand-badge">2026精选</span>
+      </a>
+      <button class="nav-toggle-btn" aria-label="展开导航菜单" aria-expanded="false">☰</button>
+      <nav class="site-nav">
+        <a href="../index.html" class="nav-link ">首页</a>
+        <a href="../recommend/index.html" class="nav-link ">机场推荐</a>
+        <a href="../ranking/overall.html" class="nav-link ">综合排行</a>
+        <a href="../compare/index.html" class="nav-link ">横向对比</a>
+        <a href="../guides/windows.html" class="nav-link ">客户端教程</a>
+        <a href="../blog/beginner-selection-guide.html" class="nav-link ">选购指南</a>
+        <a href="../glossary/iplc-iepl.html" class="nav-link active">网络百科</a>
+      </nav>
+      <div class="header-cta">
+        <a href="../ranking/value.html" class="btn btn-primary btn-sm">性价比榜单</a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb-nav" aria-label="当前页面位置">
+    <div class="container">
+      <ul class="breadcrumb-list">
+        <li class="breadcrumb-item">
+      <a href="../index.html" class="breadcrumb-link">首页</a>
+      <span class="breadcrumb-separator">/</span>
+    </li>
+<li class="breadcrumb-item">
+      <a href="iplc-iepl.html" class="breadcrumb-link">网络技术百科</a>
+      <span class="breadcrumb-separator">/</span>
+    </li>
+<li class="breadcrumb-item breadcrumb-current" aria-current="page">网络百科：主流代理翻墙协议深度对比与选型</li>
+      </ul>
+    </div>
+  </nav>
+
+<main class="container">
+  <div class="article-layout">
+    <div class="article-content prose">
+      <h1>网络百科：主流代理翻墙协议深度对比与选型</h1>
+
+      <div class="article-header-meta">
+        <span>更新日期：2026年11月</span>
+        <span>分类：网络通信技术百科</span>
+        <span>审校：梯子推荐网技术团队</span>
+      </div>
+
+      
+        <div class="callout callout-info">
+          <strong>协议演进简史：</strong>从早期的明文代理与简单加密（Shadowsocks），到对抗特征分析的复杂数据包封装（Vmess），再到伪装真实网站流量的（Trojan），直至新一代基于 UDP/QUIC 克服恶劣丢包的（Hysteria2），技术一直在持续演进。
+        </div>
+
+        <h2>一、四大主流代理协议横向对比</h2>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>协议名称</th>
+                <th>基础传输层</th>
+                <th>伪装机制</th>
+                <th>弱网抗丢包</th>
+                <th>客户端兼容性</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Shadowsocks (SS)</strong></td>
+                <td>TCP / UDP</td>
+                <td>对称流加密（AEAD）</td>
+                <td>一般</td>
+                <td>极高（全平台支持）</td>
+              </tr>
+              <tr>
+                <td><strong>Vmess (V2Ray)</strong></td>
+                <td>TCP / mKCP / WS</td>
+                <td>自定义协议头加密</td>
+                <td>一般</td>
+                <td>极高（经典主流）</td>
+              </tr>
+              <tr>
+                <td><strong>Trojan</strong></td>
+                <td>TLS over TCP</td>
+                <td>伪装标准 HTTPS 网站</td>
+                <td>良好</td>
+                <td>极高（现代化首选）</td>
+              </tr>
+              <tr>
+                <td><strong>Hysteria2</strong></td>
+                <td>UDP (QUIC)</td>
+                <td>定制拥塞控制 + 伪装</td>
+                <td><strong>极高（丢包率30%仍满速）</strong></td>
+                <td>较好（需现代客户端）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>二、各个协议的适用场景</h2>
+        <ul>
+          <li><strong>专线网络推荐：</strong>Shadowsocks 与 Trojan。因为在内网专线环境中不需要复杂的抗封锁混淆，更纯粹的加密能带来极低的 CPU 消耗与极低延迟。</li>
+          <li><strong>校园网/移动弱网推荐：</strong>Hysteria2。其自主研发的拥塞控制算法能主动抵消公网丢包带来的降速。</li>
+        </ul>
+      
+
+      <h2>相关技术词条与推荐</h2>
+      <ul>
+        <li><a href="../glossary/iplc-iepl.html">IPLC与IEPL专线技术深度解析</a></li>
+        <li><a href="../glossary/node-ratio.html">节点倍率机制与流量计费算法</a></li>
+        <li><a href="../glossary/protocols.html">主流代理翻墙协议深度横向对比</a></li>
+        <li><a href="../recommend/index.html">精选优质稳定机场推荐</a></li>
+      </ul>
+    </div>
+
+    
+  <aside class="article-sidebar">
+    <div class="sidebar-widget">
+      <h3 class="sidebar-title">🔥 核心推荐专题</h3>
+      <ul class="sidebar-list">
+        <li><a href="../recommend/budget.html">性价比机场推荐（平价实惠）</a></li>
+        <li><a href="../recommend/premium.html">高端IPLC专线机场精选</a></li>
+        <li><a href="../recommend/stable.html">晚高峰稳定抗封锁VPN梯子</a></li>
+        <li><a href="../recommend/beginner.html">新手零门槛一键式机场</a></li>
+        <li><a href="../recommend/ai.html">ChatGPT/Claude大模型解锁专线</a></li>
+        <li><a href="../recommend/streaming.html">4K奈飞/油管流媒体解锁节点</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-widget">
+      <h3 class="sidebar-title">📊 权威数据榜单</h3>
+      <ul class="sidebar-list">
+        <li><a href="../ranking/overall.html">2026综合实力排行榜</a></li>
+        <li><a href="../ranking/value.html">每GB流量单价性价比榜</a></li>
+        <li><a href="../ranking/budget.html">小额月付轻量排行榜</a></li>
+        <li><a href="../ranking/stable.html">网络SLA稳定性排行榜</a></li>
+        <li><a href="../compare/index.html">机场全维度横向对比工具</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-widget">
+      <h3 class="sidebar-title">📖 必读使用教程</h3>
+      <ul class="sidebar-list">
+        <li><a href="../guides/windows.html">Windows配置Clash Verge教程</a></li>
+        <li><a href="../guides/android.html">Android手机配置Sing-box教程</a></li>
+        <li><a href="../guides/ios.html">iOS小火箭Shadowrocket配置</a></li>
+        <li><a href="../guides/macos.html">macOS系统代理设置指南</a></li>
+        <li><a href="../guides/troubleshooting.html">节点超时与订阅失败排查</a></li>
+      </ul>
+    </div>
+  </aside>
+  </div>
+</main>
+
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-col-title">梯子推荐网 (tizituijian.vip)</div>
+          <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:14px;">
+            专注提供客观、严谨、多维度的优质机场推荐、梯子节点测速、翻墙客户端配置教程与跨境网络技术科普，帮助用户安全、高效地获取海外资讯与科研工具。
+          </p>
+          <div style="font-size:0.82rem; color:var(--text-light);">
+            <span>数据更新周期：双周核验</span> · 
+            <span>测试节点：港/美/日/新/英</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">推荐与排行榜</div>
+          <ul class="footer-links">
+            <li><a href="../recommend/budget.html">性价比平价机场</a></li>
+            <li><a href="../recommend/premium.html">高端IPLC专线机场</a></li>
+            <li><a href="../recommend/beginner.html">新手入门一键梯子</a></li>
+            <li><a href="../recommend/ai.html">ChatGPT/Claude专用节点</a></li>
+            <li><a href="../ranking/overall.html">综合实力排行榜</a></li>
+            <li><a href="../ranking/value.html">每GB单价性价比榜</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">使用教程与科普</div>
+          <ul class="footer-links">
+            <li><a href="../guides/windows.html">Windows配置教程</a></li>
+            <li><a href="../guides/android.html">Android手机教程</a></li>
+            <li><a href="../guides/ios.html">iOS小火箭配置</a></li>
+            <li><a href="../guides/macos.html">macOS配置教程</a></li>
+            <li><a href="../guides/troubleshooting.html">节点排查与连接失败</a></li>
+            <li><a href="../glossary/protocols.html">Shadowsocks/Trojan对比</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">政策与信任体系</div>
+          <ul class="footer-links">
+            <li><a href="../editorial-policy.html">编辑政策与评测准则</a></li>
+            <li><a href="../about.html">关于我们</a></li>
+            <li><a href="../contact.html">联系与数据纠错</a></li>
+            <li><a href="../privacy-policy.html">隐私权保护政策</a></li>
+            <li><a href="../disclaimer.html">免责声明与服务条款</a></li>
+            <li><a href="../sitemap.xml">站点地图 Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-disclaimer-box">
+        <strong>合规声明与风险警示：</strong>本站所有内容仅限用于跨国学术科研交流、跨国软件代码托管（如 GitHub）、企业跨境合法外贸业务及海外公开资讯查阅。严禁将本站介绍的技术、节点及客户端工具用于任何违反所在国家与地区法律法规的行为。请使用者严格自觉遵守当地网络安全法规，文明合规上网。
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 梯子推荐网 (tizituijian.vip). 保留所有权利.</div>
+        <div>原生静态极速版 · 无外链重型跟踪脚本</div>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

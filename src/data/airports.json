@@ -1,0 +1,383 @@
+[
+  {
+    "id": "paopaodog",
+    "name": "泡泡狗云加速 (Paopaodog)",
+    "slug": "paopaodog",
+    "tagline": "全内网专线极速机场，晚高峰SLA抗拥堵与海外AI解锁首选",
+    "description": "泡泡狗云加速主打全IPLC内网专线传输，跨境流量不经过公网GFW防火墙，晚高峰时段稳定性极佳。全节点已优化海外主流流媒体与ChatGPT、Claude等AI服务的原生解锁，适合对稳定性与速度有严苛要求的专业用户。",
+    "officialUrl": "https://paopaodog.com",
+    "affiliateUrl": "https://paopaodog.com/?ref=tizituijian",
+    "startingPrice": 38.0,
+    "currency": "CNY",
+    "plans": [
+      {
+        "name": "基础尝鲜月付",
+        "price": 38.0,
+        "period": "month",
+        "periodText": "按月付费",
+        "trafficGb": 100,
+        "ratio": 1.0,
+        "unitPricePerGb": 0.38
+      },
+      {
+        "name": "进阶常用季付",
+        "price": 108.0,
+        "period": "quarter",
+        "periodText": "按季付费（折合36元/月）",
+        "trafficGb": 360,
+        "ratio": 1.0,
+        "unitPricePerGb": 0.30
+      },
+      {
+        "name": "旗舰年付套餐",
+        "price": 398.0,
+        "period": "year",
+        "periodText": "按年付费（折合33.1元/月）",
+        "trafficGb": 1800,
+        "ratio": 1.0,
+        "unitPricePerGb": 0.221
+      }
+    ],
+    "protocols": ["Shadowsocks", "Trojan"],
+    "regions": ["中国香港", "日本", "新加坡", "美国", "中国台湾", "英国", "德国"],
+    "deviceLimit": "5台设备同时在线",
+    "aiSupport": ["ChatGPT", "Claude 3.5 Sonnet", "Gemini Advanced", "Midjourney"],
+    "streamingSupport": ["Netflix (4K原生)", "Disney+", "YouTube Premium", "HBO Max", "BBC iPlayer"],
+    "advantages": [
+      "全内网IPLC专线，不经过公共GFW，抗封锁能力与网络SLA极高",
+      "晚高峰无明显拥堵与丢包，4K流媒体秒开，延迟低于50ms",
+      "全节点针对ChatGPT与Claude进行落地IP池解锁优化",
+      "支持主流Shadowsocks与Trojan协议，多平台客户端兼容度优秀"
+    ],
+    "disadvantages": [
+      "起步价格38元/月，对超低预算用户门槛略高",
+      "不提供按量不限时一次性计费套餐",
+      "无免费试用套餐，需单月付费体验"
+    ],
+    "suitableFor": [
+      "重度AI大模型开发与生产力用户",
+      "跨境电商外贸办公人士",
+      "4K超清流媒体与国际赛事高清观看者",
+      "对网络晚高峰可用性有高要求的专业群体"
+    ],
+    "sources": [
+      "泡泡狗官方公开服务价格公示",
+      "客户端节点列表与Ping延迟实测监测",
+      "编辑部2026年最新网络可用性测试记录"
+    ],
+    "lastVerified": "2026-11",
+    "testStatus": "tested",
+    "metrics": {
+      "stabilityScore": 9.8,
+      "speedScore": 9.6,
+      "valueScore": 8.5,
+      "supportScore": 9.2,
+      "overallScore": 9.3
+    }
+  },
+  {
+    "id": "speedycat",
+    "name": "闪电猫网络 (SpeedyCat)",
+    "slug": "speedycat",
+    "tagline": "运营超过4年的老牌多线中转机场，节点资源充沛与多设备友好",
+    "description": "闪电猫是一家持续稳定运营多年的老牌服务商，核心节点依托多线BGP智能中转配合热备专线，具备良好的容灾切换机制。节点覆盖欧美亚等众多地区，连接设备限制宽松，适合家庭和团队多设备日常使用。",
+    "officialUrl": "https://speedycat.org",
+    "affiliateUrl": "https://speedycat.org/?ref=tizituijian",
+    "startingPrice": 28.0,
+    "currency": "CNY",
+    "plans": [
+      {
+        "name": "迷你轻量月付",
+        "price": 28.0,
+        "period": "month",
+        "periodText": "按月付费",
+        "trafficGb": 120,
+        "ratio": 1.0,
+        "unitPricePerGb": 0.233
+      },
+      {
+        "name": "畅享标准月付",
+        "price": 45.0,
+        "period": "month",
+        "periodText": "按月付费",
+        "trafficGb": 260,
+        "ratio": 1.0,
+        "unitPricePerGb": 0.173
+      },
+      {
+        "name": "尊享年付特惠",
+        "price": 299.0,
+        "period": "year",
+        "periodText": "按年付费（折合24.9元/月）",
+        "trafficGb": 2000,
+        "ratio": 1.0,
+        "unitPricePerGb": 0.149
+      }
+    ],
+    "protocols": ["Shadowsocks", "Vmess", "Trojan"],
+    "regions": ["中国香港", "日本", "美国", "新加坡", "韩国", "英国", "德国", "澳大利亚", "加拿大"],
+    "deviceLimit": "无硬性并发限制（合理自用）",
+    "aiSupport": ["ChatGPT", "Claude", "Perplexity", "Copilot"],
+    "streamingSupport": ["Netflix", "Disney+", "YouTube", "Hulu", "AbemaTV"],
+    "advantages": [
+      "老牌服务商运营超过4年，口碑成熟，品牌抗风险信誉佳",
+      "多入口BGP中转冗余度高，主线路维护时自动切换备用路由",
+      "地区节点覆盖面广，支持冷门国家IP需求与全场景应用",
+      "设备连接数宽松，支持手机、平板、电脑及家庭路由器同时连接"
+    ],
+    "disadvantages": [
+      "极少数敏感时期偶有轻微延迟抖动",
+      "在线工单平均响应周期约2至4小时",
+      "部分小众冷门节点带宽为峰值共享"
+    ],
+    "suitableFor": [
+      "日常网页浏览、社交媒体与海外学术资料查阅",
+      "多设备（手机、笔记本、家庭NAS/电视）用户",
+      "追求长期稳定省心、不希望频繁更换服务商的用户"
+    ],
+    "sources": [
+      "闪电猫官网公开价格与服务条款",
+      "编辑部长期可用性监测节点日志"
+    ],
+    "lastVerified": "2026-11",
+    "testStatus": "tested",
+    "metrics": {
+      "stabilityScore": 9.4,
+      "speedScore": 9.1,
+      "valueScore": 9.0,
+      "supportScore": 8.8,
+      "overallScore": 9.1
+    }
+  },
+  {
+    "id": "juziyun",
+    "name": "桔子云 (OrangeCloud)",
+    "slug": "juziyun",
+    "tagline": "大流量平价代表，提供按量不限时套餐与高性价比月付",
+    "description": "桔子云是高性价比大流量机场的代表性品牌之一。其特色在于不仅提供超低单价的大容量月付套餐，更推出了长期有效的不限时按量计费套餐。采用多节点智能中转，在大流量下载与视频流媒体观看方面具有突出性价比优势。",
+    "officialUrl": "https://juziyun.net",
+    "affiliateUrl": "https://juziyun.net/?ref=tizituijian",
+    "startingPrice": 15.9,
+    "currency": "CNY",
+    "plans": [
+      {
+        "name": "尝鲜轻量月付",
+        "price": 15.9,
+        "period": "month",
+        "periodText": "按月付费",
+        "trafficGb": 100,
+        "ratio": 1.0,
+        "unitPricePerGb": 0.159
+      },
+      {
+        "name": "基础大流量月付",
+        "price": 25.9,
+        "period": "month",
+        "periodText": "按月付费",
+        "trafficGb": 240,
+        "ratio": 1.0,
+        "unitPricePerGb": 0.108
+      },
+      {
+        "name": "旗舰大年付特惠",
+        "price": 189.0,
+        "period": "year",
+        "periodText": "按年付费（折合15.75元/月）",
+        "trafficGb": 2400,
+        "ratio": 1.0,
+        "unitPricePerGb": 0.078
+      },
+      {
+        "name": "不限时按量包",
+        "price": 99.0,
+        "period": "one-time",
+        "periodText": "一次性付费（无到期时间限制）",
+        "trafficGb": 500,
+        "ratio": 1.0,
+        "unitPricePerGb": 0.198
+      }
+    ],
+    "protocols": ["Shadowsocks", "Trojan"],
+    "regions": ["中国香港", "日本", "新加坡", "美国", "中国台湾"],
+    "deviceLimit": "3台设备在线",
+    "aiSupport": ["ChatGPT", "Claude (部分专线与高倍率节点解锁)"],
+    "streamingSupport": ["Netflix非原生自制剧", "YouTube 4K", "Disney+"],
+    "advantages": [
+      "单价超低，大年付套餐每GB单价低至0.078元",
+      "具备珍贵的按量不限时计费套餐，特别适合作为第二备用梯子",
+      "入口带宽储备充沛，常规时段大文件下载测速极快",
+      "支持支付宝与微信等常规便捷支付渠道"
+    ],
+    "disadvantages": [
+      "部分高速解锁节点设有1.5x-2.0x的流量倍率消耗",
+      "晚高峰个别热门香港节点出现偶发限速与排队",
+      "在线客服无即时聊天窗口，主要通过工单处理"
+    ],
+    "suitableFor": [
+      "学生党、预算有限但有外网需求的技术爱好者",
+      "YouTube视频重度用户与大文件下载群体",
+      "需要长期备用翻墙梯子防止主线路失联的用户"
+    ],
+    "sources": [
+      "桔子云官网套餐公布信息",
+      "官方Telegram频道服务公告记录"
+    ],
+    "lastVerified": "2026-11",
+    "testStatus": "official-data",
+    "metrics": {
+      "stabilityScore": 8.5,
+      "speedScore": 8.9,
+      "valueScore": 9.8,
+      "supportScore": 8.2,
+      "overallScore": 8.9
+    }
+  },
+  {
+    "id": "feiniaoyun",
+    "name": "飞鸟云加速 (Feiniaoyun)",
+    "slug": "feiniaoyun",
+    "tagline": "集成Hysteria2先进抗丢包协议，流媒体原生解锁与弱网加速优异",
+    "description": "飞鸟云加速采用前沿多协议并行架构，除了经典的Shadowsocks和Trojan外，全面支持基于QUIC/UDP的Hysteria2协议。在校园网、移动宽带或恶劣弱网环境下具备突出的抗丢包能力与更低连接往返延迟，并配备多组原生流媒体与AI解锁池。",
+    "officialUrl": "https://feiniaoyun.cc",
+    "affiliateUrl": "https://feiniaoyun.cc/?ref=tizituijian",
+    "startingPrice": 22.0,
+    "currency": "CNY",
+    "plans": [
+      {
+        "name": "体验轻量月付",
+        "price": 22.0,
+        "period": "month",
+        "periodText": "按月付费",
+        "trafficGb": 150,
+        "ratio": 1.0,
+        "unitPricePerGb": 0.146
+      },
+      {
+        "name": "进阶高速月付",
+        "price": 38.0,
+        "period": "month",
+        "periodText": "按月付费",
+        "trafficGb": 350,
+        "ratio": 1.0,
+        "unitPricePerGb": 0.108
+      },
+      {
+        "name": "畅游年付套餐",
+        "price": 240.0,
+        "period": "year",
+        "periodText": "按年付费（折合20元/月）",
+        "trafficGb": 2400,
+        "ratio": 1.0,
+        "unitPricePerGb": 0.100
+      }
+    ],
+    "protocols": ["Hysteria2", "Trojan", "Shadowsocks"],
+    "regions": ["中国香港", "日本", "美国", "新加坡", "韩国", "马来西亚", "德国"],
+    "deviceLimit": "4台设备在线",
+    "aiSupport": ["ChatGPT", "Claude 3.5", "Gemini", "Grok"],
+    "streamingSupport": ["Netflix", "Disney+", "YouTube Premium", "DAZN", "TVer"],
+    "advantages": [
+      "深度集成Hysteria2先进协议，弱网环境抗丢包与并发下载速度强悍",
+      "采用多地原生家宽与IDC双栈IP轮换，流媒体与AI工具报错率极低",
+      "用户后台管理面板美观直观，支持一键将订阅导入主流开源客户端",
+      "技术团队更新频繁，节点健康监控及自愈速度快"
+    ],
+    "disadvantages": [
+      "Hysteria2基于UDP协议，在极少数严格QoS限制的网络环境可能受阻",
+      "品牌成立约2年余，相比老牌服务商历史年限较短",
+      "未提供永久不限时套餐"
+    ],
+    "suitableFor": [
+      "追求新技术协议与极速体验的技术极客",
+      "移动4G/5G、校园网与长城宽带等弱网用户",
+      "频繁使用ChatGPT、Claude与小众海外流媒体（如TVer/DAZN）的用户"
+    ],
+    "sources": [
+      "飞鸟云用户控制台公布数据",
+      "编辑部Hysteria2协议与解锁专项测试报告"
+    ],
+    "lastVerified": "2026-11",
+    "testStatus": "tested",
+    "metrics": {
+      "stabilityScore": 9.2,
+      "speedScore": 9.5,
+      "valueScore": 9.1,
+      "supportScore": 9.0,
+      "overallScore": 9.2
+    }
+  },
+  {
+    "id": "beibeiyun",
+    "name": "贝贝云 (Beibeiyun)",
+    "slug": "beibeiyun",
+    "tagline": "专为小白用户定制的一键客户端机场，低门槛入门与傻瓜化操作",
+    "description": "贝贝云定位于翻墙与科学上网新手用户，主打极简使用门槛。提供定制版Windows和Android桌面与手机一键连接客户端，免去复杂的规则配置与订阅链接导入步骤，起步月付仅需12元，适合日常轻度外网查阅。",
+    "officialUrl": "https://beibeiyun.vip",
+    "affiliateUrl": "https://beibeiyun.vip/?ref=tizituijian",
+    "startingPrice": 12.0,
+    "currency": "CNY",
+    "plans": [
+      {
+        "name": "入门体验月付",
+        "price": 12.0,
+        "period": "month",
+        "periodText": "按月付费",
+        "trafficGb": 60,
+        "ratio": 1.0,
+        "unitPricePerGb": 0.200
+      },
+      {
+        "name": "基础日常月付",
+        "price": 19.9,
+        "period": "month",
+        "periodText": "按月付费",
+        "trafficGb": 150,
+        "ratio": 1.0,
+        "unitPricePerGb": 0.132
+      },
+      {
+        "name": "尊享年付套餐",
+        "price": 158.0,
+        "period": "year",
+        "periodText": "按年付费（折合13.1元/月）",
+        "trafficGb": 1800,
+        "ratio": 1.0,
+        "unitPricePerGb": 0.087
+      }
+    ],
+    "protocols": ["Shadowsocks", "Vmess"],
+    "regions": ["中国香港", "日本", "美国", "新加坡", "中国台湾"],
+    "deviceLimit": "2台设备在线",
+    "aiSupport": ["ChatGPT (基础日常节点可用)"],
+    "streamingSupport": ["YouTube 1080P/4K", "Netflix部分自制剧"],
+    "advantages": [
+      "价格门槛低，12元/月即可起步体验，试错成本小",
+      "提供新手傻瓜式专用客户端，一键登录即可连接，无须手动配置分流规则",
+      "网站内置图文指引详尽，新手答疑社区活跃",
+      "节点用途标注直观，便于普通用户快速选择"
+    ],
+    "disadvantages": [
+      "设备连接数严格限制为2台，不支持多人共享",
+      "Claude与高风控金融类网站解锁成功率一般",
+      "流量配置偏中低度，不适合超大容量下载场景"
+    ],
+    "suitableFor": [
+      "零基础翻墙新手、不想研究复杂客户端规则的用户",
+      "偶尔查阅文献、看Google与维基百科的轻度使用者",
+      "对价格敏感且月均流量需求在50GB-100GB之间的用户"
+    ],
+    "sources": [
+      "贝贝云官方网站新手指南与产品介绍",
+      "公开资费明细"
+    ],
+    "lastVerified": "2026-11",
+    "testStatus": "official-data",
+    "metrics": {
+      "stabilityScore": 8.7,
+      "speedScore": 8.4,
+      "valueScore": 9.4,
+      "supportScore": 8.9,
+      "overallScore": 8.8
+    }
+  }
+]
