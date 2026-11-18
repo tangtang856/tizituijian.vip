@@ -129,7 +129,6 @@ function renderFooter(depth = 0) {
             <li><a href="${p}contact.html">联系与数据纠错</a></li>
             <li><a href="${p}privacy-policy.html">隐私权保护政策</a></li>
             <li><a href="${p}disclaimer.html">免责声明与服务条款</a></li>
-            <li><a href="${p}sitemap.xml">站点地图 Sitemap</a></li>
           </ul>
         </div>
       </div>
