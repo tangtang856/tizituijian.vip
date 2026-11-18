@@ -1,5 +1,5 @@
 /**
- * 生成 robots.txt、sitemap.xml 与 IndexNow 验证文件
+ * 生成 robots.txt、sitemap.xml、sitemap-index.xml 与 IndexNow 验证文件
  */
 
 const fs = require('fs');
@@ -29,6 +29,7 @@ Disallow: /scripts/
 Disallow: /src/
 
 Sitemap: ${DOMAIN}/sitemap.xml
+Sitemap: ${DOMAIN}/sitemap-index.xml
 `;
   fs.writeFileSync(path.join(ROOT_DIR, 'robots.txt'), robotsTxt, 'utf8');
   console.log('Generated: robots.txt');
@@ -39,7 +40,7 @@ Sitemap: ${DOMAIN}/sitemap.xml
 
   // 3. 收集全站所有正式公开页面的 URL
   const pages = [
-    '', // 首页
+    '', // 首页 -> https://tizituijian.vip/
     'recommend/index.html',
     'recommend/budget.html',
     'recommend/premium.html',
@@ -81,10 +82,12 @@ Sitemap: ${DOMAIN}/sitemap.xml
 
   const today = '2026-11-18';
 
+  // 4. 生成带 XSLT 样式的 sitemap.xml
   const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${pages.map(p => {
-  const loc = p === '' ? `${DOMAIN}/index.html` : `${DOMAIN}/${p}`;
+  const loc = p === '' ? `${DOMAIN}/` : `${DOMAIN}/${p}`;
   const priority = p === '' ? '1.0' : p.startsWith('recommend/') || p.startsWith('ranking/') ? '0.9' : p.startsWith('review/') || p.startsWith('guides/') ? '0.8' : '0.6';
   const changefreq = p === '' || p.startsWith('ranking/') ? 'daily' : 'weekly';
   return `  <url>
@@ -97,7 +100,20 @@ ${pages.map(p => {
 </urlset>`;
 
   fs.writeFileSync(path.join(ROOT_DIR, 'sitemap.xml'), sitemapXml, 'utf8');
-  console.log('Generated: sitemap.xml');
+  console.log('Generated: sitemap.xml (with XSLT stylesheet)');
+
+  // 5. 生成 sitemap-index.xml (兼容各种爬虫规范)
+  const sitemapIndexXml = `<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>${DOMAIN}/sitemap.xml</loc>
+    <lastmod>${today}</lastmod>
+  </sitemap>
+</sitemapindex>`;
+
+  fs.writeFileSync(path.join(ROOT_DIR, 'sitemap-index.xml'), sitemapIndexXml, 'utf8');
+  console.log('Generated: sitemap-index.xml');
 }
 
 module.exports = { generateSeoFiles, INDEXNOW_KEY };

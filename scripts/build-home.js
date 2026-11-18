@@ -19,7 +19,7 @@ function generateHomePage() {
     title: '机场推荐 2026 | 精选高性价比稳定VPN与翻墙梯子节点指南 - 梯子推荐网',
     description: '梯子推荐网为您提供2026年度客观中立的机场推荐、高性价比机场节点评测、IPLC/IEPL专线梯子排行、稳定VPN与翻墙加速器对比，涵盖Windows/Mac/iOS/Android完整配置教程。',
     keywords: '机场推荐,梯子推荐,性价比机场,机场节点,vpn,vpn机场,vpn节点,vpn推荐',
-    canonicalPath: 'index.html',
+    canonicalPath: '',
     schema: {
       "@context": "https://schema.org",
       "@graph": [

@@ -16,3 +16,4 @@ Disallow: /scripts/
 Disallow: /src/
 
 Sitemap: https://tizituijian.vip/sitemap.xml
+Sitemap: https://tizituijian.vip/sitemap-index.xml
