@@ -1,5 +1,6 @@
 /**
- * 生成 airport/ 和 review/ 目录下的所有机场资料与深度评测页面 (14大真实品牌适配)
+ * 生成 airport/ 和 review/ 目录下的所有机场资料与深度评测页面 (14大真实品牌独立专页)
+ * 以及评测中心总览页 (review/index.html) 与品牌档案总览页 (airport/index.html)
  */
 
 const fs = require('fs');
@@ -22,13 +23,14 @@ if (!fs.existsSync(AIRPORT_DIR)) fs.mkdirSync(AIRPORT_DIR, { recursive: true });
 if (!fs.existsSync(REVIEW_DIR)) fs.mkdirSync(REVIEW_DIR, { recursive: true });
 
 function generateAirportsAndReviews() {
+  // 1. 生成 14 个品牌的独立参数档案页 (airport/[slug].html) 与 独立深度评测页 (review/[slug].html)
   airports.forEach(a => {
     // -------------------------------------------------------------
-    // 1. 生成 airport/[slug].html (官方资料与参数页面)
+    // 生成 airport/[slug].html (官方资料与参数独立页面)
     // -------------------------------------------------------------
     const profileMeta = {
       title: `${a.name}官方资料与套餐详情 | 最新线路与协议汇总 - 梯子推荐网`,
-      description: `${a.name}品牌档案：起步价格¥${a.startingPrice}/月，线路类型${a.lineType}，主打${a.protocols.join('/')}协议，覆盖${a.regions.slice(0, 4).join('、')}等地区，设备并发${a.deviceLimit}。提供详细套餐参数与购买指引。`,
+      description: `${a.name}品牌独立档案：起步价格¥${a.startingPrice}/月，线路类型${a.lineType}，主打${a.protocols.join('/')}协议，覆盖${a.regions.slice(0, 4).join('、')}等地区，设备并发${a.deviceLimit}。提供详细套餐参数与购买指引。`,
       keywords: `${a.name},${a.slug},机场推荐,梯子推荐,性价比机场,机场节点`,
       canonicalPath: `airport/${a.slug}.html`,
       schema: {
@@ -47,7 +49,7 @@ function generateAirportsAndReviews() {
 
     const profileBreadcrumbs = [
       { name: '首页', url: '../index.html' },
-      { name: '机场资料库', url: '../recommend/index.html' },
+      { name: '品牌档案', url: 'index.html' },
       { name: a.name, url: `${a.slug}.html` }
     ];
 
@@ -120,26 +122,28 @@ ${renderBreadcrumbs(profileBreadcrumbs, 1)}
         <li><strong>4K流媒体解锁：</strong>${a.streamingSupport.join('、')}</li>
       </ul>
 
-      <h2>四、核心优劣势对比</h2>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:20px 0;">
-        <div style="background:var(--success-bg); border:1px solid #bbf7d0; padding:18px; border-radius:var(--radius-sm);">
-          <strong style="color:var(--success);">优势亮点：</strong>
-          <ul style="margin:8px 0 0 18px; font-size:0.88rem;">
+      <h2>四、优缺点客观分析</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:20px 0;">
+        <div style="background:#f0fdf4; border:1px solid #bbf7d0; padding:16px; border-radius:var(--radius-sm);">
+          <strong style="color:#166534; font-size:0.95rem;">✓ 核心优势</strong>
+          <ul style="margin:8px 0 0 16px; font-size:0.88rem; color:#14532d;">
             ${a.advantages.map(adv => `<li>${adv}</li>`).join('')}
           </ul>
         </div>
-        <div style="background:var(--warning-bg); border:1px solid #fde68a; padding:18px; border-radius:var(--radius-sm);">
-          <strong style="color:var(--warning);">注意事项：</strong>
-          <ul style="margin:8px 0 0 18px; font-size:0.88rem;">
+        <div style="background:#fff1f2; border:1px solid #fecdd3; padding:16px; border-radius:var(--radius-sm);">
+          <strong style="color:#9f1239; font-size:0.95rem;">! 注意事项</strong>
+          <ul style="margin:8px 0 0 16px; font-size:0.88rem; color:#881337;">
             ${a.disadvantages.map(dis => `<li>${dis}</li>`).join('')}
           </ul>
         </div>
       </div>
 
-      <h2>五、直达官网与专属通道</h2>
-      <div style="display:flex; gap:16px; margin:24px 0; flex-wrap:wrap;">
-        <a href="${a.affiliateUrl}" target="_blank" rel="noopener nofollow" class="btn btn-primary btn-lg">直达 ${a.name} 官网注册 →</a>
-        <a href="../review/${a.slug}.html" class="btn btn-outline btn-lg">阅读深度实测评测</a>
+      <h2>五、相关独立评测与横向对比</h2>
+      <p>您可以查看关于 ${a.name} 的独立实测长文或使用在线对比工具与其他品牌横向比对：</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin:16px 0;">
+        <a href="../review/${a.slug}.html" class="btn btn-primary btn-sm">阅读 ${a.name} 独立深度评测报告 →</a>
+        <a href="../compare/index.html" class="btn btn-outline btn-sm">打开14大品牌横向对比工具</a>
+        <a href="../ranking/overall.html" class="btn btn-outline btn-sm">查看2026年综合排行榜</a>
       </div>
     </div>
 
@@ -153,7 +157,7 @@ ${renderFooter(1)}`;
     console.log(`Generated: airport/${a.slug}.html`);
 
     // -------------------------------------------------------------
-    // 2. 生成 review/[slug].html (深度独立评测报告)
+    // 生成 review/[slug].html (独立深度评测页面)
     // -------------------------------------------------------------
     const reviewMeta = {
       title: `${a.name}评测 2026 | 全面网络表现与套餐优缺点深度分析 - 梯子推荐网`,
@@ -187,12 +191,12 @@ ${renderFooter(1)}`;
 
     const reviewBreadcrumbs = [
       { name: '首页', url: '../index.html' },
-      { name: '评测中心', url: '../ranking/overall.html' },
-      { name: `${a.name}评测报告`, url: `${a.slug}.html` }
+      { name: '机场评测', url: 'index.html' },
+      { name: `${a.name}独立评测`, url: `${a.slug}.html` }
     ];
 
     const reviewHtml = `${renderHead(reviewMeta, 1)}
-${renderHeader(1, 'ranking')}
+${renderHeader(1, 'review')}
 ${renderBreadcrumbs(reviewBreadcrumbs, 1)}
 
 <main class="container">
@@ -327,6 +331,7 @@ ${renderBreadcrumbs(reviewBreadcrumbs, 1)}
         <li><a href="../compare/index.html">使用机场横向全维度对比工具</a></li>
         <li><a href="../ranking/overall.html">查看2026年机场综合实力排行榜</a></li>
         <li><a href="../ranking/value.html">查看2026年性价比机场排行榜</a></li>
+        <li><a href="../airport/${a.slug}.html">查看 ${a.name} 官方参数档案</a></li>
       </ul>
     </div>
 
@@ -339,6 +344,247 @@ ${renderFooter(1)}`;
     fs.writeFileSync(path.join(REVIEW_DIR, `${a.slug}.html`), reviewHtml, 'utf8');
     console.log(`Generated: review/${a.slug}.html`);
   });
+
+  // 2. 生成 14 大品牌独立评测中心总览页 (review/index.html)
+  generateReviewHub();
+
+  // 3. 生成 14 大品牌官方参数档案中心总览页 (airport/index.html)
+  generateAirportHub();
+}
+
+// 评测中心总览页生成器
+function generateReviewHub() {
+  const meta = {
+    title: '机场独立评测大全 2026 | 14大主流品牌深度实测报告汇总 - 梯子推荐网',
+    description: '梯子推荐网官方独立评测中心：汇集14家主流机场梯子节点的独立评测专页，包含微风网络、暮光网络、飞猫云、无忧、灵猫、闪跃、萤火虫、跨界、隐形人、飞V、梯子云、浪网、灵动云、全球云的全维度晚高峰测速、线路架构与优缺点深度剖析。',
+    keywords: '机场评测,机场推荐,梯子评测,vpn评测,独立评测,性价比机场',
+    canonicalPath: 'review/index.html',
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "2026年度 14 大主流机场品牌独立评测专页大全",
+      "url": `${DOMAIN}/review/index.html`,
+      "description": "提供客观独立、技术核验与多维度测试的机场专属评测报告汇总"
+    }
+  };
+
+  const breadcrumbs = [
+    { name: '首页', url: '../index.html' },
+    { name: '机场独立评测大全', url: 'index.html' }
+  ];
+
+  const sorted = airports.slice().sort((a, b) => (a.customRank || 99) - (b.customRank || 99));
+
+  const html = `${renderHead(meta, 1)}
+${renderHeader(1, 'review')}
+${renderBreadcrumbs(breadcrumbs, 1)}
+
+<main class="container" style="padding:30px 15px 60px;">
+  <section class="page-intro" style="margin-bottom:35px; text-align:center;">
+    <h1 style="font-size:2.2rem; font-weight:800; color:var(--text-main); margin-bottom:14px;">
+      🔍 2026年度 14 大主流机场品牌独立评测专页大全
+    </h1>
+    <p style="font-size:1.02rem; color:var(--text-muted); max-width:860px; margin:0 auto; line-height:1.7;">
+      本站坚持<strong>非赞助、纯客观、持续核验</strong>的评测原则。为收录的 14 家机场服务商全部建立<strong>单独独立的深度评测专页</strong>，涵盖晚高峰测速、物理专线抖动、流媒体与 AI 解锁、真实在售套餐明细及避坑建议。
+    </p>
+  </section>
+
+  <!-- 14大品牌独立评测卡片网格 -->
+  <div class="airport-grid" style="margin-bottom:45px;">
+    ${sorted.map((a, idx) => {
+      const isTop3 = idx < 3;
+      const rankClass = idx === 0 ? 'rank-gold' : idx === 1 ? 'rank-silver' : idx === 2 ? 'rank-bronze' : 'rank-normal';
+      const rankText = idx === 0 ? '🥇 TOP 1' : idx === 1 ? '🥈 TOP 2' : idx === 2 ? '🥉 TOP 3' : `${idx + 1}`;
+
+      return `
+      <article class="airport-card ${isTop3 ? 'card-featured' : ''}">
+        <div class="card-top-meta">
+          <div class="card-title-box">
+            <span class="card-rank-badge ${rankClass}">${rankText}</span>
+            <h2 class="card-brand-name" style="margin:0; font-size:1.22rem;">
+              <a href="${a.slug}.html">${a.name}</a>
+            </h2>
+          </div>
+          <span class="card-status-badge badge-verified">✓ 独立专页</span>
+        </div>
+
+        <p class="card-description">${a.tagline}</p>
+
+        <div class="card-metric-banner">
+          <div class="metric-price-left">
+            <span class="metric-price-num">¥${a.startingPrice}</span>
+            <span class="metric-price-unit">/月起</span>
+          </div>
+          <div class="metric-traffic-right">
+            <strong>${a.plans[0].trafficGb}&nbsp;GB</strong> / 月<br>
+            <span>${a.deviceLimit}</span>
+          </div>
+        </div>
+
+        <div class="card-tags-row">
+          <span class="tag tag-highlight">${a.lineType}</span>
+          ${a.protocols.slice(0, 2).map(p => `<span class="tag">${p}</span>`).join('')}
+          <span class="tag">单价 ¥${a.plans[0].unitPricePerGb.toFixed(3)}/G</span>
+        </div>
+
+        <ul class="card-features-list">
+          <li><span class="icon-check">✓</span> <span>${a.advantages[0]}</span></li>
+          <li><span class="icon-check">✓</span> <span>${a.advantages[1]}</span></li>
+          ${a.disadvantages && a.disadvantages[0] ? `<li><span class="icon-warn">!</span> <span style="color:var(--text-light);">${a.disadvantages[0]}</span></li>` : ''}
+        </ul>
+
+        ${a.coupon ? `
+        <div class="card-coupon-bar">
+          <span>专属优惠券码：</span>
+          <code>${a.coupon}</code>
+        </div>
+        ` : ''}
+
+        <div class="card-actions-grid">
+          <a href="${a.slug}.html" class="btn btn-primary btn-sm">阅读独立评测专页 →</a>
+          <a href="${a.affiliateUrl}" target="_blank" rel="noopener nofollow" class="btn btn-outline btn-sm">直达官网 ↗</a>
+        </div>
+      </article>
+      `;
+    }).join('')}
+  </div>
+
+  <!-- 14大品牌核心评测指标快速总表 -->
+  <section style="background:#ffffff; border:1px solid var(--border-color); border-radius:var(--radius-md); padding:28px; box-shadow:var(--shadow-xs);">
+    <h2 style="font-size:1.35rem; font-weight:800; margin-bottom:14px;">📊 14大品牌独立评测综合指标速查</h2>
+    <div class="table-responsive">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th style="width:50px; text-align:center;">排名</th>
+            <th style="white-space:nowrap;">品牌名称</th>
+            <th style="white-space:nowrap;">起步价格</th>
+            <th style="white-space:nowrap;">主力线路</th>
+            <th style="white-space:nowrap;">综合实测评分</th>
+            <th style="white-space:nowrap;">独立评测专页</th>
+            <th style="white-space:nowrap; text-align:center;">官网直达</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${sorted.map((a, idx) => `
+          <tr>
+            <td style="text-align:center; white-space:nowrap;">
+              <span class="rank-badge ${idx === 0 ? 'rank-1' : idx === 1 ? 'rank-2' : idx === 2 ? 'rank-3' : 'rank-other'}">
+                ${idx + 1}
+              </span>
+            </td>
+            <td style="white-space:nowrap;">
+              <strong><a href="${a.slug}.html">${a.name}</a></strong>
+            </td>
+            <td style="white-space:nowrap;">
+              <span style="font-weight:700; color:var(--primary);">¥${a.startingPrice}</span>/月起
+            </td>
+            <td style="white-space:nowrap;">
+              <span class="tag" style="white-space:nowrap; display:inline-block; padding:3px 8px;">${a.lineType}</span>
+            </td>
+            <td style="white-space:nowrap;">
+              <strong style="color:var(--success); font-size:1.05rem;">${a.metrics.overallScore}</strong> / 10
+            </td>
+            <td style="white-space:nowrap;">
+              <a href="${a.slug}.html" class="btn btn-outline btn-sm" style="padding:4px 10px; font-size:0.82rem;">详细评测专页 →</a>
+            </td>
+            <td style="white-space:nowrap; text-align:center;">
+              <a href="${a.affiliateUrl}" target="_blank" rel="noopener nofollow" class="btn btn-primary btn-sm" style="padding:4px 10px; font-size:0.82rem;">官网选购 ↗</a>
+            </td>
+          </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+${renderFooter(1)}`;
+
+  fs.writeFileSync(path.join(REVIEW_DIR, 'index.html'), html, 'utf8');
+  console.log('✓ 已成功生成 review/index.html 机场独立评测大全！');
+}
+
+// 品牌官方参数档案库总览页生成器
+function generateAirportHub() {
+  const meta = {
+    title: '机场品牌参数档案库 2026 | 14大主流机场官方资料与套餐大全 - 梯子推荐网',
+    description: '梯子推荐网官方资料库：收录14家主流机场梯子品牌的官方套餐明细、传输线路架构、支持协议、地区节点及设备并发限制参数档案。',
+    keywords: '机场资料库,机场档案,机场套餐,节点参数,梯子参数,机场推荐',
+    canonicalPath: 'airport/index.html',
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "14大主流机场品牌官方资料与参数档案库",
+      "url": `${DOMAIN}/airport/index.html`,
+      "description": "收录14家主流机场梯子品牌的官方套餐明细与传输线路架构参数档案"
+    }
+  };
+
+  const breadcrumbs = [
+    { name: '首页', url: '../index.html' },
+    { name: '品牌参数档案库', url: 'index.html' }
+  ];
+
+  const sorted = airports.slice().sort((a, b) => (a.customRank || 99) - (b.customRank || 99));
+
+  const html = `${renderHead(meta, 1)}
+${renderHeader(1, 'recommend')}
+${renderBreadcrumbs(breadcrumbs, 1)}
+
+<main class="container" style="padding:30px 15px 60px;">
+  <section class="page-intro" style="margin-bottom:35px; text-align:center;">
+    <h1 style="font-size:2.2rem; font-weight:800; color:var(--text-main); margin-bottom:14px;">
+      📋 14 大主流机场品牌官方资料与参数档案库
+    </h1>
+    <p style="font-size:1.02rem; color:var(--text-muted); max-width:860px; margin:0 auto; line-height:1.7;">
+      提供真实、公开、可核验的 14 家机场官方在售套餐资费、节点地区覆盖、协议支持与设备并发限制，每个品牌均配备<strong>独立档案页面</strong>。
+    </p>
+  </section>
+
+  <div class="table-responsive" style="background:#ffffff; border:1px solid var(--border-color); border-radius:var(--radius-md); padding:24px; box-shadow:var(--shadow-xs);">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th style="width:50px; text-align:center;">序号</th>
+          <th style="white-space:nowrap;">品牌名称</th>
+          <th style="white-space:nowrap;">主力线路</th>
+          <th style="white-space:nowrap;">在售起步价</th>
+          <th style="white-space:nowrap;">支持协议</th>
+          <th style="white-space:nowrap;">节点区域覆盖</th>
+          <th style="white-space:nowrap;">独立档案与评测</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${sorted.map((a, idx) => `
+        <tr>
+          <td style="text-align:center; white-space:nowrap;">${idx + 1}</td>
+          <td style="white-space:nowrap;">
+            <strong><a href="${a.slug}.html">${a.name}</a></strong>
+          </td>
+          <td style="white-space:nowrap;">
+            <span class="tag" style="white-space:nowrap; display:inline-block; padding:3px 8px;">${a.lineType}</span>
+          </td>
+          <td style="white-space:nowrap;">
+            <span style="font-weight:700; color:var(--primary);">¥${a.startingPrice}</span>/月起
+          </td>
+          <td style="white-space:nowrap;">${a.protocols.join(' / ')}</td>
+          <td style="white-space:nowrap;">${a.regions.slice(0, 3).join('、')}等</td>
+          <td style="white-space:nowrap;">
+            <a href="${a.slug}.html" class="btn btn-outline btn-sm" style="padding:4px 8px; font-size:0.82rem; margin-right:6px;">参数档案</a>
+            <a href="../review/${a.slug}.html" class="btn btn-primary btn-sm" style="padding:4px 8px; font-size:0.82rem;">独立评测</a>
+          </td>
+        </tr>
+        `).join('')}
+      </tbody>
+    </table>
+  </div>
+</main>
+
+${renderFooter(1)}`;
+
+  fs.writeFileSync(path.join(AIRPORT_DIR, 'index.html'), html, 'utf8');
+  console.log('✓ 已成功生成 airport/index.html 品牌参数档案库！');
 }
 
 module.exports = { generateAirportsAndReviews };

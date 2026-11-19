@@ -71,6 +71,7 @@ function renderHeader(depth = 0, currentSection = '') {
         <a href="${p}index.html" class="nav-link ${currentSection === 'home' ? 'active' : ''}">首页</a>
         <a href="${p}recommend/index.html" class="nav-link ${currentSection === 'recommend' ? 'active' : ''}">机场推荐</a>
         <a href="${p}ranking/overall.html" class="nav-link ${currentSection === 'ranking' ? 'active' : ''}">综合排行</a>
+        <a href="${p}review/index.html" class="nav-link ${currentSection === 'review' ? 'active' : ''}">机场评测</a>
         <a href="${p}compare/index.html" class="nav-link ${currentSection === 'compare' ? 'active' : ''}">横向对比</a>
         <a href="${p}guides/index.html" class="nav-link ${currentSection === 'guides' ? 'active' : ''}">客户端教程</a>
         <a href="${p}blog/index.html" class="nav-link ${currentSection === 'blog' ? 'active' : ''}">选购指南</a>
@@ -101,12 +102,12 @@ function renderFooter(depth = 0) {
           </div>
         </div>
         <div class="footer-col">
-          <div class="footer-col-title">推荐与排行榜</div>
+          <div class="footer-col-title">推荐与品牌专页</div>
           <ul class="footer-links">
+            <li><a href="${p}review/index.html"><strong>14大品牌独立评测专页 →</strong></a></li>
+            <li><a href="${p}airport/index.html">品牌官方参数档案库</a></li>
             <li><a href="${p}recommend/budget.html">性价比平价机场</a></li>
             <li><a href="${p}recommend/premium.html">高端IPLC专线机场</a></li>
-            <li><a href="${p}recommend/beginner.html">新手入门一键梯子</a></li>
-            <li><a href="${p}recommend/ai.html">ChatGPT/Claude专用节点</a></li>
             <li><a href="${p}ranking/overall.html">综合实力排行榜</a></li>
             <li><a href="${p}ranking/value.html">每GB单价性价比榜</a></li>
           </ul>

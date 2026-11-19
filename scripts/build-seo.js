@@ -54,6 +54,8 @@ Sitemap: ${DOMAIN}/sitemap-index.xml
     'ranking/value.html',
     'ranking/budget.html',
     'ranking/stable.html',
+    'review/index.html',
+    'airport/index.html',
     'compare/index.html',
     'guides/index.html',
     'blog/index.html',

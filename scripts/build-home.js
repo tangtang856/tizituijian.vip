@@ -83,6 +83,7 @@ ${renderHeader(0, 'home')}
         
         <div class="hero-quick-tags">
           <span class="hero-tag-label">🔥 快速筛选：</span>
+          <a href="review/index.html" class="hero-tag-chip">🔍 14大品牌独立专页</a>
           <a href="recommend/budget.html" class="hero-tag-chip">💰 平价月付 ¥4.9起</a>
           <a href="recommend/premium.html" class="hero-tag-chip">🚀 IPLC/IEPL 纯专线</a>
           <a href="recommend/ai.html" class="hero-tag-chip">🤖 ChatGPT/Claude 原生</a>
@@ -187,7 +188,10 @@ ${renderHeader(0, 'home')}
             严格按照评测与核验顺序排序，全量支持 Clash Verge Rev、Shadowrocket 小火箭、Sing-box 等主流客户端
           </p>
         </div>
-        <a href="ranking/overall.html" class="btn btn-outline btn-sm">查看全站排行榜单 →</a>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a href="review/index.html" class="btn btn-primary btn-sm">14大品牌独立专页大全 →</a>
+          <a href="ranking/overall.html" class="btn btn-outline btn-sm">查看综合排行细则</a>
+        </div>
       </div>
 
       <div class="airport-grid">
