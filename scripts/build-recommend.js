@@ -71,13 +71,13 @@ ${renderBreadcrumbs(breadcrumbs, 1)}
             <div class="bento-icon">💰</div>
             <h3 class="bento-title"><a href="budget.html">低预算平价高性价比机场</a></h3>
             <p class="bento-desc">
-              精选飞V（¥4.9起）、微风网络（¥8/200GB）、飞猫云（折合¥7/月）等大流量低门槛方案。单价低至 0.040元/GB，更有 29 元不限时永久流量包。
+              精选微风网络（¥8/200GB）、暮光网络、飞猫云（折合¥7/月）、隐形人等高性价比大流量方案。单价低至 0.040元/GB，提供充足专线配额与高抗抖动表现。
             </p>
             <div class="bento-pills-row">
-              <span class="tag">飞V ¥4.9起</span>
               <span class="tag">微风网络 ¥8/200GB</span>
+              <span class="tag">暮光网络专线</span>
               <span class="tag">飞猫云折约¥7/月</span>
-              <span class="tag">支持纯月付</span>
+              <span class="tag">隐形人IEPL纯专线</span>
             </div>
           </div>
           <a href="budget.html" class="btn btn-primary btn-sm" style="align-self:flex-start;">进入平价专题 →</a>
@@ -171,10 +171,10 @@ function generateTopicPages() {
       slug: 'budget',
       title: '性价比机场推荐 2026 | 低预算平价优质翻墙梯子节点精选 - 梯子推荐网',
       h1: '2026高性价比与平价实惠机场推荐',
-      desc: '专为学生党与预算有限用户整理的高性价比机场推荐：解析飞V（¥4.9起）、微风网络（¥8/200GB）、飞猫云等每GB低至0.036元的大流量平价方案。',
-      targetAirports: ['feiv', 'breezenet', 'feimaoyun', 'firefly'],
+      desc: '专为学生党与预算有限用户整理的高性价比机场推荐：解析微风网络（¥8/200GB）、暮光网络、飞猫云（折合¥7/月）、隐形人等高性价比大流量优质方案。',
+      targetAirports: ['breezenet', 'muguang', 'feimaoyun', 'yinxingren'],
       intro: '在科学上网与跨境加速领域，“性价比”并不等于单纯的“超低劣质”。真正的性价比是在保证网络稳定可用、晚高峰不至于断流的前提下，实现每 GB 流量成本的最优化。',
-      advice: '对于月使用流量在100GB-200GB左右的用户，首推微风网络（¥8元享200GB专线流量，单价低至0.04元/GB）；对于只想以极小成本尝试的新手，飞V月付仅需¥4.9起，同时还提供29元不限时永久流量包。'
+      advice: '对于月使用流量在100GB-200GB左右的用户，首推微风网络（¥8元享200GB专线流量，单价低至0.04元/GB）；对于追求高稳定专线且重视性价比的用户，暮光网络、飞猫云与隐形人均提供高冗余大带宽配额。'
     },
     {
       slug: 'premium',
