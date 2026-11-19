@@ -196,25 +196,27 @@ ${renderHeader(0, 'home')}
           <tbody>
             ${airports.slice().sort((a, b) => (a.customRank || 99) - (b.customRank || 99)).map((a, idx) => `
             <tr>
-              <td>
+              <td style="text-align:center; white-space:nowrap;">
                 <span class="rank-badge ${idx === 0 ? 'rank-1' : idx === 1 ? 'rank-2' : idx === 2 ? 'rank-3' : 'rank-other'}">
                   ${idx + 1}
                 </span>
               </td>
               <td>
-                <strong><a href="airport/${a.slug}.html">${a.name}</a></strong>
-                <div style="font-size:0.78rem; color:var(--text-light);">${a.protocols.join(' / ')}</div>
+                <strong style="white-space:nowrap;"><a href="airport/${a.slug}.html">${a.name}</a></strong>
+                <div style="font-size:0.78rem; color:var(--text-light); white-space:nowrap;">${a.protocols.slice(0, 2).join(' / ')}</div>
               </td>
-              <td><span style="font-weight:700; color:var(--primary);">¥${a.startingPrice}</span> / 月起</td>
-              <td>${a.plans[0].trafficGb} GB</td>
-              <td><span class="tag" style="padding:2px 6px;">${a.lineType}</span></td>
-              <td>${a.aiSupport.slice(0, 2).join('、')}</td>
-              <td>
+              <td style="white-space:nowrap;">
+                <span style="font-weight:700; color:var(--primary);">¥${a.startingPrice}</span><span style="font-size:0.85rem; color:var(--text-muted);">/月起</span>
+              </td>
+              <td style="white-space:nowrap;">${a.plans[0].trafficGb}&nbsp;GB</td>
+              <td style="white-space:nowrap;"><span class="tag" style="white-space:nowrap; display:inline-block; padding:3px 8px;">${a.lineType}</span></td>
+              <td style="white-space:nowrap;">${a.aiSupport.slice(0, 2).join('、')}</td>
+              <td style="white-space:nowrap;">
                 <span style="font-weight:800; color:var(--success); font-size:1.05rem;">${a.metrics.overallScore}</span>
                 <span style="font-size:0.75rem; color:var(--text-light);"> / 10</span>
               </td>
-              <td>
-                <a href="review/${a.slug}.html" class="btn btn-outline btn-sm" style="padding:4px 10px;">详细评测</a>
+              <td style="white-space:nowrap; text-align:center;">
+                <a href="review/${a.slug}.html" class="btn btn-outline btn-sm" style="padding:5px 12px; white-space:nowrap; font-size:0.82rem;">详细评测</a>
               </td>
             </tr>
             `).join('')}
