@@ -130,16 +130,19 @@ img {
   align-items: center;
   justify-content: space-between;
   height: 70px;
+  gap: 12px;
 }
 
 .brand-logo {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 1.28rem;
+  font-size: 1.25rem;
   font-weight: 800;
   color: var(--text-main);
   letter-spacing: -0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .brand-logo:hover {
@@ -157,6 +160,7 @@ img {
   color: #fff;
   font-size: 1rem;
   box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+  flex-shrink: 0;
 }
 
 .brand-badge {
@@ -168,21 +172,29 @@ img {
   border-radius: var(--radius-full);
   border: 1px solid var(--primary-border);
   letter-spacing: 0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
+  display: inline-block;
 }
 
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
+  flex-shrink: 1;
 }
 
 .nav-link {
-  font-size: 0.93rem;
+  font-size: 0.92rem;
   font-weight: 500;
   color: var(--text-muted);
-  padding: 7px 14px;
+  padding: 7px 11px;
   border-radius: var(--radius-sm);
   transition: all 0.18s ease;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .nav-link:hover {
@@ -199,7 +211,9 @@ img {
 .header-cta {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .nav-toggle-btn {
@@ -211,6 +225,7 @@ img {
   font-size: 1.25rem;
   cursor: pointer;
   color: var(--text-main);
+  flex-shrink: 0;
 }
 
 /* ==========================================================================
@@ -1345,6 +1360,34 @@ img {
 /* ==========================================================================
    响应式断点适配 (Responsive Breakpoints)
    ========================================================================== */
+
+/* 1. 中等屏幕 / 笔记本屏 (1025px ~ 1260px) - 保证字不折行，紧凑内边距 */
+@media (max-width: 1260px) {
+  .brand-badge {
+    display: none; /* 紧凑屏幕隐藏副徽章，为导航留出充分横向空间 */
+  }
+  .brand-logo {
+    font-size: 1.18rem;
+    gap: 8px;
+  }
+  .site-nav {
+    gap: 2px;
+  }
+  .nav-link {
+    padding: 6px 8px;
+    font-size: 0.86rem;
+  }
+  .header-cta {
+    gap: 8px;
+  }
+  .btn-contact-trigger,
+  .header-cta .btn {
+    padding: 6px 10px;
+    font-size: 0.82rem;
+  }
+}
+
+/* 2. 平板与窄屏桌面 (<= 1024px) - 启动专业移动端折叠导航，彻底杜绝任何字数换行 */
 @media (max-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -1369,12 +1412,8 @@ img {
     grid-template-columns: 1fr 1fr;
     gap: 32px;
   }
-}
 
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 1.95rem;
-  }
+  /* 导航折叠为全宽下拉抽屉 */
   .site-nav {
     display: none;
     position: absolute;
@@ -1383,15 +1422,38 @@ img {
     right: 0;
     background: #ffffff;
     flex-direction: column;
-    padding: 20px;
+    padding: 18px 24px;
     border-bottom: 1px solid var(--border-color);
     box-shadow: var(--shadow-lg);
+    gap: 6px;
+    z-index: 1001;
   }
   .site-nav.open {
     display: flex;
   }
+  .site-nav .nav-link {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+    border-radius: var(--radius-sm);
+    width: 100%;
+  }
   .nav-toggle-btn {
     display: block;
+  }
+  .header-cta {
+    gap: 8px;
+  }
+  .btn-contact-trigger,
+  .header-cta .btn {
+    padding: 6px 10px;
+    font-size: 0.82rem;
+  }
+}
+
+/* 3. 手机端 (<= 768px) */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 1.95rem;
   }
   .airport-grid {
     grid-template-columns: 1fr;
@@ -1405,19 +1467,34 @@ img {
   .footer-grid {
     grid-template-columns: 1fr;
   }
-  .header-cta {
-    gap: 8px;
-  }
-  .btn-contact-trigger {
-    padding: 7px 12px;
-    font-size: 0.84rem;
-  }
 }
 
+/* 4. 小屏手机 (<= 480px) */
 @media (max-width: 480px) {
+  .header-inner {
+    height: 60px;
+  }
+  .site-nav {
+    top: 60px;
+  }
+  .brand-logo {
+    font-size: 1.08rem;
+    gap: 6px;
+  }
+  .brand-icon-box {
+    width: 28px;
+    height: 28px;
+    font-size: 0.85rem;
+  }
+  .header-cta {
+    gap: 6px;
+  }
   .header-cta .btn {
-    padding: 6px 9px;
-    font-size: 0.78rem;
+    padding: 5px 8px;
+    font-size: 0.76rem;
+  }
+  .header-cta .btn-contact-trigger span.contact-bubble-icon {
+    display: none;
   }
 }
 
@@ -1450,7 +1527,7 @@ img {
   line-height: 1;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1025px) {
   .mobile-contact-link {
     display: none !important;
   }
