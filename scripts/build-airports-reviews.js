@@ -75,7 +75,12 @@ ${renderBreadcrumbs(profileBreadcrumbs, 1)}
       <h2>一、品牌基础概述</h2>
       <p>${a.description}</p>
 
-      <h2>二、官方在售套餐与资费明细</h2>
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:32px; margin-bottom:8px;">
+        <h2 style="margin:0; font-size:1.45rem;">二、官方在售套餐与资费明细</h2>
+        <a href="${a.affiliateUrl}" target="_blank" rel="noopener nofollow" class="btn btn-primary btn-sm" style="display:inline-flex; align-items:center; gap:6px; font-weight:700; padding:6px 14px; border-radius:6px; font-size:0.85rem; box-shadow:0 2px 6px rgba(37,99,235,0.25);">
+          <span>🚀 立刻前往 ${a.name} 官网</span> ↗
+        </a>
+      </div>
       <div class="table-responsive">
         <table class="data-table">
           <thead>
@@ -217,7 +222,12 @@ ${renderBreadcrumbs(reviewBreadcrumbs, 1)}
       <p>${a.description}</p>
       <p>在当前科学上网服务鱼龙混杂的环境下，我们通过对 ${a.name} 的网络延迟监测、晚高峰吞吐测试以及海外大模型/流媒体的风控验证，整理出本篇详实的评测报告。</p>
 
-      <h2>二、套餐资费与每GB成本测算</h2>
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:32px; margin-bottom:8px;">
+        <h2 style="margin:0; font-size:1.45rem;">二、套餐资费与每GB成本测算</h2>
+        <a href="${a.affiliateUrl}" target="_blank" rel="noopener nofollow" class="btn btn-primary btn-sm" style="display:inline-flex; align-items:center; gap:6px; font-weight:700; padding:6px 14px; border-radius:6px; font-size:0.85rem; box-shadow:0 2px 6px rgba(37,99,235,0.25);">
+          <span>🚀 立刻前往 ${a.name} 官网</span> ↗
+        </a>
+      </div>
       <p>以下为官方当前公示的在售套餐及实测折算单价：</p>
       <div class="table-responsive">
         <table class="data-table">
