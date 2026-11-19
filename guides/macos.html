@@ -56,8 +56,12 @@
         <a href="../guides/index.html" class="nav-link active">客户端教程</a>
         <a href="../blog/index.html" class="nav-link ">选购指南</a>
         <a href="../glossary/iplc-iepl.html" class="nav-link ">网络百科</a>
+        <a href="javascript:void(0)" class="nav-link mobile-contact-link btn-contact-trigger">💬 联络我们</a>
       </nav>
       <div class="header-cta">
+        <button type="button" class="btn btn-outline btn-sm btn-contact-trigger" id="headerContactBtn" title="商务合作、品牌收录与数据纠错">
+          <span class="contact-bubble-icon">💬</span> 联络我们
+        </button>
         <a href="../ranking/value.html" class="btn btn-primary btn-sm">性价比榜单</a>
       </div>
     </div>
@@ -228,6 +232,118 @@ alias unsetproxy="unset http_proxy; unset https_proxy"</code></pre>
       </div>
     </div>
   </footer>
+
+  <!-- 商务合作与联络弹窗 (全站统一模态框) -->
+  <div id="contactModalBackdrop" class="contact-modal-backdrop" aria-hidden="true">
+    <div class="contact-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+      <div class="contact-modal-header">
+        <div class="contact-modal-title-group">
+          <div class="contact-modal-icon-badge">📬</div>
+          <div>
+            <h3 id="contactModalTitle" class="contact-modal-title">商务合作与联络中心</h3>
+            <p class="contact-modal-subtitle">梯子推荐网官方沟通渠道 · 快速响应 · 严谨高效</p>
+          </div>
+        </div>
+        <button type="button" class="contact-modal-close" id="closeContactModal" aria-label="关闭窗口">×</button>
+      </div>
+
+      <div class="contact-modal-body">
+        <!-- 业务受理范畴 -->
+        <div class="contact-scope-box">
+          <div class="contact-scope-title">受理业务范畴：</div>
+          <div class="contact-scope-tags">
+            <span class="scope-tag">🏢 品牌入驻与收录</span>
+            <span class="scope-tag">📊 独立实测与跑分复测</span>
+            <span class="scope-tag">📢 广告赞助与战略合作</span>
+            <span class="scope-tag">🔍 数据纠错与参数勘误</span>
+            <span class="scope-tag">💡 用户建议与技术咨询</span>
+          </div>
+        </div>
+
+        <!-- 核心官方联络通道 (Telegram & Gmail) -->
+        <div class="contact-channels-grid">
+          <!-- Telegram 专区 -->
+          <div class="contact-channel-card contact-channel-tg">
+            <div class="channel-card-top">
+              <span class="channel-badge tg-badge">推荐 · 即时沟通</span>
+              <div class="channel-avatar-row">
+                <div class="channel-avatar-icon tg-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.77-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .34z"/></svg>
+                </div>
+                <div class="channel-title">Telegram 官方直联</div>
+              </div>
+              <div class="channel-account-box">
+                <span class="channel-account-text" id="tgHandleDisplay">@xintangtang</span>
+              </div>
+              <p class="channel-desc">适合即时商务接洽、紧急数据勘误、测评进度咨询。工作时段主编与商务专员在线实时响应。</p>
+            </div>
+            <div class="channel-actions">
+              <a href="https://t.me/xintangtang" target="_blank" rel="noopener noreferrer" class="btn btn-tg-primary">
+                <span>✈️ 打开 Telegram 对话 ↗</span>
+              </a>
+              <button type="button" class="btn btn-contact-copy" data-copy="@xintangtang" title="点击复制 Telegram 账号">
+                <span>📋 复制 Telegram 账号</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Gmail 专区 -->
+          <div class="contact-channel-card contact-channel-gmail">
+            <div class="channel-card-top">
+              <span class="channel-badge gmail-badge">官方 · 正式信函</span>
+              <div class="channel-avatar-row">
+                <div class="channel-avatar-icon gmail-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                </div>
+                <div class="channel-title">官方 Gmail 商务信箱</div>
+              </div>
+              <div class="channel-account-box">
+                <span class="channel-account-text" id="gmailHandleDisplay">xintangtang888@gmail.com</span>
+              </div>
+              <p class="channel-desc">适合正式商业提案、品牌入驻资质审核、大型赞助合作、PDF文稿与凭证附件正式投递。</p>
+            </div>
+            <div class="channel-actions">
+              <a href="mailto:xintangtang888@gmail.com?subject=%E3%80%90%E5%95%86%E5%8A%A1%E5%90%88%E4%BD%9C%2F%E6%95%B0%E6%8D%AE%E7%BA%A0%E9%94%99%E3%80%91%E6%A2%AF%E5%AD%90%E6%8E%A8%E8%8D%90%E7%BD%91%E8%81%94%E7%BB%9C" class="btn btn-gmail-primary">
+                <span>✉️ 发送 Gmail 邮件 ↗</span>
+              </a>
+              <button type="button" class="btn btn-contact-copy" data-copy="xintangtang888@gmail.com" title="点击复制 Gmail 地址">
+                <span>📋 复制 Gmail 地址</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 专业服务承诺 -->
+        <div class="contact-commitments">
+          <div class="commitment-item">
+            <span class="commitment-icon">⏱</span>
+            <div>
+              <strong>时效承诺</strong>
+              <p>Telegram 2~4 小时内即时跟进，邮件 24 小时内正式回复</p>
+            </div>
+          </div>
+          <div class="commitment-item">
+            <span class="commitment-icon">🛡</span>
+            <div>
+              <strong>客观中立</strong>
+              <p>坚守实测数据与技术中立，不接受付费要求删除负面实测</p>
+            </div>
+          </div>
+          <div class="commitment-item">
+            <span class="commitment-icon">🔒</span>
+            <div>
+              <strong>隐私保密</strong>
+              <p>所有商务咨询、合作洽谈细节与提交材料依法严格保密</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 一键复制成功 Toast 浮层 -->
+  <div id="contactToast" class="contact-toast" role="alert" aria-live="polite">✓ 已复制到剪贴板</div>
+
   <script src="../js/main.js" defer></script>
 </body>
 </html>

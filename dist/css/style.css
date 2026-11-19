@@ -1405,4 +1405,472 @@ img {
   .footer-grid {
     grid-template-columns: 1fr;
   }
+  .header-cta {
+    gap: 8px;
+  }
+  .btn-contact-trigger {
+    padding: 7px 12px;
+    font-size: 0.84rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-cta .btn {
+    padding: 6px 9px;
+    font-size: 0.78rem;
+  }
+}
+
+/* ==========================================================================
+   商务合作与联络弹窗体系 (Contact & Business Modal)
+   ========================================================================== */
+.btn-contact-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+}
+
+.btn-contact-trigger:hover {
+  background: #eff6ff;
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(37, 99, 235, 0.16);
+}
+
+.contact-bubble-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+@media (min-width: 769px) {
+  .mobile-contact-link {
+    display: none !important;
+  }
+}
+
+.mobile-contact-link {
+  font-weight: 700;
+  color: var(--primary) !important;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius-sm);
+  margin-top: 6px;
+  text-align: center;
+}
+
+/* 模态框背景遮罩 */
+.contact-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.22s ease, visibility 0.22s ease;
+}
+
+.contact-modal-backdrop.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 模态对话框 */
+.contact-modal-dialog {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 660px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.3), 0 0 0 1px rgba(226, 232, 240, 0.9);
+  transform: translateY(18px) scale(0.97);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 26px;
+  position: relative;
+}
+
+.contact-modal-backdrop.is-active .contact-modal-dialog {
+  transform: translateY(0) scale(1);
+}
+
+/* 弹窗头部 */
+.contact-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.contact-modal-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.contact-modal-icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  border: 1px solid #bfdbfe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.contact-modal-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 3px 0;
+  line-height: 1.25;
+}
+
+.contact-modal-subtitle {
+  font-size: 0.84rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.contact-modal-close {
+  background: #f1f5f9;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  color: #64748b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  line-height: 1;
+}
+
+.contact-modal-close:hover {
+  background: #fee2e2;
+  color: #ef4444;
+  transform: rotate(90deg);
+}
+
+.contact-modal-body {
+  padding-top: 18px;
+}
+
+/* 业务范围标签栏 */
+.contact-scope-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-bottom: 18px;
+}
+
+.contact-scope-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #475569;
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+
+.contact-scope-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.scope-tag {
+  font-size: 0.76rem;
+  background: #ffffff;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+/* 渠道卡片双列网格 */
+.contact-channels-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.contact-channel-card {
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid;
+  transition: all 0.2s ease;
+}
+
+/* Telegram 渠道卡片 */
+.contact-channel-tg {
+  background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);
+  border-color: #bae6fd;
+}
+.contact-channel-tg:hover {
+  border-color: #0284c7;
+  box-shadow: 0 8px 24px -4px rgba(14, 165, 233, 0.18);
+}
+
+/* Gmail 渠道卡片 */
+.contact-channel-gmail {
+  background: linear-gradient(180deg, #fef2f2 0%, #ffffff 100%);
+  border-color: #fecaca;
+}
+.contact-channel-gmail:hover {
+  border-color: #dc2626;
+  box-shadow: 0 8px 24px -4px rgba(239, 68, 68, 0.18);
+}
+
+.channel-card-top {
+  margin-bottom: 14px;
+}
+
+.channel-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+.tg-badge {
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #7dd3fc;
+}
+.gmail-badge {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
+}
+
+.channel-avatar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.channel-avatar-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tg-icon {
+  background: #229ed9;
+  color: #ffffff;
+}
+.gmail-icon {
+  background: #ea4335;
+  color: #ffffff;
+}
+
+.channel-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.channel-account-box {
+  background: #ffffff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin: 8px 0 10px 0;
+}
+
+.channel-account-text {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #0f172a;
+  word-break: break-all;
+  display: block;
+}
+
+.channel-desc {
+  font-size: 0.78rem;
+  color: #64748b;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.channel-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.btn-tg-primary {
+  background: linear-gradient(135deg, #229ed9, #0284c7);
+  color: #ffffff !important;
+  border: none;
+  font-weight: 700;
+  font-size: 0.86rem;
+  padding: 9px 12px;
+  border-radius: 8px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.18s ease;
+  box-shadow: 0 2px 6px rgba(34, 158, 217, 0.3);
+  text-decoration: none;
+}
+.btn-tg-primary:hover {
+  background: linear-gradient(135deg, #0284c7, #0369a1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(34, 158, 217, 0.4);
+}
+
+.btn-gmail-primary {
+  background: linear-gradient(135deg, #ea4335, #dc2626);
+  color: #ffffff !important;
+  border: none;
+  font-weight: 700;
+  font-size: 0.86rem;
+  padding: 9px 12px;
+  border-radius: 8px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.18s ease;
+  box-shadow: 0 2px 6px rgba(234, 67, 53, 0.3);
+  text-decoration: none;
+}
+.btn-gmail-primary:hover {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(234, 67, 53, 0.4);
+}
+
+.btn-contact-copy {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 7px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: all 0.18s ease;
+}
+.btn-contact-copy:hover {
+  background: #f8fafc;
+  color: #0f172a;
+  border-color: #94a3b8;
+}
+.btn-contact-copy.is-copied {
+  background: #dcfce7 !important;
+  color: #15803d !important;
+  border-color: #86efac !important;
+}
+
+/* 承诺条目 */
+.contact-commitments {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.commitment-item {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.commitment-icon {
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+.commitment-item strong {
+  display: block;
+  font-size: 0.8rem;
+  color: #1e293b;
+  margin-bottom: 2px;
+}
+
+.commitment-item p {
+  font-size: 0.72rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.35;
+}
+
+/* 复制成功浮动 Toast */
+.contact-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #0f172a;
+  color: #ffffff;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.35);
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-toast.is-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 640px) {
+  .contact-channels-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-commitments {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .contact-modal-dialog {
+    padding: 20px 16px;
+  }
 }

@@ -40,25 +40,92 @@ function generatePages() {
     },
     {
       slug: 'contact',
-      title: '联系我们 | 梯子推荐网 - 用户建议与数据纠错通道',
-      h1: '联系我们与数据纠错通道',
-      desc: '如果您发现本站收录的机场价格、节点倍率或在线限制有任何变动或疏漏，欢迎通过此通道提交纠错反馈。',
+      title: '联系我们 | 梯子推荐网 - 官方商务合作、品牌入驻与数据纠错通道',
+      h1: '官方商务合作、品牌入驻与数据纠错通道',
+      desc: '梯子推荐网官方联络中心。受理机场品牌入驻、独立测评申请、商业赞助合作、节点测速复核与全网数据勘误。Gmail: xintangtang888@gmail.com，Telegram: @xintangtang。',
       content: `
-        <h2>欢迎监督与数据纠错</h2>
-        <p>机场服务商的套餐资费、节点线路、倍率机制经常发生动态调整。虽然我们维持双周例行核验机制，但难免存在时间差。</p>
-        <p>如果您是普通用户或服务商品牌方，发现本站展示的任何参数（如价格变动、节点下架、协议更新）存在偏差，请通过以下方式联系我们勘误：</p>
-
-        <div class="callout callout-info">
-          <strong>官方沟通与纠错邮箱：</strong><br>
-          <code>feedback@tizituijian.vip</code> 或通过 GitHub 仓库提交 Issue：<br>
-          <a href="https://github.com/tangtang856/tizituijian.vip" target="_blank" rel="noopener">https://github.com/tangtang856/tizituijian.vip</a>
+        <div class="callout callout-info" style="margin-bottom:28px;">
+          <strong>官方联络中心导言：</strong>梯子推荐网秉持“客观、严谨、多维、真实”的测评与资讯原则。无论是机场品牌方寻求官方入驻、测评复核，或是企业用户提出商业合作、数据纠错建议，均可通过下方官方直达通道与我们取得联系。
         </div>
 
-        <h2>数据纠错提交须知</h2>
+        <h2>一、官方专属联络通道</h2>
+        <p>为保障沟通效率与信息安全，我们开通了 Telegram 实时在线客服与 Gmail 官方商务邮箱双通道。您可以根据诉求类型选择合适的方式：</p>
+
+        <div class="contact-channels-grid" style="margin: 24px 0 28px 0;">
+          <div class="contact-channel-card contact-channel-tg">
+            <div class="channel-card-top">
+              <span class="channel-badge tg-badge">推荐 · 即时沟通</span>
+              <div class="channel-avatar-row">
+                <div class="channel-avatar-icon tg-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.77-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .34z"/></svg>
+                </div>
+                <div class="channel-title">Telegram 官方直联</div>
+              </div>
+              <div class="channel-account-box">
+                <span class="channel-account-text">@xintangtang</span>
+              </div>
+              <p class="channel-desc">适合即时商务接洽、加急数据勘误、测评复核沟通。通常在工作时间 2~4 小时内即时跟进。</p>
+            </div>
+            <div class="channel-actions">
+              <a href="https://t.me/xintangtang" target="_blank" rel="noopener noreferrer" class="btn btn-tg-primary">
+                <span>✈️ 打开 Telegram 对话 ↗</span>
+              </a>
+              <button type="button" class="btn btn-contact-copy" data-copy="@xintangtang" title="点击复制 Telegram 账号">
+                <span>📋 复制 Telegram 账号</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="contact-channel-card contact-channel-gmail">
+            <div class="channel-card-top">
+              <span class="channel-badge gmail-badge">官方 · 正式函件</span>
+              <div class="channel-avatar-row">
+                <div class="channel-avatar-icon gmail-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                </div>
+                <div class="channel-title">官方 Gmail 商务信箱</div>
+              </div>
+              <div class="channel-account-box">
+                <span class="channel-account-text">xintangtang888@gmail.com</span>
+              </div>
+              <p class="channel-desc">适合正式商业提案、品牌资质核验材料、大型活动赞助方案、PDF附件与合同签署投递。</p>
+            </div>
+            <div class="channel-actions">
+              <a href="mailto:xintangtang888@gmail.com?subject=%E3%80%90%E5%95%86%E5%8A%A1%E5%90%88%E4%BD%9C%2F%E6%95%B0%E6%8D%AE%E7%BA%A0%E9%94%99%E3%80%91%E6%A2%AF%E5%AD%90%E6%8E%A8%E8%8D%90%E7%BD%91%E8%81%94%E7%BB%9C" class="btn btn-gmail-primary">
+                <span>✉️ 发送 Gmail 邮件 ↗</span>
+              </a>
+              <button type="button" class="btn btn-contact-copy" data-copy="xintangtang888@gmail.com" title="点击复制 Gmail 地址">
+                <span>📋 复制 Gmail 地址</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 32px;">
+          <button type="button" class="btn btn-primary btn-contact-trigger" style="padding: 12px 28px; font-size: 0.96rem;">
+            <span>💬 立即调起全屏联络窗口</span>
+          </button>
+        </div>
+
+        <h2>二、业务受理范畴与沟通指引</h2>
+        <h3>1. 品牌入驻与收录申请 (Airport Listing & Profile)</h3>
+        <p>我们欢迎具备正规技术实力、稳定运营记录与良好口碑的机场服务商申请收录。申请邮件请提供：品牌名称、官网地址、线路架构（如 IPLC/IEPL/BGP中转）、主推套餐资费与测试账号。编辑部将在 3 个工作日内完成节点稳定性与流媒体解锁盲测。</p>
+
+        <h3>2. 独立测评与跑分复测 (Independent Benchmark Retest)</h3>
+        <p>若服务商进行了重大节点扩容、线路升级或更换了专线架构，可联络我们申请重新进行晚高峰测速与基准评测。新一轮实测数据将在双周例行核验周期中统一同步更新至品牌独立评测专页。</p>
+
+        <h3>3. 网站数据纠错与参数勘误 (Data Corrections)</h3>
+        <p>各品牌套餐价格、节点倍率或在线设备数如发生调整，欢迎广大读者与品牌方随时指正。来信请附带官方公告链接或控制台截图，核实后通常在 12 小时内完成全站静态页面部署与更新。</p>
+
+        <h3>4. 代码与开源协作 (GitHub Issue)</h3>
+        <p>本站作为纯原生静态站点，您也可以直接通过 GitHub 仓库提交 Issue 或 Pull Request：<br>
+        <a href="https://github.com/tangtang856/tizituijian.vip" target="_blank" rel="noopener">https://github.com/tangtang856/tizituijian.vip</a></p>
+
+        <h2>三、服务承诺与中立性准则</h2>
         <ol>
-          <li>请在邮件中附带官方公告链接或控制台相关截图，以便核实真伪。</li>
-          <li>我们通常会在收到勘误邮件后的 48 小时内完成核查与全站静态页面更新。</li>
-          <li>本站不接受任何付费要求删除客观负面评测的商业请求，坚守内容中立性。</li>
+          <li><strong>快速响应承诺：</strong>Telegram 咨询通常在 2~4 小时内回复；正式邮件最迟不超过 24 小时由商务专员人工答复。</li>
+          <li><strong>坚持中立评测：</strong>本站坚决不接受任何付费要求删除客观负面实测数据的请求。测评结果始终基于真实网络测试环境。</li>
+          <li><strong>商业信息保密：</strong>所有沟通来信、合作协议及测试凭据均依法严格保密，绝不对外泄露。</li>
         </ol>
       `
     },
