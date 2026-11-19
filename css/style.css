@@ -923,6 +923,133 @@ img {
 }
 
 /* ==========================================================================
+   横向对比工具专属控制器与胶囊标签 (Comparison Tool Controller)
+   ========================================================================== */
+.compare-selector-bar {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 22px 24px;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow-xs);
+}
+
+.compare-selector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.compare-selector-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.02rem;
+  font-weight: 750;
+  color: var(--text-main);
+}
+
+.compare-count-badge {
+  display: inline-flex;
+  align-items: center;
+  background: #eff6ff;
+  color: var(--primary);
+  border: 1px solid #bfdbfe;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.compare-quick-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.compare-action-btn {
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  padding: 4px 11px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-weight: 550;
+}
+
+.compare-action-btn:hover {
+  background: #ffffff;
+  border-color: var(--primary);
+  color: var(--primary);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* 品牌胶囊选择群组 */
+.compare-checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+}
+
+.compare-check-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 550;
+  color: var(--text-main);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.compare-check-label:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+/* 选中高亮状态 (同时支持 CSS :has() 与 JS .is-checked class 回退) */
+.compare-check-label.is-checked,
+.compare-check-label:has(.compare-check-input:checked) {
+  background: #eff6ff;
+  border-color: #3b82f6;
+  color: #1d4ed8;
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(37, 99, 235, 0.12);
+}
+
+.compare-check-input {
+  appearance: auto;
+  accent-color: #2563eb;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.compare-selector-hint {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ==========================================================================
    杂志风双栏文章与教程展台 (Magazine Editorial Showcase)
    ========================================================================== */
 .magazine-grid {

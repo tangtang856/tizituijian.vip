@@ -53,16 +53,34 @@ ${renderBreadcrumbs(breadcrumbs, 1)}
     </p>
   </div>
 
-  <!-- 勾选控制器 -->
+  <!-- 勾选控制器 (现代胶囊筛选器) -->
   <div class="compare-selector-bar">
-    <strong style="font-size:0.95rem; color:var(--text-main);">选择对比品牌（已选 <span id="selected-count">${Math.min(airports.length, 5)}</span> 家）：</strong>
+    <div class="compare-selector-header">
+      <div class="compare-selector-title">
+        <span>🔘 选择对比品牌</span>
+        <span class="compare-count-badge">已选 <span id="selected-count">${Math.min(airports.length, 5)}</span> / 14 家</span>
+      </div>
+      <div class="compare-quick-actions">
+        <span style="font-size:0.82rem; color:var(--text-light); margin-right:4px;">快捷预设：</span>
+        <button type="button" class="compare-action-btn" data-preset="top5">精选前5家</button>
+        <button type="button" class="compare-action-btn" data-preset="budget">平价高性价比</button>
+        <button type="button" class="compare-action-btn" data-preset="premium">纯专线高稳</button>
+        <button type="button" class="compare-action-btn" data-preset="all">全部勾选</button>
+        <button type="button" class="compare-action-btn" data-preset="reset">重置默认</button>
+      </div>
+    </div>
+
     <div class="compare-checkbox-group">
       ${airports.map((a, idx) => `
-        <label class="compare-check-label">
+        <label class="compare-check-label ${idx < 5 ? 'is-checked' : ''}">
           <input type="checkbox" class="compare-check-input" value="${a.id}" ${idx < 5 ? 'checked' : ''}>
           <span>${a.name}</span>
         </label>
       `).join('')}
+    </div>
+
+    <div class="compare-selector-hint">
+      <span>💡 提示：点击任意品牌胶囊即可实时展开或隐藏对比列，建议勾选 2 ~ 6 家以获得最佳横向对比体验。</span>
     </div>
   </div>
 

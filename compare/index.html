@@ -79,81 +79,99 @@
     </p>
   </div>
 
-  <!-- 勾选控制器 -->
+  <!-- 勾选控制器 (现代胶囊筛选器) -->
   <div class="compare-selector-bar">
-    <strong style="font-size:0.95rem; color:var(--text-main);">选择对比品牌（已选 <span id="selected-count">5</span> 家）：</strong>
+    <div class="compare-selector-header">
+      <div class="compare-selector-title">
+        <span>🔘 选择对比品牌</span>
+        <span class="compare-count-badge">已选 <span id="selected-count">5</span> / 14 家</span>
+      </div>
+      <div class="compare-quick-actions">
+        <span style="font-size:0.82rem; color:var(--text-light); margin-right:4px;">快捷预设：</span>
+        <button type="button" class="compare-action-btn" data-preset="top5">精选前5家</button>
+        <button type="button" class="compare-action-btn" data-preset="budget">平价高性价比</button>
+        <button type="button" class="compare-action-btn" data-preset="premium">纯专线高稳</button>
+        <button type="button" class="compare-action-btn" data-preset="all">全部勾选</button>
+        <button type="button" class="compare-action-btn" data-preset="reset">重置默认</button>
+      </div>
+    </div>
+
     <div class="compare-checkbox-group">
       
-        <label class="compare-check-label">
+        <label class="compare-check-label is-checked">
           <input type="checkbox" class="compare-check-input" value="breezenet" checked>
           <span>微风网络 Breezenet</span>
         </label>
       
-        <label class="compare-check-label">
+        <label class="compare-check-label is-checked">
           <input type="checkbox" class="compare-check-input" value="muguang" checked>
           <span>暮光网络</span>
         </label>
       
-        <label class="compare-check-label">
+        <label class="compare-check-label is-checked">
           <input type="checkbox" class="compare-check-input" value="feimaoyun" checked>
           <span>飞猫云</span>
         </label>
       
-        <label class="compare-check-label">
+        <label class="compare-check-label is-checked">
           <input type="checkbox" class="compare-check-input" value="wuyou" checked>
           <span>无忧</span>
         </label>
       
-        <label class="compare-check-label">
+        <label class="compare-check-label is-checked">
           <input type="checkbox" class="compare-check-input" value="lingmao" checked>
           <span>灵猫</span>
         </label>
       
-        <label class="compare-check-label">
+        <label class="compare-check-label ">
           <input type="checkbox" class="compare-check-input" value="flashleap" >
           <span>闪跃 FlashLeap</span>
         </label>
       
-        <label class="compare-check-label">
+        <label class="compare-check-label ">
           <input type="checkbox" class="compare-check-input" value="firefly" >
           <span>萤火虫 (Firefly)</span>
         </label>
       
-        <label class="compare-check-label">
+        <label class="compare-check-label ">
           <input type="checkbox" class="compare-check-input" value="kuajiecloud" >
           <span>跨界</span>
         </label>
       
-        <label class="compare-check-label">
+        <label class="compare-check-label ">
           <input type="checkbox" class="compare-check-input" value="yinxingren" >
           <span>隐形人</span>
         </label>
       
-        <label class="compare-check-label">
+        <label class="compare-check-label ">
           <input type="checkbox" class="compare-check-input" value="feiv" >
           <span>飞V</span>
         </label>
       
-        <label class="compare-check-label">
+        <label class="compare-check-label ">
           <input type="checkbox" class="compare-check-input" value="laddercloud" >
           <span>梯子云 LadderCloud</span>
         </label>
       
-        <label class="compare-check-label">
+        <label class="compare-check-label ">
           <input type="checkbox" class="compare-check-input" value="wavenet" >
           <span>浪网 WaveNet</span>
         </label>
       
-        <label class="compare-check-label">
+        <label class="compare-check-label ">
           <input type="checkbox" class="compare-check-input" value="lingdongcloud" >
           <span>灵动云</span>
         </label>
       
-        <label class="compare-check-label">
+        <label class="compare-check-label ">
           <input type="checkbox" class="compare-check-input" value="quanqiuyun" >
           <span>全球云</span>
         </label>
       
+    </div>
+
+    <div class="compare-selector-hint">
+      <span>💡 提示：点击任意品牌胶囊即可实时展开或隐藏对比列，建议勾选 2 ~ 6 家以获得最佳横向对比体验。</span>
     </div>
   </div>
 
