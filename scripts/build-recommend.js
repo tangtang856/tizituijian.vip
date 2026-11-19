@@ -1,5 +1,6 @@
 /**
  * 生成 recommend/ 目录下的所有推荐专题页面 (14大真实品牌适配)
+ * 采用 Design System 2.0：层次丰富、场景差异化、杜绝重复卡片
  */
 
 const fs = require('fs');
@@ -61,49 +62,83 @@ ${renderBreadcrumbs(breadcrumbs, 1)}
         <strong>选型导读：</strong>科学上网与海外加速并非“越贵越好”。选择机场的核心逻辑在于“场景匹配度”。我们根据网络传输原理与实际用户需求，梳理了六大核心细分专题，助您快速锁定最合适的解决方案。
       </div>
 
-      <h2>一、六大核心需求专题入口</h2>
+      <h2>一、六大核心需求专题入口 (Bento-Grid 场景矩阵)</h2>
 
-      <div class="category-grid" style="margin:24px 0;">
-        <div class="category-card">
-          <div class="category-icon">💰</div>
-          <h3 class="category-title"><a href="budget.html">性价比平价机场推荐</a></h3>
-          <p class="category-desc">精选飞V（¥4.9起）、微风网络（¥8/200GB）、飞猫云（折合¥7/月）等大流量低门槛方案。</p>
-          <a href="budget.html" class="btn btn-outline btn-sm">进入平价专题 →</a>
+      <div class="bento-grid" style="margin:24px 0;">
+        <!-- 宽幅重点卡 1: 平价 -->
+        <div class="bento-card bento-card-wide">
+          <div>
+            <div class="bento-icon">💰</div>
+            <h3 class="bento-title"><a href="budget.html">低预算平价高性价比机场</a></h3>
+            <p class="bento-desc">
+              精选飞V（¥4.9起）、微风网络（¥8/200GB）、飞猫云（折合¥7/月）等大流量低门槛方案。单价低至 0.040元/GB，更有 29 元不限时永久流量包。
+            </p>
+            <div class="bento-pills-row">
+              <span class="tag">飞V ¥4.9起</span>
+              <span class="tag">微风网络 ¥8/200GB</span>
+              <span class="tag">飞猫云折约¥7/月</span>
+              <span class="tag">支持纯月付</span>
+            </div>
+          </div>
+          <a href="budget.html" class="btn btn-primary btn-sm" style="align-self:flex-start;">进入平价专题 →</a>
         </div>
 
-        <div class="category-card">
-          <div class="category-icon">🚀</div>
-          <h3 class="category-title"><a href="premium.html">高端IPLC/IEPL专线推荐</a></h3>
-          <p class="category-desc">隐形人、闪跃、无忧、灵猫纯专线架构，物理内网过境不过GFW，超低网络抖动与SLA保障。</p>
-          <a href="premium.html" class="btn btn-outline btn-sm">进入专线专题 →</a>
+        <!-- 宽幅重点卡 2: 高端专线 -->
+        <div class="bento-card bento-card-wide">
+          <div>
+            <div class="bento-icon">🚀</div>
+            <h3 class="bento-title"><a href="premium.html">高端 IPLC / IEPL 企业级专线</a></h3>
+            <p class="bento-desc">
+              隐形人、闪跃、无忧、灵猫纯专线方案，跨国内网端到端物理光纤直达，数据全程不过 GFW 公共网关，SLA 99.9% 在线率，抖动 &lt; 2ms。
+            </p>
+            <div class="bento-pills-row">
+              <span class="tag">物理内网过境</span>
+              <span class="tag">不过GFW</span>
+              <span class="tag">抖动 &lt; 2ms</span>
+              <span class="tag">商务与高频交易</span>
+            </div>
+          </div>
+          <a href="premium.html" class="btn btn-primary btn-sm" style="align-self:flex-start;">进入专线专题 →</a>
         </div>
 
-        <div class="category-card">
-          <div class="category-icon">🔰</div>
-          <h3 class="category-title"><a href="beginner.html">新手入门一键梯子推荐</a></h3>
-          <p class="category-desc">极简使用门槛，支持一键配置导入，附带专属折扣优惠码，1分钟快速上手。</p>
-          <a href="beginner.html" class="btn btn-outline btn-sm">进入新手专题 →</a>
+        <!-- 紧凑主题卡 3: 新手 -->
+        <div class="bento-card">
+          <div>
+            <div class="bento-icon">🔰</div>
+            <h3 class="bento-title"><a href="beginner.html">新手入门一键梯子</a></h3>
+            <p class="bento-desc">极简门槛，支持一键配置导入，附带专属折扣优惠码，30秒轻松上手。</p>
+          </div>
+          <a href="beginner.html" class="btn btn-outline btn-sm" style="margin-top:auto;">新手入门推荐 →</a>
         </div>
 
-        <div class="category-card">
-          <div class="category-icon">🛡️</div>
-          <h3 class="category-title"><a href="stable.html">稳定抗封锁高可用VPN推荐</a></h3>
-          <p class="category-desc">暮光网络、跨界、浪网等抗封锁高容灾架构，敏感期不失联，晚高峰流畅观看4K超清视频。</p>
-          <a href="stable.html" class="btn btn-outline btn-sm">进入稳定专题 →</a>
+        <!-- 紧凑主题卡 4: 稳定 -->
+        <div class="bento-card">
+          <div>
+            <div class="bento-icon">🛡️</div>
+            <h3 class="bento-title"><a href="stable.html">晚高峰稳定抗封锁</a></h3>
+            <p class="bento-desc">暮光网络、跨界、浪网等抗封锁高容灾架构，敏感期不失联，晚高峰流畅观看4K超清视频。</p>
+          </div>
+          <a href="stable.html" class="btn btn-outline btn-sm" style="margin-top:auto;">抗封锁专题推荐 →</a>
         </div>
 
-        <div class="category-card">
-          <div class="category-icon">🤖</div>
-          <h3 class="category-title"><a href="ai.html">AI 大模型加速专线推荐</a></h3>
-          <p class="category-desc">针对 ChatGPT 4o、Claude 3.5 Sonnet 及 Midjourney 专门优化的原生住宅双ISP落地IP。</p>
-          <a href="ai.html" class="btn btn-outline btn-sm">进入AI专线专题 →</a>
+        <!-- 紧凑主题卡 5: AI -->
+        <div class="bento-card">
+          <div>
+            <div class="bento-icon">🤖</div>
+            <h3 class="bento-title"><a href="ai.html">AI 大模型加速专线</a></h3>
+            <p class="bento-desc">针对 ChatGPT 4o、Claude 3.5 Sonnet 及 Midjourney 专门优化的原生住宅双ISP落地IP。</p>
+          </div>
+          <a href="ai.html" class="btn btn-outline btn-sm" style="margin-top:auto;">AI专属节点推荐 →</a>
         </div>
 
-        <div class="category-card">
-          <div class="category-icon">🎬</div>
-          <h3 class="category-title"><a href="streaming.html">4K超清流媒体解锁推荐</a></h3>
-          <p class="category-desc">专攻 Netflix、Disney+、YouTube Premium、TikTok 等多国版权限制的高带宽解锁节点。</p>
-          <a href="streaming.html" class="btn btn-outline btn-sm">进入流媒体专题 →</a>
+        <!-- 紧凑主题卡 6: 流媒体 -->
+        <div class="bento-card">
+          <div>
+            <div class="bento-icon">🎬</div>
+            <h3 class="bento-title"><a href="streaming.html">4K超清流媒体解锁</a></h3>
+            <p class="bento-desc">专攻 Netflix 全球片库、Disney+、YouTube 4K/8K 码率稳定不降画质的高带宽节点。</p>
+          </div>
+          <a href="streaming.html" class="btn btn-outline btn-sm" style="margin-top:auto;">流媒体解锁推荐 →</a>
         </div>
       </div>
 
@@ -116,7 +151,7 @@ ${renderBreadcrumbs(breadcrumbs, 1)}
 
       <h2>三、快速对比工具</h2>
       <p>如果您已经有了心仪的备选品牌，可以通过我们的横向对比工具，直观查看 14 大品牌在价格、协议、设备数等维度的差异：</p>
-      <p><a href="../compare/index.html" class="btn btn-primary btn-sm">使用机场横向全维度对比工具</a></p>
+      <p><a href="../compare/index.html" class="btn btn-primary btn-sm">使用机场横向全维度对比工具 →</a></p>
     </div>
 
     ${renderSidebarWidgets(1)}
@@ -192,7 +227,7 @@ function generateTopicPages() {
     const meta = {
       title: t.title,
       description: t.desc,
-      keywords: '机场推荐,梯子推荐,性价比机场,机场节点,vpn,vpn机场,vpn推荐',
+      keywords: '机场推荐,梯子推荐,性价比机场,机场节点,vpn,vpn机场,vpn节点,vpn推荐',
       canonicalPath: `recommend/${t.slug}.html`,
       schema: {
         "@context": "https://schema.org",
@@ -242,51 +277,97 @@ ${renderBreadcrumbs(breadcrumbs, 1)}
 
       <h2>一、本专题精选适配品牌列表</h2>
 
+      <!-- 现代精选卡片 (Design System 2.0 展台风格) -->
       <div class="airport-grid" style="margin:28px 0;">
-        ${matchedAirports.map(a => `
-        <article class="airport-card">
-          <span class="card-badge-top badge-tested">
-            ✓ 真实核验数据
-          </span>
-          <div class="airport-card-header">
-            <h3 class="airport-name"><a href="../airport/${a.slug}.html">${a.name}</a></h3>
-            <div class="airport-tagline">${a.tagline}</div>
-          </div>
-          
-          <div class="airport-price-box">
-            <div>
-              <span class="price-val">¥${a.startingPrice}</span>
-              <span class="price-unit">/月起</span>
+        ${matchedAirports.map((a, idx) => {
+          const isTop = idx === 0;
+          return `
+          <article class="airport-card ${isTop ? 'card-featured' : ''}">
+            <div class="card-top-meta">
+              <div class="card-title-box">
+                <span class="card-rank-badge ${idx === 0 ? 'rank-gold' : 'rank-normal'}">${idx + 1}</span>
+                <h3 class="card-brand-name">
+                  <a href="../airport/${a.slug}.html">${a.name}</a>
+                </h3>
+              </div>
+              <span class="card-status-badge badge-verified">✓ 官方核实</span>
             </div>
-            <div class="price-sub">${a.plans[0].trafficGb}GB · ${a.deviceLimit}</div>
-          </div>
 
-          <div class="tag-cloud">
-            <span class="tag" style="background:#eff6ff; color:#1d4ed8; font-weight:600;">${a.lineType}</span>
-            ${a.protocols.slice(0, 2).map(p => `<span class="tag">${p}</span>`).join('')}
-            ${a.regions.slice(0, 3).map(r => `<span class="tag">${r}</span>`).join('')}
-          </div>
+            <p class="card-description">${a.tagline}</p>
 
-          <ul class="feature-list">
-            ${a.advantages.slice(0, 3).map(adv => `
-              <li class="feature-item"><span class="feature-icon-check">✓</span><span>${adv}</span></li>
-            `).join('')}
-            <li class="feature-item"><span class="feature-icon-warn">!</span><span>${a.disadvantages[0]}</span></li>
-          </ul>
+            <div class="card-metric-banner">
+              <div class="metric-price-left">
+                <span class="metric-price-num">¥${a.startingPrice}</span>
+                <span class="metric-price-unit">/月起</span>
+              </div>
+              <div class="metric-traffic-right">
+                <strong>${a.plans[0].trafficGb}&nbsp;GB</strong> / 月<br>
+                <span>${a.deviceLimit}</span>
+              </div>
+            </div>
 
-          <div class="card-actions">
-            <a href="../airport/${a.slug}.html" class="btn btn-outline btn-sm">查看参数</a>
-            <a href="../review/${a.slug}.html" class="btn btn-primary btn-sm">独立评测</a>
-          </div>
-          ${a.coupon ? `<div style="margin-top:10px; font-size:0.78rem; text-align:center; color:#e11d48; background:#fff1f2; padding:3px 6px; border-radius:4px;">专属优惠码：<strong>${a.coupon}</strong></div>` : ''}
-        </article>
-        `).join('')}
+            <div class="card-tags-row">
+              <span class="tag tag-highlight">${a.lineType}</span>
+              ${a.protocols.slice(0, 2).map(p => `<span class="tag">${p}</span>`).join('')}
+              <span class="tag">单价 ¥${a.plans[0].unitPricePerGb.toFixed(3)}/G</span>
+            </div>
+
+            <ul class="card-features-list">
+              <li><span class="icon-check">✓</span> <span>${a.advantages[0] || '高速稳定线路'}</span></li>
+              <li><span class="icon-check">✓</span> <span>${a.advantages[1] || '多端适配，节点秒切'}</span></li>
+              ${a.disadvantages && a.disadvantages[0] ? `<li><span class="icon-warn">!</span> <span style="color:var(--text-light);">${a.disadvantages[0]}</span></li>` : ''}
+            </ul>
+
+            ${a.coupon ? `
+            <div class="card-coupon-bar">
+              <span>专属优惠券码：</span>
+              <code>${a.coupon}</code>
+            </div>
+            ` : ''}
+
+            <div class="card-actions-grid">
+              <a href="../review/${a.slug}.html" class="btn btn-outline btn-sm">独立评测</a>
+              <a href="${a.affiliateUrl}" target="_blank" rel="noopener nofollow" class="btn btn-primary btn-sm">直达官网 ↗</a>
+            </div>
+          </article>
+          `;
+        }).join('')}
       </div>
 
-      <h2>二、专业选型建议与避坑提醒</h2>
+      <h2>二、精选品牌核心指标快速横比</h2>
+      <div class="table-responsive" style="margin:20px 0 30px;">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th style="white-space:nowrap;">品牌名称</th>
+              <th style="white-space:nowrap;">起步价格</th>
+              <th style="white-space:nowrap;">月配额</th>
+              <th style="white-space:nowrap;">主力线路</th>
+              <th style="white-space:nowrap;">每GB单价</th>
+              <th style="white-space:nowrap; text-align:center;">操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${matchedAirports.map(a => `
+            <tr>
+              <td style="white-space:nowrap;"><strong><a href="../airport/${a.slug}.html">${a.name}</a></strong></td>
+              <td style="white-space:nowrap;"><span style="font-weight:700; color:var(--primary);">¥${a.startingPrice}</span>/月</td>
+              <td style="white-space:nowrap;">${a.plans[0].trafficGb}&nbsp;GB</td>
+              <td style="white-space:nowrap;"><span class="tag" style="white-space:nowrap; display:inline-block; padding:3px 8px;">${a.lineType}</span></td>
+              <td style="white-space:nowrap;"><span style="color:var(--success); font-weight:600;">¥${a.plans[0].unitPricePerGb.toFixed(3)}</span>/GB</td>
+              <td style="white-space:nowrap; text-align:center;">
+                <a href="../review/${a.slug}.html" class="btn btn-outline btn-sm" style="padding:4px 10px; font-size:0.82rem;">详细评测</a>
+              </td>
+            </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>
+
+      <h2>三、专业选型建议与避坑提醒</h2>
       <p>${t.advice}</p>
 
-      <h2>三、常见关联知识与教程</h2>
+      <h2>四、常见关联知识与教程</h2>
       <ul>
         <li><a href="../guides/windows.html">Windows客户端配置教程与分流规则详解</a></li>
         <li><a href="../blog/beginner-selection-guide.html">2026新手挑选机场节点的五大黄金准则</a></li>
