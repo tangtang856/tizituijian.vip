@@ -89,7 +89,7 @@ ${renderBreadcrumbs(breadcrumbs, 1)}
             <div class="bento-icon">🚀</div>
             <h3 class="bento-title"><a href="premium.html">高端 IPLC / IEPL 企业级专线</a></h3>
             <p class="bento-desc">
-              隐形人、闪跃、无忧、灵猫纯专线方案，跨国内网端到端物理光纤直达，数据全程不过 GFW 公共网关，SLA 99.9% 在线率，抖动 &lt; 2ms。
+              微风网络、飞猫云、暮光网络、无忧、灵猫纯专线方案，跨国内网端到端物理光纤直达，数据全程不过 GFW 公共网关，SLA 99.9% 在线率，抖动 &lt; 2ms。
             </p>
             <div class="bento-pills-row">
               <span class="tag">物理内网过境</span>
@@ -180,10 +180,10 @@ function generateTopicPages() {
       slug: 'premium',
       title: '高端专线VPN机场推荐 2026 | IPLC/IEPL高速稳定节点精选 - 梯子推荐网',
       h1: '2026高端IPLC/IEPL专线VPN机场精选推荐',
-      desc: '面向跨国企业办公、外贸金融与高要求极客的高端内网专线机场推荐：精选隐形人、闪跃、无忧、灵猫纯专线物理光纤过境方案，零丢包不卡顿。',
-      targetAirports: ['yinxingren', 'flashleap', 'wuyou', 'lingmao', 'breezenet'],
+      desc: '面向跨国企业办公、外贸金融与高要求极客的高端内网专线机场推荐：精选微风网络、飞猫云、暮光网络、无忧、灵猫纯专线物理光纤过境方案，零丢包不卡顿。',
+      targetAirports: ['breezenet', 'feimaoyun', 'muguang', 'wuyou', 'lingmao'],
       intro: '高端专线机场采用 IPLC（国际私有租线）或 IEPL（国际以太网专线）物理内网光纤传输。数据在境内入口服务器接收后，通过物理内网隧道直达境外机房，全程不通过公共 GFW 防火墙审查，因此拥有无与伦比的极速与超高网络 SLA 保证。',
-      advice: '高端专线起步月付通常在19元至25元之间。如果您从事跨境电商、跨国视频会议、海外服务器运维或对网络丢包率有零容忍要求，隐形人、闪跃、无忧等专线方案是全天候可靠体验的首选。'
+      advice: '高端专线起步月付通常在19元至25元之间，微风网络与飞猫云提供平价低门槛专线体验。如果您从事跨境电商、跨国视频会议、海外服务器运维或对网络丢包率有零容忍要求，飞猫云、暮光网络、隐形人、闪跃、无忧等专线方案是全天候可靠体验的首选。'
     },
     {
       slug: 'beginner',
@@ -254,7 +254,7 @@ function generateTopicPages() {
       { name: t.h1, url: `${t.slug}.html` }
     ];
 
-    const matchedAirports = airports.filter(a => t.targetAirports.includes(a.id));
+    const matchedAirports = t.targetAirports.map(id => airports.find(a => a.id === id)).filter(Boolean);
 
     const html = `${renderHead(meta, 1)}
 ${renderHeader(1, 'recommend')}
@@ -280,12 +280,13 @@ ${renderBreadcrumbs(breadcrumbs, 1)}
       <!-- 现代精选卡片 (Design System 2.0 展台风格) -->
       <div class="airport-grid" style="margin:28px 0;">
         ${matchedAirports.map((a, idx) => {
-          const isTop = idx === 0;
+          const isTop3 = idx < 3;
+          const rankClass = idx === 0 ? 'rank-gold' : idx === 1 ? 'rank-silver' : idx === 2 ? 'rank-bronze' : 'rank-normal';
           return `
-          <article class="airport-card ${isTop ? 'card-featured' : ''}">
+          <article class="airport-card ${isTop3 ? 'card-featured' : ''}">
             <div class="card-top-meta">
               <div class="card-title-box">
-                <span class="card-rank-badge ${idx === 0 ? 'rank-gold' : 'rank-normal'}">${idx + 1}</span>
+                <span class="card-rank-badge ${rankClass}">${idx + 1}</span>
                 <h3 class="card-brand-name">
                   <a href="../airport/${a.slug}.html">${a.name}</a>
                 </h3>
